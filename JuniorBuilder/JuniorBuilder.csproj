@@ -403,6 +403,7 @@
     <Content Include="vendor\icofont\fonts\icofont.woff2" />
     <Content Include="vendor\jquery\jquery.min.map" />
     <Content Include="Views\homePage.cshtml" />
+    <Content Include="Views\master.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
