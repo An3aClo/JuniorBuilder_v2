@@ -3,3 +3,66 @@
 @{
 	Layout = "loggedInMaster.cshtml";
 }
+<main id="main">
+	<!-- ======= About Section ======= -->
+	<section id="about" class="about section-bg">
+		<div class="container">
+			<div class="section-title">
+				@if (!string.IsNullOrEmpty(@Model.LessonDetailHeader))
+				{
+					<h2 data-aos="fade-in">@Model.LessonDetailHeader</h2>
+				}
+				@if (@Model.LessonDetailDescribtion != null)
+				{
+					<p data-aos="fade-in">@Model.LessonDetailDescribtion</p>
+				}
+			</div>
+			<div class="row">
+				<div class="image col-xl-12 d-flex align-items-stretch justify-content-center justify-content-lg-start ">
+					@if (Model.LessonDetailIntroductionImage != null)
+					{
+						<img src="@Model.LessonDetailIntroductionImage.Url" alt="image" class="imageCentre" />
+					}
+
+				</div>
+				<div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch"></div>
+				<div class="content d-flex flex-column justify-content-center">
+					@if (!string.IsNullOrEmpty(Model.LessonTitle))
+					{
+						<h3 data-aos="fade-in" data-aos-delay="100">
+							@Model.LessonTitle
+						</h3>
+					}
+					@if (Model.LessonShortDescription != null)
+					{
+						<p data-aos="fade-in">
+							@Model.LessonShortDescription
+						</p>
+					}
+					@if (Model.LessonKeyPointList != null)
+                    {
+                        foreach(var keyPoint in Model.LessonKeyPointList)
+                        {
+							<p>hi</p>
+                        }
+                    }
+					<div class="row">
+						<div class="col-md-6 icon-box" data-aos="fade-up">
+							<i class="bx bx-receipt"></i>
+							<h4><a href="#">Corporis voluptates sit</a></h4>
+							<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+						</div>		
+					</div>
+				</div><!-- End .content-->
+			</div>
+			<div class="section-title markCompleteText">
+				<p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+				<div class="markCompleteButton">
+					<a href="purchase.html" class="yourKidsButton">Purchase</a>
+				</div>
+			</div>
+
+		</div>
+	</section><!-- End About Section -->
+
+</main><!-- End #main -->
