@@ -1,17 +1,17 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
 	Layout = null;
-    var homePage = (HomePage)Model.Root();
+    var loginPage = (LoginPage)Model.Root();
 }
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-        <title>Junior Builder- Register</title>
+        <title>Junior Builder</title>
         <meta content="" name="descriptison">
         <meta content="" name="keywords">
+
         <!-- Favicons -->
         <link href="~/Media/vs1ab5vr/characters2.png" rel="icon">
         <link href="~/Media/vs1ab5vr/characters2.png" rel="apple-touch-icon">
@@ -20,7 +20,6 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
         <!-- Vendor CSS Files -->
-
         <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link href="~/vendor/icofont/icofont.min.css" rel="stylesheet" />
         <link href="~/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
@@ -35,11 +34,11 @@
         <header id="header">
             <div class="container d-flex">
                 <div class="logo mr-auto">
-                    @if (!string.IsNullOrWhiteSpace(homePage.NavigationHeaderText) && homePage.NavigationHeaderLink != null)
+                    @if (!string.IsNullOrWhiteSpace(loginPage.NavigationHeaderText) && loginPage.NavigationHeaderLink != null)
                     {
                         <h1 class="text-light">
-                            <a href="@homePage.NavigationHeaderLink.Url">
-                                @homePage.NavigationHeaderText
+                            <a href="@loginPage.NavigationHeaderLink.Url">
+                                @loginPage.NavigationHeaderText
                                 <span>
                                     .
                                 </span>
@@ -51,9 +50,9 @@
                 <!-- .nav-menu -->
                 <nav class="nav-menu d-none d-lg-block">                   
                     <ul>
-                        @if (homePage.NavigationBarItemList != null)
+                        @if (loginPage.NavigationBarItemList != null)
                         {
-                            foreach (var navItem in homePage.NavigationBarItemList)
+                            foreach (var navItem in loginPage.NavigationBarItemList)
                             {
                                 if (!string.IsNullOrWhiteSpace(navItem.NavigationItemText) && navItem.NavigationItemLink != null)
                                 {
@@ -65,9 +64,9 @@
                                 }
                             }
                         }
-                        @if (homePage.NavigationBarButtonList != null)
+                        @if (loginPage.NavigationBarButtonList != null)
                         {
-                            foreach (var button in homePage.NavigationBarButtonList)
+                            foreach (var button in loginPage.NavigationBarButtonList)
                             {
                                 if (!string.IsNullOrWhiteSpace(button.NavigationButtonText) && button.NavigationButtonLink != null)
                                 {
@@ -94,49 +93,49 @@
                 <div class="container" data-aos="fade-up">
                     <div class="row  justify-content-center">
                         <div class="col-lg-6">
-                            @if (!string.IsNullOrWhiteSpace(homePage.FooterHeaderText))
+                            @if (!string.IsNullOrWhiteSpace(loginPage.FooterHeaderText))
                             {
-                                <h3>@homePage.FooterHeaderText</h3>
+                                <h3>@loginPage.FooterHeaderText</h3>
                             }
-                            @if (homePage.FooterDescription != null)
+                            @if (loginPage.FooterDescription != null)
                             {
-                                <p>@homePage.FooterDescription</p>
+                                <p>@loginPage.FooterDescription</p>
                             }
                         </div>
                     </div>
                     <div class="row footer-newsletter justify-content-center">
                         <div class="col-lg-6">
                             <form action="" method="post">
-                                @if (!string.IsNullOrWhiteSpace(homePage.FooterSubscriptionPlaceholderText) && !string.IsNullOrWhiteSpace(homePage.FooterSubscriptionButtonText))
+                                @if (!string.IsNullOrWhiteSpace(loginPage.FooterSubscriptionPlaceholderText) && !string.IsNullOrWhiteSpace(loginPage.FooterSubscriptionButtonText))
                                 {
-                                    <input type="email" name="email" placeholder="@homePage.FooterSubscriptionPlaceholderText">
-                                    <input type="submit" value="@homePage.FooterSubscriptionButtonText">
+                                    <input type="email" name="email" placeholder="@loginPage.FooterSubscriptionPlaceholderText">
+                                    <input type="submit" value="@loginPage.FooterSubscriptionButtonText">
                                 }
                             </form>
                         </div>
                     </div>
                     <div class="social-links">
                         
-                            @if (!string.IsNullOrWhiteSpace(homePage.TwitterLink))
+                            @if (!string.IsNullOrWhiteSpace(loginPage.TwitterLink))
                             {
-                                <a href="@homePage.TwitterLink" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a href="@loginPage.TwitterLink" class="twitter"><i class="bx bxl-twitter"></i></a>
                             }
-                            @if (!string.IsNullOrWhiteSpace(homePage.FacebookLink))
+                            @if (!string.IsNullOrWhiteSpace(loginPage.FacebookLink))
                             {
-                                <a href="@homePage.FacebookLink" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="@loginPage.FacebookLink" class="facebook"><i class="bx bxl-facebook"></i></a>
                             }
-                            @if (!string.IsNullOrWhiteSpace(homePage.InstagramLink))
+                            @if (!string.IsNullOrWhiteSpace(loginPage.InstagramLink))
                             {
 
-                                <a href="@homePage.InstagramLink" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <a href="@loginPage.InstagramLink" class="instagram"><i class="bx bxl-instagram"></i></a>
                             }
-                            @if (!string.IsNullOrWhiteSpace(homePage.SkypeLink))
+                            @if (!string.IsNullOrWhiteSpace(loginPage.SkypeLink))
                             {
-                                <a href="@homePage.SkypeLink" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                <a href="@loginPage.SkypeLink" class="google-plus"><i class="bx bxl-skype"></i></a>
                             }
-                            @if (!string.IsNullOrWhiteSpace(homePage.LinkeInLink))
+                            @if (!string.IsNullOrWhiteSpace(loginPage.LinkeInLink))
                             {
-                                <a href="@homePage.LinkeInLink" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                <a href="@loginPage.LinkeInLink" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                             }
                     </div>
                 </div>
