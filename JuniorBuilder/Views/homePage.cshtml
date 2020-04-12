@@ -1,49 +1,65 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "master.cshtml";
 }
-    <main id="main">
-
-        <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact section-bg">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2 data-aos="fade-in">Login</h2>
-                    <p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-up">
-                            <div class="form-row">
-                                <div class="col-md-6 form-group">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                                    <div class="validate"></div>
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <input type="password" class="form-control" name="password" id="email" placeholder="Your password" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                    <div class="validate"></div>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button class="yourKidsButton" type="submit" data-toggle="modal" data-target="#myModal">Login</button>
-                                <br />
-
-                                <a class="smallButtonLink" href="" target="_blank">Forgot password |</a>
-                                <a class="smallButtonLink" href="register.html" target="_blank">Register&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                                <br />
-                                <a class="smallButtonLink" href="yourKids.html">Click here to act if you are logging in. Note this will be removed</a>
-                                <br />
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
+<main id="main">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+        <div class="container">
+            <div class="section-title">
+                @if (!string.IsNullOrWhiteSpace(@Model.IntroductionTitle))
+                {
+                    <h2 data-aos="fade-in">@Model.IntroductionTitle</h2>
+                }
+                @if (@Model.IntroductionDescription != null)
+                {
+                    <p data-aos="fade-in">@Model.IntroductionDescription</p>
+                }
             </div>
-
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-up">
+                        <div class="form-row">
+                            <div class="col-md-6 form-group">
+                                @if (!string.IsNullOrWhiteSpace(@Model.LoginEmailAddressPlaceholder))
+                                {
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="@Model.LoginEmailAddressPlaceholder" data-rule="email" data-msg="Please enter a valid email" />
+                                }
+                                <div class="validate"></div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                @if (!string.IsNullOrWhiteSpace(@Model.LoginPasswordPlaceholder))
+                                {
+                                    <input type="password" class="form-control" name="password" id="email" placeholder="@Model.LoginPasswordPlaceholder" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                }
+                                <div class="validate"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <br />
+                            @if (!string.IsNullOrWhiteSpace(@Model.LoginButtonText) && @Model.LoginButtonLink != null)
+                            {
+                                <a class="yourKidsButton" href="@Model.LoginButtonLink.Url">@Model.LoginButtonText</a>
+                            }
+                            <br /><br />
+                            @if (!string.IsNullOrWhiteSpace(Model.ForgotPasswordText) && Model.ForgotPasswordLink != null)
+                            {
+                                <a class="smallButtonLink" href="@Model.ForgotPasswordLink.Url" target="_blank">@Model.ForgotPasswordText</a>
+                            }
+                            @if (!string.IsNullOrWhiteSpace(Model.RegisterText) && Model.RegisterLink != null)
+                            {
+                                <a class="smallButtonLink">|</a>
+                                <a class="smallButtonLink" href="@Model.RegisterLink.Url" target="_blank">@Model.RegisterText</a>
+                            }
+                            <br />
+                            <a class="smallButtonLink" href="/">Click here to act if you are logging in. Note this will be removed</a>
+                            <br />
+                        </div>
+                    </form>
+                </div>
             </div>
-        </section><!-- End Contact Section -->
-    </main><!-- End #main -->
-
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+        </div>
+    </section><!-- End Contact Section -->
+</main><!-- End #main -->
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
