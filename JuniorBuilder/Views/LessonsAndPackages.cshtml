@@ -31,9 +31,9 @@
 									}
 								</div>
 								<div class="card-body">
-									@if (!string.IsNullOrWhiteSpace(lesson.LessonTitle))
+									@if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
 									{
-										<h5 class="card-title"><a href="">@lesson.LessonTitle</a></h5>
+										<h5 class="card-title"><a href="@lesson.LessonButtonLink.Url">@lesson.LessonTitle</a></h5>
 									}
 									@if (lesson.LessonShortDescription != null)
 									{

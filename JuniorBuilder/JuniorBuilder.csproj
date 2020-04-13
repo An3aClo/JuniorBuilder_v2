@@ -440,6 +440,9 @@
     <Content Include="Views\Lesson.cshtml" />
     <Content Include="Views\loggedInMaster.cshtml" />
     <Content Include="Views\LessonsAndPackages.cshtml" />
+    <Content Include="Views\LessonLayout.cshtml" />
+    <Content Include="Views\Package.cshtml" />
+    <Content Include="Views\lessonWeekLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

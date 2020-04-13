@@ -53,6 +53,10 @@ h6 {
     border-radius: 60px;
 }
 
+.roundNumber {
+    max-height: 55px;
+    max-width: 55px;
+}
 /*-------------------------------------------------------------- # Raion button --------------------------------------------------------------*/
 /* The container */
 .chbox {
@@ -135,6 +139,13 @@ h6 {
     padding: 10px 24px;
     color: #fff;
     transition: 0.4s;
+}
+.yourKidsButtonOutline {
+    color: #ed3d96;
+    border-radius: 50px;
+    margin: 2px 0 0 15px;
+    padding: 4px 25px 6px 25px;
+    border: 2px solid #ed3d96;
 }
 
 /*-------------------------------------------------------------- # lesson details --------------------------------------------------------------*/
@@ -389,6 +400,8 @@ h6 {
     padding-left: 2%;
     padding-right: 2%;
     border-radius: 0px 0px 15px 15px;
+    margin-bottom: 25px;
+}
 }
 
 .funfactInformationExpandedBox {
