@@ -1,0 +1,181 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.LessonWeekLayout>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "loggedInMaster.cshtml";   
+}
+<!-- ======= Model ======= -->
+<div class="container">
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Completed Sucesfully</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>Congratulation! You have marked this week as completed.</p>
+				</div>
+				@if (Model.PageButtonLink != null)
+				{
+					<div class="modal-footer">
+						<a href="@Model.PageButtonLink.Url" class="btn btn-default">Close</a>
+					</div>
+				}				
+			</div>
+		</div>
+	</div>
+</div>
+<main id="main">
+	<section class="page-section" id="about">
+		<div class="container">
+			<!-- Main heading-->
+			<div class="section-title">
+				@if (!string.IsNullOrWhiteSpace(Model.PageMainSectionTitle))
+				{
+					<h2 data-aos="fade-in">@Model.PageMainSectionTitle</h2>
+				}
+				@if (Model.PageMainSectionDescription != null)
+				{
+					<p data-aos="fade-in">@Model.PageMainSectionDescription</p>
+				}
+			</div>
+			<!-- Information blocks -->
+			@if (Model.ClassInformationBlockList != null)
+			{
+				foreach (var infoBlock in Model.ClassInformationBlockList)
+				{
+					if (!string.IsNullOrWhiteSpace(infoBlock.InformationBlockTitle) && infoBlock.InformationBlockContent != null)
+					{
+						var functionName = @infoBlock.InformationBlockTitle;
+						<div data-aos="fade-right" class="col-lg-12">
+
+							<div id="myMainDiv" class="row funfactBlock">
+								<p>@infoBlock.InformationBlockTitle</p>
+							</div>
+							<div id="test2" class="funfactInformationOnlyBox">
+								@infoBlock.InformationBlockContent
+							</div>
+
+						</div>
+					}
+				}
+			}
+	
+
+			<br />
+				<!--Secondary header-->
+				<div class="section-title">
+					@if (!string.IsNullOrWhiteSpace(Model.PageSecondSectionTitle))
+                    {
+						<h2 data-aos="fade-in">@Model.PageSecondSectionTitle</h2>
+                    }
+					@if (Model.PageSecondSectionDescription != null)
+                    {
+						<p data-aos="fade-in">@Model.PageSecondSectionDescription</p>
+                    }
+				</div>
+
+				<div class="row content">
+					<!--Class image-->
+					@if (Model.ClassImage != null)
+                    {
+						<div class="col-md-5" data-aos="fade-right">
+							<img src="@Model.ClassImage.Url" class="img-fluid" alt="">
+						</div>
+                    }
+					<!--class steps-->
+					<div class="col-md-7 pt-4" data-aos="fade-left">
+						@if (!string.IsNullOrWhiteSpace(Model.ClassTitle))
+                        {
+							<h3>@Model.ClassTitle</h3>
+                        }
+						@if (Model.ClassDescription != null)
+                        {
+							<p class="font-italic">@Model.ClassDescription</p>
+                        }
+						@if (Model.ClassStepList != null)
+                        {
+                            foreach (var step in Model.ClassStepList)
+                            {
+								<div class="row lessonstepRow">
+									@if (!string.IsNullOrWhiteSpace(step.StepNumber))
+                                    {
+										<div class="col-md-1 numberCircle roundNumber">
+											@step.StepNumber
+										</div>
+                                    }
+									@if (step.StepDescription != null)
+                                    {
+										<div class="col-md-11 ">
+											<p>@step.StepDescription</p>
+										</div>
+                                    }
+								</div>
+                            }
+                        }
+					</div>
+				</div>		
+    
+		<!-- ======= story time section ======= -->
+		<!--Story time section-->
+		@if (Model.ClassStoryTimeSection)
+		{
+					<div class="row">
+						<div class="col-lg-12">
+							<form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-up">								
+									<div class="form-group">
+										<input type="text" class="form-control" name="storyTitle" id="subject" placeholder="Your story title" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+									</div>								
+									<div class="form-group">
+										<textarea class="form-control" name="stiry" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Your story "></textarea>
+									</div>
+								<!--Story time conclution section-->
+								<div class="section-title markCompleteText">
+									@if (Model.PageConclusion != null)
+									{
+										<p data-aos="fade-in">@Model.PageConclusion</p>
+									}
+									@if (!string.IsNullOrWhiteSpace(Model.PageButtonText) && Model.PageButtonLink != null)
+									{
+										<div class="markCompleteButton">
+											<a href="@Model.PageButtonLink.Url" class="yourKidsButton" data-toggle="modal" data-target="#myModal">@Model.PageButtonText</a>
+										</div>
+									}
+								</div>
+							</form>
+						</div>
+					</div>
+			
+		}
+		
+				<!--Conclution image-->
+				@if (Model.ClassConclusionImage != null)
+				{
+					<div class="section-title markCompleteText">
+						<div class="col-md-12" data-aos="fade-right">
+							<img src="@Model.ClassConclusionImage.Url" class="img-fluid center" alt="">
+						</div>
+					</div>
+				}
+				<!--Conclution section-->
+				@if (!Model.ClassStoryTimeSection)
+				{
+					<div class="section-title markCompleteText">
+						@if (Model.PageConclusion != null)
+						{
+							<p data-aos="fade-in">@Model.PageConclusion</p>
+						}
+						<br />
+						@if (!string.IsNullOrWhiteSpace(Model.PageButtonText) && Model.PageButtonLink != null)
+						{
+							<div class="markCompleteButton">
+								<a href="@Model.PageButtonLink.Url" class="yourKidsButton" data-toggle="modal" data-target="#myModal">@Model.PageButtonText</a>
+							</div>
+						}
+					</div>
+				}
+			</div>
+		</section>
+	</main><!-- End #main -->

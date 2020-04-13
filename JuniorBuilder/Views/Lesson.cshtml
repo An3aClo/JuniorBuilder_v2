@@ -1,0 +1,80 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Lesson>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "loggedInMaster.cshtml";
+}
+<main id="main">
+	<!-- ======= leson detail Section ======= -->
+	<section id="about" class="about section-bg">
+		<div class="container">
+			<div class="section-title">
+				@if (!string.IsNullOrEmpty(@Model.LessonDetailHeader))
+				{
+					<h2 data-aos="fade-in">@Model.LessonDetailHeader</h2>
+				}
+				@if (@Model.LessonDetailDescribtion != null)
+				{
+					<p data-aos="fade-in">@Model.LessonDetailDescribtion</p>
+				}
+			</div>
+			<div class="row">
+				<div class="image col-xl-12 d-flex align-items-stretch justify-content-center justify-content-lg-start ">
+					@if (Model.LessonDetailIntroductionImage != null)
+					{
+						<img src="@Model.LessonDetailIntroductionImage.Url" alt="image" class="imageCentre" />
+					}
+
+				</div>
+				<div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch"></div>
+				<div class="content d-flex flex-column justify-content-center">
+					@if (!string.IsNullOrEmpty(Model.LessonTitle))
+					{
+						<h3 data-aos="fade-in" data-aos-delay="100">
+							@Model.LessonTitle
+						</h3>
+					}
+					@if (Model.LessonShortDescription != null)
+					{
+						<p data-aos="fade-in">
+							@Model.LessonShortDescription
+						</p>
+					}
+					@if (Model.LessonKeyPointList != null)
+					{
+						<div class="row">
+							@foreach (var keyPoint in Model.LessonKeyPointList)
+							{
+								if (!string.IsNullOrWhiteSpace(keyPoint.KeyPointHeading) && keyPoint.KeyPointDescription != null && keyPoint.KeyPointIcon != null)
+                                {
+									<div class="col-md-6 icon-box" data-aos="fade-up">
+										<div class="row">
+											<div class="col-1">
+												<img src="@keyPoint.KeyPointIcon.Url" />
+											</div>
+											<div class="col-11">
+												<h4>@keyPoint.KeyPointHeading</h4>
+												<p>@keyPoint.KeyPointDescription</p>
+											</div>
+										</div>		
+									</div>
+                                }							
+							}
+						</div>
+					}				
+				</div><!-- End -->
+			</div>
+			<div class="section-title markCompleteText">
+				@if (Model.LessonDetailConclusion != null)
+				{
+					<p data-aos="fade-in">@Model.LessonDetailConclusion</p>
+				}
+				@if (!string.IsNullOrWhiteSpace(Model.LessonDetailButtonText) && Model.LessonDetailButtonLink != null)
+				{
+					<div class="markCompleteButton">
+						<a href="@Model.LessonDetailButtonLink.Url" class="yourKidsButton">@Model.LessonDetailButtonText</a>
+					</div>
+				}
+			</div>
+		</div>
+	</section><!-- End Section -->
+</main><!-- End #main -->

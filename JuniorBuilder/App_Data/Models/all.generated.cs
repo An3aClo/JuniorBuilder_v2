@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6eb7e94288b3c498")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.7")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d6d7cbe9d5e2a325")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -631,26 +631,26 @@ namespace Umbraco.Web.PublishedModels
 		public static string GetVersionNumber(IFooterContent that) => that.Value<string>("versionNumber");
 	}
 
-	/// <summary>Home page</summary>
-	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IFooterContent, ILoginContent, INavigationHeader
+	/// <summary>Login page</summary>
+	[PublishedModel("loginPage")]
+	public partial class LoginPage : PublishedContentModel, IFooterContent, ILoginContent, INavigationHeader
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public new const string ModelTypeAlias = "homePage";
+		public new const string ModelTypeAlias = "loginPage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HomePage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoginPage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public HomePage(IPublishedContent content)
+		public LoginPage(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -837,6 +837,1026 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("navigationHeaderText")]
 		public string NavigationHeaderText => global::Umbraco.Web.PublishedModels.NavigationHeader.GetNavigationHeaderText(this);
+	}
+
+	/// <summary>Lesson</summary>
+	[PublishedModel("lesson")]
+	public partial class Lesson : PublishedContentModel, ILessonDetailPageContent
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "lesson";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Lesson, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Lesson(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Lesson button link: This is the page to where the user should be taken to to read more
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonButtonLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LessonButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("lessonButtonLink");
+
+		///<summary>
+		/// Lesson button text: This is the text on the button which prompt a user to read more
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonButtonText")]
+		public string LessonButtonText => this.Value<string>("lessonButtonText");
+
+		///<summary>
+		/// Lesson detail button link: This is the link to where a person will go to purchase the lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonDetailButtonLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LessonDetailButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("lessonDetailButtonLink");
+
+		///<summary>
+		/// Lesson detail button text: This is the text of the purchase button
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonDetailButtonText")]
+		public string LessonDetailButtonText => this.Value<string>("lessonDetailButtonText");
+
+		///<summary>
+		/// Lesson detail conclusion: This is a conclusion of the lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonDetailConclusion")]
+		public global::System.Web.IHtmlString LessonDetailConclusion => this.Value<global::System.Web.IHtmlString>("lessonDetailConclusion");
+
+		///<summary>
+		/// Lesson detail introduction image: This is a bigger image of the lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonDetailIntroductionImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LessonDetailIntroductionImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("lessonDetailIntroductionImage");
+
+		///<summary>
+		/// Lesson image: This is a small image associated with the lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LessonImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("lessonImage");
+
+		///<summary>
+		/// Lesson key point list: This is a list of the key point of the lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonKeyPointList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonKeyPoints> LessonKeyPointList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonKeyPoints>>("lessonKeyPointList");
+
+		///<summary>
+		/// Lesson lay out page: This is a lesson layout page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonLayOutPage")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> LessonLayOutPage => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("lessonLayOutPage");
+
+		///<summary>
+		/// Lesson long description: This is a long description of the lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonLongDescription")]
+		public global::System.Web.IHtmlString LessonLongDescription => this.Value<global::System.Web.IHtmlString>("lessonLongDescription");
+
+		///<summary>
+		/// Lesson short description: This is a short introduction description to the lesson. User will be able to read more on the lessons page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonShortDescription")]
+		public global::System.Web.IHtmlString LessonShortDescription => this.Value<global::System.Web.IHtmlString>("lessonShortDescription");
+
+		///<summary>
+		/// Lesson title: This is the name of the package
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonTitle")]
+		public string LessonTitle => this.Value<string>("lessonTitle");
+
+		///<summary>
+		/// Lesson detail describtion: This is the description of the lesson details page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonDetailDescribtion")]
+		public global::System.Web.IHtmlString LessonDetailDescribtion => global::Umbraco.Web.PublishedModels.LessonDetailPageContent.GetLessonDetailDescribtion(this);
+
+		///<summary>
+		/// Lesson detail header: This is the header of the lessons detail page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonDetailHeader")]
+		public string LessonDetailHeader => global::Umbraco.Web.PublishedModels.LessonDetailPageContent.GetLessonDetailHeader(this);
+	}
+
+	/// <summary>Lessons and packages</summary>
+	[PublishedModel("lessonsAndPackages")]
+	public partial class LessonsAndPackages : PublishedContentModel, ILoggedInFooterContent, INavigationHeader
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "lessonsAndPackages";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LessonsAndPackages, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public LessonsAndPackages(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Lesson list: This is a list of all the available lessons
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> LessonList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("lessonList");
+
+		///<summary>
+		/// Lesson section description: This is the introduction of the lesson section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonSectionDescription")]
+		public global::System.Web.IHtmlString LessonSectionDescription => this.Value<global::System.Web.IHtmlString>("lessonSectionDescription");
+
+		///<summary>
+		/// Lessons section header: This is the header of the lessons section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonsSectionHeader")]
+		public string LessonsSectionHeader => this.Value<string>("lessonsSectionHeader");
+
+		///<summary>
+		/// Package list: This is a list of all packages
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packageList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> PackageList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("packageList");
+
+		///<summary>
+		/// Package section header: This is the header of package section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packageSectionHeader")]
+		public string PackageSectionHeader => this.Value<string>("packageSectionHeader");
+
+		///<summary>
+		/// Packages section description: This is the description of the packages section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packagesSectionDescription")]
+		public string PackagesSectionDescription => this.Value<string>("packagesSectionDescription");
+
+		///<summary>
+		/// Copy Right text: This is the copy right text in the footer
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("copyRightText")]
+		public string CopyRightText => global::Umbraco.Web.PublishedModels.LoggedInFooterContent.GetCopyRightText(this);
+
+		///<summary>
+		/// Facebook link: This is the link to your Facebook account
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("facebookLink")]
+		public string FacebookLink => global::Umbraco.Web.PublishedModels.LoggedInFooterContent.GetFacebookLink(this);
+
+		///<summary>
+		/// Footer description: This is the description of the footer
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("footerDescription")]
+		public global::System.Web.IHtmlString FooterDescription => global::Umbraco.Web.PublishedModels.LoggedInFooterContent.GetFooterDescription(this);
+
+		///<summary>
+		/// Footer header URL: This is to where the user will be taken to if the user click on the footer header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("footerHeaderLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent FooterHeaderLink => global::Umbraco.Web.PublishedModels.LoggedInFooterContent.GetFooterHeaderLink(this);
+
+		///<summary>
+		/// Footer header text: This is the text to where the user will see
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("footerHeaderText")]
+		public string FooterHeaderText => global::Umbraco.Web.PublishedModels.LoggedInFooterContent.GetFooterHeaderText(this);
+
+		///<summary>
+		/// Instagram link: This is the link to your Instagram account
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("instagramLink")]
+		public string InstagramLink => global::Umbraco.Web.PublishedModels.LoggedInFooterContent.GetInstagramLink(this);
+
+		///<summary>
+		/// LinkeIn link: This is the link to your LinkedIn account
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("linkeInLink")]
+		public string LinkeInLink => global::Umbraco.Web.PublishedModels.LoggedInFooterContent.GetLinkeInLink(this);
+
+		///<summary>
+		/// Skype link: This is the link to your Skype account
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("skypeLink")]
+		public string SkypeLink => global::Umbraco.Web.PublishedModels.LoggedInFooterContent.GetSkypeLink(this);
+
+		///<summary>
+		/// Twitter link: This is the link to your Twitter account
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("twitterLink")]
+		public string TwitterLink => global::Umbraco.Web.PublishedModels.LoggedInFooterContent.GetTwitterLink(this);
+
+		///<summary>
+		/// Version number: This is the version of the website
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("versionNumber")]
+		public string VersionNumber => global::Umbraco.Web.PublishedModels.LoggedInFooterContent.GetVersionNumber(this);
+
+		///<summary>
+		/// Navigation bar button list: This is a list of all the buttons in the navigation bar
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("navigationBarButtonList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.NavigationButtonList> NavigationBarButtonList => global::Umbraco.Web.PublishedModels.NavigationHeader.GetNavigationBarButtonList(this);
+
+		///<summary>
+		/// Navigation bar item list: This is a list of all the navigation items in the navigation bar
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("navigationBarItemList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.NavigationListComponents> NavigationBarItemList => global::Umbraco.Web.PublishedModels.NavigationHeader.GetNavigationBarItemList(this);
+
+		///<summary>
+		/// Navigation header URL: This is the page to where a user will be taken to if they click on the navigation header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("navigationHeaderLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent NavigationHeaderLink => global::Umbraco.Web.PublishedModels.NavigationHeader.GetNavigationHeaderLink(this);
+
+		///<summary>
+		/// Navigation header text: This is the text which will show in the header.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("navigationHeaderText")]
+		public string NavigationHeaderText => global::Umbraco.Web.PublishedModels.NavigationHeader.GetNavigationHeaderText(this);
+	}
+
+	/// <summary>Package</summary>
+	[PublishedModel("package")]
+	public partial class Package : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "package";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Package, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Package(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Alternative item list: This is the alternative items which are included in the package
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("alternativeItemList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.PackageItems> AlternativeItemList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.PackageItems>>("alternativeItemList");
+
+		///<summary>
+		/// Lesson list: This is a list of lesson which are included in the packages
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> LessonList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("lessonList");
+
+		///<summary>
+		/// Package button link: This is the page to where the user will be navigated to
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packageButtonLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent PackageButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("packageButtonLink");
+
+		///<summary>
+		/// Package button text: This is the text of the button for the user to purchase it
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packageButtonText")]
+		public string PackageButtonText => this.Value<string>("packageButtonText");
+
+		///<summary>
+		/// Package description: This is an introduction description for the package
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packageDescription")]
+		public string PackageDescription => this.Value<string>("packageDescription");
+
+		///<summary>
+		/// Package image: This is a image associated with the package
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packageImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent PackageImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("packageImage");
+
+		///<summary>
+		/// Package title: This is a title for the package
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packageTitle")]
+		public string PackageTitle => this.Value<string>("packageTitle");
+	}
+
+	/// <summary>Package items</summary>
+	[PublishedModel("packageItems")]
+	public partial class PackageItems : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "packageItems";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<PackageItems, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public PackageItems(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Alternative item: This is an alternative items included in the
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("alternativeItem")]
+		public string AlternativeItem => this.Value<string>("alternativeItem");
+	}
+
+	// Mixin Content Type with alias "loggedInFooterContent"
+	/// <summary>Logged in footer content</summary>
+	public partial interface ILoggedInFooterContent : IPublishedContent
+	{
+		/// <summary>Copy Right text</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string CopyRightText { get; }
+
+		/// <summary>Facebook link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string FacebookLink { get; }
+
+		/// <summary>Footer description</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		global::System.Web.IHtmlString FooterDescription { get; }
+
+		/// <summary>Footer header URL</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		global::Umbraco.Core.Models.PublishedContent.IPublishedContent FooterHeaderLink { get; }
+
+		/// <summary>Footer header text</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string FooterHeaderText { get; }
+
+		/// <summary>Instagram link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string InstagramLink { get; }
+
+		/// <summary>LinkeIn link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string LinkeInLink { get; }
+
+		/// <summary>Skype link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string SkypeLink { get; }
+
+		/// <summary>Twitter link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string TwitterLink { get; }
+
+		/// <summary>Version number</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string VersionNumber { get; }
+	}
+
+	/// <summary>Logged in footer content</summary>
+	[PublishedModel("loggedInFooterContent")]
+	public partial class LoggedInFooterContent : PublishedContentModel, ILoggedInFooterContent
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "loggedInFooterContent";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoggedInFooterContent, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public LoggedInFooterContent(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Copy Right text: This is the copy right text in the footer
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("copyRightText")]
+		public string CopyRightText => GetCopyRightText(this);
+
+		/// <summary>Static getter for Copy Right text</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetCopyRightText(ILoggedInFooterContent that) => that.Value<string>("copyRightText");
+
+		///<summary>
+		/// Facebook link: This is the link to your Facebook account
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("facebookLink")]
+		public string FacebookLink => GetFacebookLink(this);
+
+		/// <summary>Static getter for Facebook link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetFacebookLink(ILoggedInFooterContent that) => that.Value<string>("facebookLink");
+
+		///<summary>
+		/// Footer description: This is the description of the footer
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("footerDescription")]
+		public global::System.Web.IHtmlString FooterDescription => GetFooterDescription(this);
+
+		/// <summary>Static getter for Footer description</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static global::System.Web.IHtmlString GetFooterDescription(ILoggedInFooterContent that) => that.Value<global::System.Web.IHtmlString>("footerDescription");
+
+		///<summary>
+		/// Footer header URL: This is to where the user will be taken to if the user click on the footer header
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("footerHeaderLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent FooterHeaderLink => GetFooterHeaderLink(this);
+
+		/// <summary>Static getter for Footer header URL</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static global::Umbraco.Core.Models.PublishedContent.IPublishedContent GetFooterHeaderLink(ILoggedInFooterContent that) => that.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("footerHeaderLink");
+
+		///<summary>
+		/// Footer header text: This is the text to where the user will see
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("footerHeaderText")]
+		public string FooterHeaderText => GetFooterHeaderText(this);
+
+		/// <summary>Static getter for Footer header text</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetFooterHeaderText(ILoggedInFooterContent that) => that.Value<string>("footerHeaderText");
+
+		///<summary>
+		/// Instagram link: This is the link to your Instagram account
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("instagramLink")]
+		public string InstagramLink => GetInstagramLink(this);
+
+		/// <summary>Static getter for Instagram link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetInstagramLink(ILoggedInFooterContent that) => that.Value<string>("instagramLink");
+
+		///<summary>
+		/// LinkeIn link: This is the link to your LinkedIn account
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("linkeInLink")]
+		public string LinkeInLink => GetLinkeInLink(this);
+
+		/// <summary>Static getter for LinkeIn link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetLinkeInLink(ILoggedInFooterContent that) => that.Value<string>("linkeInLink");
+
+		///<summary>
+		/// Skype link: This is the link to your Skype account
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("skypeLink")]
+		public string SkypeLink => GetSkypeLink(this);
+
+		/// <summary>Static getter for Skype link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetSkypeLink(ILoggedInFooterContent that) => that.Value<string>("skypeLink");
+
+		///<summary>
+		/// Twitter link: This is the link to your Twitter account
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("twitterLink")]
+		public string TwitterLink => GetTwitterLink(this);
+
+		/// <summary>Static getter for Twitter link</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetTwitterLink(ILoggedInFooterContent that) => that.Value<string>("twitterLink");
+
+		///<summary>
+		/// Version number: This is the version of the website
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("versionNumber")]
+		public string VersionNumber => GetVersionNumber(this);
+
+		/// <summary>Static getter for Version number</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetVersionNumber(ILoggedInFooterContent that) => that.Value<string>("versionNumber");
+	}
+
+	/// <summary>Lesson key points</summary>
+	[PublishedModel("lessonKeyPoints")]
+	public partial class LessonKeyPoints : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "lessonKeyPoints";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LessonKeyPoints, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public LessonKeyPoints(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Key point description: This is a short description of the key point of the lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("keyPointDescription")]
+		public global::System.Web.IHtmlString KeyPointDescription => this.Value<global::System.Web.IHtmlString>("keyPointDescription");
+
+		///<summary>
+		/// Key point heading: This is the heading of the key point of the lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("keyPointHeading")]
+		public string KeyPointHeading => this.Value<string>("keyPointHeading");
+
+		///<summary>
+		/// Key point icon: This is an icon to represent the key point
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("keyPointIcon")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent KeyPointIcon => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("keyPointIcon");
+	}
+
+	// Mixin Content Type with alias "lessonDetailPageContent"
+	/// <summary>Lesson detail page content</summary>
+	public partial interface ILessonDetailPageContent : IPublishedContent
+	{
+		/// <summary>Lesson detail describtion</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		global::System.Web.IHtmlString LessonDetailDescribtion { get; }
+
+		/// <summary>Lesson detail header</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string LessonDetailHeader { get; }
+	}
+
+	/// <summary>Lesson detail page content</summary>
+	[PublishedModel("lessonDetailPageContent")]
+	public partial class LessonDetailPageContent : PublishedContentModel, ILessonDetailPageContent
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "lessonDetailPageContent";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LessonDetailPageContent, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public LessonDetailPageContent(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Lesson detail describtion: This is the description of the lesson details page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonDetailDescribtion")]
+		public global::System.Web.IHtmlString LessonDetailDescribtion => GetLessonDetailDescribtion(this);
+
+		/// <summary>Static getter for Lesson detail describtion</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static global::System.Web.IHtmlString GetLessonDetailDescribtion(ILessonDetailPageContent that) => that.Value<global::System.Web.IHtmlString>("lessonDetailDescribtion");
+
+		///<summary>
+		/// Lesson detail header: This is the header of the lessons detail page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonDetailHeader")]
+		public string LessonDetailHeader => GetLessonDetailHeader(this);
+
+		/// <summary>Static getter for Lesson detail header</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetLessonDetailHeader(ILessonDetailPageContent that) => that.Value<string>("lessonDetailHeader");
+	}
+
+	/// <summary>Lesson layout</summary>
+	[PublishedModel("lessonLayout")]
+	public partial class LessonLayout : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "lessonLayout";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LessonLayout, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public LessonLayout(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Lesson layout description: This is the description of the lesson layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonLayoutDescription")]
+		public global::System.Web.IHtmlString LessonLayoutDescription => this.Value<global::System.Web.IHtmlString>("lessonLayoutDescription");
+
+		///<summary>
+		/// Lesson layout header: This is the header of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonLayoutHeader")]
+		public string LessonLayoutHeader => this.Value<string>("lessonLayoutHeader");
+
+		///<summary>
+		/// Lesson week list: This is a list of all the weeks in the lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("lessonWeekList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonWeek> LessonWeekList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonWeek>>("lessonWeekList");
+	}
+
+	/// <summary>Lesson week</summary>
+	[PublishedModel("lessonWeek")]
+	public partial class LessonWeek : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "lessonWeek";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LessonWeek, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public LessonWeek(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Week activities: These are the activities in the week
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("weekActivities")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> WeekActivities => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("weekActivities");
+
+		///<summary>
+		/// Week button link: This is the link to where the button will take a user
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("weekButtonLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent WeekButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("weekButtonLink");
+
+		///<summary>
+		/// Week button text: This is the text of the button to lead the user to the lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("weekButtonText")]
+		public string WeekButtonText => this.Value<string>("weekButtonText");
+
+		///<summary>
+		/// Week count: This is the week count
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("weekCount")]
+		public string WeekCount => this.Value<string>("weekCount");
+
+		///<summary>
+		/// Week description: This is a short description of the week
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("weekDescription")]
+		public global::System.Web.IHtmlString WeekDescription => this.Value<global::System.Web.IHtmlString>("weekDescription");
+
+		///<summary>
+		/// Week title: This is the title of the week
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("weekTitle")]
+		public string WeekTitle => this.Value<string>("weekTitle");
+	}
+
+	/// <summary>lesson week layout</summary>
+	[PublishedModel("lessonWeekLayout")]
+	public partial class LessonWeekLayout : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "lessonWeekLayout";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LessonWeekLayout, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public LessonWeekLayout(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Class conclusion image: This is a small image to round off the week layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("classConclusionImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ClassConclusionImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("classConclusionImage");
+
+		///<summary>
+		/// Class description: This is a description of the class for the week
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("classDescription")]
+		public global::System.Web.IHtmlString ClassDescription => this.Value<global::System.Web.IHtmlString>("classDescription");
+
+		///<summary>
+		/// Class image: This is a image which represents the class and the steps related to it
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("classImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ClassImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("classImage");
+
+		///<summary>
+		/// Class information block list: This is a list of information blocks associated with the week
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("classInformationBlockList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonInformationBlocks> ClassInformationBlockList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonInformationBlocks>>("classInformationBlockList");
+
+		///<summary>
+		/// Class step list: This is a list of steps to follow
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("classStepList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonSteps> ClassStepList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonSteps>>("classStepList");
+
+		///<summary>
+		/// Class story time section: This is the story time section when toggle is active there will be a input field for a story title and text box for a story
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("classStoryTimeSection")]
+		public bool ClassStoryTimeSection => this.Value<bool>("classStoryTimeSection");
+
+		///<summary>
+		/// Class title: This is a title which represent the class of the week
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("classTitle")]
+		public string ClassTitle => this.Value<string>("classTitle");
+
+		///<summary>
+		/// Page button link: This is to where the user will be navigated to
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageButtonLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent PageButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("pageButtonLink");
+
+		///<summary>
+		/// Page button text: This is the text which will show on the button
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageButtonText")]
+		public string PageButtonText => this.Value<string>("pageButtonText");
+
+		///<summary>
+		/// Page conclusion: This is a conclusion for the week
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageConclusion")]
+		public global::System.Web.IHtmlString PageConclusion => this.Value<global::System.Web.IHtmlString>("pageConclusion");
+
+		///<summary>
+		/// Page main section description: This is the main discretion of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageMainSectionDescription")]
+		public global::System.Web.IHtmlString PageMainSectionDescription => this.Value<global::System.Web.IHtmlString>("pageMainSectionDescription");
+
+		///<summary>
+		/// Page main section title: This is the first title on the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageMainSectionTitle")]
+		public string PageMainSectionTitle => this.Value<string>("pageMainSectionTitle");
+
+		///<summary>
+		/// Page second second description: This is the second description on the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageSecondSectionDescription")]
+		public global::System.Web.IHtmlString PageSecondSectionDescription => this.Value<global::System.Web.IHtmlString>("pageSecondSectionDescription");
+
+		///<summary>
+		/// Page second section title: This is a second title on the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageSecondSectionTitle")]
+		public string PageSecondSectionTitle => this.Value<string>("pageSecondSectionTitle");
+
+		///<summary>
+		/// Story time story placeholder text: This is text which will show in the input field of the story block as a place holder
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("storyTimeStoryPlaceholderText")]
+		public string StoryTimeStoryPlaceholderText => this.Value<string>("storyTimeStoryPlaceholderText");
+
+		///<summary>
+		/// Story time title placeholder text: This is text which will show in the input field of the title block as a place holder
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("storyTimeTitlePlaceholderText")]
+		public string StoryTimeTitlePlaceholderText => this.Value<string>("storyTimeTitlePlaceholderText");
+	}
+
+	/// <summary>Lesson information blocks</summary>
+	[PublishedModel("lessonInformationBlocks")]
+	public partial class LessonInformationBlocks : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "lessonInformationBlocks";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LessonInformationBlocks, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public LessonInformationBlocks(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Information block content: This is the content of the information block
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("informationBlockContent")]
+		public global::System.Web.IHtmlString InformationBlockContent => this.Value<global::System.Web.IHtmlString>("informationBlockContent");
+
+		///<summary>
+		/// Information block title: This is the title of the information block
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("informationBlockTitle")]
+		public string InformationBlockTitle => this.Value<string>("informationBlockTitle");
+	}
+
+	/// <summary>Lesson steps</summary>
+	[PublishedModel("lessonSteps")]
+	public partial class LessonSteps : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "lessonSteps";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LessonSteps, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public LessonSteps(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Step description: This is the description of the text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("stepDescription")]
+		public global::System.Web.IHtmlString StepDescription => this.Value<global::System.Web.IHtmlString>("stepDescription");
+
+		///<summary>
+		/// Step number: This is  the number of the step
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("stepNumber")]
+		public string StepNumber => this.Value<string>("stepNumber");
 	}
 
 	/// <summary>Folder</summary>
