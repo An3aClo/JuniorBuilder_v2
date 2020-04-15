@@ -428,7 +428,6 @@
     <Content Include="vendor\icofont\fonts\icofont.woff" />
     <Content Include="vendor\icofont\fonts\icofont.woff2" />
     <Content Include="vendor\jquery\jquery.min.map" />
-    <Content Include="Views\homePage.cshtml" />
     <Content Include="Views\master.cshtml" />
     <Content Include="Views\contact.cshtml" />
     <Content Include="Views\Partials\Contact\_Contact.cshtml" />
@@ -441,8 +440,8 @@
     <Content Include="Views\loggedInMaster.cshtml" />
     <Content Include="Views\LessonsAndPackages.cshtml" />
     <Content Include="Views\LessonLayout.cshtml" />
-    <Content Include="Views\Package.cshtml" />
     <Content Include="Views\lessonWeekLayout.cshtml" />
+    <Content Include="Views\LoginPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
