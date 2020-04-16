@@ -71,11 +71,20 @@
                                 if (!string.IsNullOrWhiteSpace(button.NavigationButtonText) && button.NavigationButtonLink != null)
                                 {
                                     <li class="get-started">
-                                        <a href="@button.NavigationButtonLink.Url">
+                                        <a href="@button.NavigationButtonLink.Url#loginSection">
                                             @button.NavigationButtonText
                                         </a>
                                     </li>
                                 }
+                                else if (!string.IsNullOrWhiteSpace(button.NavigationButtonText) && !string.IsNullOrWhiteSpace(button.ExternalNavigationButtonLink))
+                                {
+                                    <li class="get-started">
+                                        <a href="@button.ExternalNavigationButtonLink">
+                                            @button.NavigationButtonText
+                                        </a>
+                                    </li>
+                                }
+                        
                             }
                         }
                     </ul> 

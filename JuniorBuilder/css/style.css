@@ -25,7 +25,18 @@ h6 {
 .packageDivHeight {
     height: 75px;
 }
-
+.rightArrowImage {
+    margin-left: 55px;
+    max-width: 25px;
+    margin-top: -4px
+}
+.readMoreColor {
+    color: #ed3d96;
+    margin-top: 10px;
+}
+.noDisplay {
+    display: none;
+}
 /*-------------------------------------------------------------- # Registration --------------------------------------------------------------*/
 .smallButtonLink {
     font-size: 10px;
@@ -350,6 +361,12 @@ h6 {
 }
 
 /*-------------------------------------------------------------- # Fun Fact Block --------------------------------------------------------------*/
+
+.readMoreArrow {
+    margin-left: 55px;
+    font-size: 20px;
+}
+
 .funfactBlock {
     padding-top: 12px;
     padding-left: 12px;
@@ -1146,6 +1163,19 @@ section {
     margin-left: 60px;
 }
 
+    /*.about .content .icon-box p {
+        font-size: 15px;
+        color: #848484;
+        
+    }*/
+.intro {
+    background: url('../Media/no3gmnee/site-header-2.jpg') center center no-repeat;
+}
+.about .image .intro {    
+    background-size: cover;
+    min-height: 400px;
+    border-radius: 25px;
+}
 .about .image {
     width: 70%;
     background-size: cover;
@@ -1872,6 +1902,6 @@ section {
     #footer .credits {
         padding: 5px;
         float: none;
-        text-align: ceneter;
+        text-align: center;
     }
 }

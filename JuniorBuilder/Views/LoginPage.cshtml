@@ -32,12 +32,13 @@
 					</div>
 				</div>
 			</div>
-		</section><!-- End Hero -->
+		</section><!-- End Hero -->		
 		<!--introduction-->
 		<section id="about" class="about section-bg">
 			<div class="container">
 				<div class="row">
-					<div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
+					<!--To do: Let the image pull from the back office-->
+					<div class="image intro col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
 					<div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch">
 						<div class="content d-flex flex-column justify-content-center">
 							@if (!string.IsNullOrEmpty(Model.IntroductionSectionIntroductionHeader))
@@ -48,77 +49,183 @@
 							{
 								<p data-aos="fade-in">@Model.IntroductionSectionIntroductionDescription</p>
 							}
-							<div class="row">
-								<div class="col-md-6 icon-box" data-aos="fade-up">
-									@if (!string.IsNullOrEmpty(Model.FirstIntroBlockTitle) && Model.FirstIntroBlockDescription != null)
-									{
-										<i class="bx bx-receipt"></i>
-										<h4><a href="#">@Model.FirstIntroBlockTitle</a></h4>
-										<p>@Model.FirstIntroBlockDescription</p>
-									}
-								</div>
-								<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-									@if (!string.IsNullOrEmpty(Model.FourthIntroBlockTitle) && Model.FourthIntroBlockDescription != null)
-									{
-										<i class="bx bx-shield"></i>
-										<h4><a href="#">@Model.FourthIntroBlockTitle</a></h4>
-										<p>@Model.FourthIntroBlockDescription</p>
-									}
-								</div>
-								<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-									@if (!string.IsNullOrEmpty(Model.ThirdIntroBlockTitle) && Model.ThirdIntroBlockDescription != null)
-									{
-										<i class="bx bx-images"></i>
-										<h4><a href="#">@Model.ThirdIntroBlockTitle</a></h4>
-										<p>@Model.ThirdIntroBlockDescription</p>
-									}
-								</div>
-								<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-									@if (!string.IsNullOrEmpty(Model.SecondIntroBlockTitle) && Model.SecondIntroBlockDescription != null)
-									{
-										<i class="bx bx-cube-alt"></i>
-										<h4><a href="#">@Model.SecondIntroBlockTitle</a></h4>
-										<p>@Model.SecondIntroBlockDescription</p>
-									}
-								</div>
+						<div class="row">
+							<div class="col-md-6 icon-box" data-aos="fade-up">
+								@if (!string.IsNullOrEmpty(Model.FirstIntroBlockTitle)
+									&& !string.IsNullOrEmpty(Model.FirstIntroBlockDescription)
+									&& !string.IsNullOrEmpty(Model.FirstIntroBlockMoreDescription))
+								{
+									<i class="bx bx-receipt"></i>
+									<h4><a>@Model.FirstIntroBlockTitle</a></h4>
 
+									<p>@Model.FirstIntroBlockDescription</p>
+									<p id="myDIV" class="noDisplay">@Model.FirstIntroBlockMoreDescription</p>
+
+									<div class="row" id="myMainDiv" onclick="myFunction()">
+										<div class="col-12 readMoreColor">
+											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
+											Read More
+										</div>
+									</div>
+									<script>
+										function myFunction() {
+											var x = document.getElementById("myDIV");
+											if (x.style.display === "none") {
+												x.style.display = "block";
+											} else {
+												x.style.display = "none";
+											}
+										}
+									</script>
+								}
 							</div>
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+								@if (!string.IsNullOrEmpty(Model.FourthIntroBlockTitle) && !string.IsNullOrEmpty(Model.FourthIntroBlockDescription) && !string.IsNullOrEmpty(Model.FourthIntroBlockMoreDescription))
+								{
+									<i class="bx bx-receipt"></i>
+									<h4><a>@Model.FourthIntroBlockTitle</a></h4>
+
+									<p>@Model.FourthIntroBlockDescription</p>
+									<p id="myDIV1" class="noDisplay">@Model.FourthIntroBlockMoreDescription</p>
+
+									<div class="row" id="myMainDiv" onclick="myFunction1()">
+										<div class="col-12 readMoreColor">
+											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
+											Read More
+										</div>
+									</div>
+									<script>
+										function myFunction1() {
+											var x = document.getElementById("myDIV1");
+											if (x.style.display === "none") {
+												x.style.display = "block";
+											} else {
+												x.style.display = "none";
+											}
+										}
+									</script>
+								}
+							</div>
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+								@if (!string.IsNullOrEmpty(Model.ThirdIntroBlockTitle) && !string.IsNullOrEmpty(Model.ThirdIntroBlockDescription) && !string.IsNullOrEmpty(Model.ThirdIntroBlockMoreDescription))
+								{
+									<i class="bx bx-receipt"></i>
+									<h4><a>@Model.ThirdIntroBlockTitle</a></h4>
+
+									<p>@Model.ThirdIntroBlockDescription</p>
+									<p id="myDIV2" class="noDisplay">@Model.ThirdIntroBlockMoreDescription</p>
+
+									<div class="row" id="myMainDiv" onclick="myFunction2()">
+										<div class="col-12 readMoreColor">
+											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
+											Read More
+										</div>
+									</div>
+									<script>
+										function myFunction2() {
+											var x = document.getElementById("myDIV2");
+											if (x.style.display === "none") {
+												x.style.display = "block";
+											} else {
+												x.style.display = "none";
+											}
+										}
+									</script>
+								}
+							</div>
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+								@if (!string.IsNullOrEmpty(Model.SecondIntroBlockTitle) && !string.IsNullOrEmpty(Model.SecondIntroBlockDescription) && !string.IsNullOrEmpty(Model.SecondIntroBlockMoreDescription))
+								{
+									<i class="bx bx-receipt"></i>
+									<h4><a>@Model.SecondIntroBlockTitle</a></h4>
+
+									<p>@Model.SecondIntroBlockDescription</p>
+									<p id="myDIV3" class="noDisplay">@Model.SecondIntroBlockMoreDescription</p>
+
+									<div class="row" id="myMainDiv" onclick="myFunction3()">
+										<div class="col-12 readMoreColor">
+											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
+											Read More
+										</div>
+									</div>
+									<script>
+										function myFunction3() {
+											var x = document.getElementById("myDIV3");
+											if (x.style.display === "none") {
+												x.style.display = "block";
+											} else {
+												x.style.display = "none";
+											}
+										}
+									</script>
+								}
+							</div>
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+								@if (!string.IsNullOrEmpty(Model.FifthIntroBlockTitle) && !string.IsNullOrEmpty(Model.FifthIntroBlockDescription) && !string.IsNullOrEmpty(Model.FifthIntroBlockMoreDescription))
+								{
+									<i class="bx bxs-face"></i>
+									<h4><a>@Model.FifthIntroBlockTitle</a></h4>
+
+									<p>@Model.FifthIntroBlockDescription</p>
+									<p id="myDIV4" class="noDisplay">@Model.FifthIntroBlockMoreDescription</p>
+
+									<div class="row" id="myMainDiv" onclick="myFunction4()">
+										<div class="col-12 readMoreColor">
+											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
+											Read More
+										</div>
+									</div>
+									<script>
+										function myFunction4() {
+											var x = document.getElementById("myDIV4");
+											if (x.style.display === "none") {
+												x.style.display = "block";
+											} else {
+												x.style.display = "none";
+											}
+										}
+									</script>
+								}
+							</div>
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+								@if (!string.IsNullOrEmpty(Model.SixthIntroBlockTitle) && !string.IsNullOrEmpty(Model.SixthIntroBlockDescription) && !string.IsNullOrEmpty(Model.SixthIntroBlockMoreDescription))
+								{
+									<i class="bx bxs-face"></i>
+									<h4><a>@Model.SixthIntroBlockTitle</a></h4>
+
+									<p>@Model.SixthIntroBlockDescription</p>
+									<p id="myDIV5" class="noDisplay">@Model.SixthIntroBlockMoreDescription</p>
+
+									<div class="row" id="myMainDiv" onclick="myFunction5()">
+										<div class="col-12 readMoreColor">
+											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
+											Read More
+										</div>
+									</div>
+									<script>
+										function myFunction5() {
+											var x = document.getElementById("myDIV5");
+											if (x.style.display === "none") {
+												x.style.display = "block";
+											} else {
+												x.style.display = "none";
+											}
+										}
+									</script>
+								}
+							</div>
+						</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- End introduction Section -->
-		<!-- Secondary Introduction -->
-		<section class="page-section section-bg" id="about">
-			<div class="container">
-				<div class="section-title">
-					@if (!string.IsNullOrEmpty(Model.IntroductionSectionIntroductionHeader))
-					{
-						<h2 data-aos="fade-in">@Model.IntroductionSectionIntroductionHeader</h2>
-					}
-					@if (Model.IntroductionSectionIntroductionDescription != null)
-					{
-						<p data-aos="fade-in">@Model.IntroductionSectionIntroductionDescription</p>
-					}
-				</div>
-			
-					@if (!string.IsNullOrEmpty(Model.FifthIntroBlockTitle) && Model.FifthIntroBlockDescription != null)
-					{
-						<div class="row funfactLastBlock" onclick="fifthBlock()">
-							<p>@Model.FifthIntroBlockTitle</p>
-						</div>
-						<div id="fifthBlock" class="funfactInformationLastBox">
-							@Model.FifthIntroBlockDescription
-						</div>
-					}
-			
-			</div>
-		</section>
+
 
 
 		<!-- ======= Login Section ======= -->
-		<section id="contact" class="contact section-bg">
+		<section id="loginSection" class="contact section-bg">
 			<div class="container">
 				<div class="section-title">
 					@if (!string.IsNullOrWhiteSpace(@Model.IntroductionTitle))
@@ -155,7 +262,7 @@
 								{
 									<a class="yourKidsButton" href="@Model.LoginButtonLink.Url">@Model.LoginButtonText</a>
 								}
-								@*<br /><br />
+								<br /><br />
 								@if (!string.IsNullOrWhiteSpace(Model.ForgotPasswordText) && Model.ForgotPasswordLink != null)
 								{
 								<a class="smallButtonLink" href="@Model.ForgotPasswordLink.Url" target="_blank">@Model.ForgotPasswordText</a>
@@ -164,7 +271,7 @@
 								{
 								<a class="smallButtonLink">|</a>
 								<a class="smallButtonLink" href="@Model.RegisterLink.Url" target="_blank">@Model.RegisterText</a>
-								}*@
+								}
 								<br />
 								<a class="smallButtonLink" href="/">Click here to act if you are logging in. Note this will be removed</a>
 								<br />
@@ -178,40 +285,3 @@
 		<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 
-		<script>
-                    function myFunction() {
-                        var x = document.getElementById("myDIV");
-                        if (x.style.display === "none") {
-                            x.style.display = "block";
-                        } else {
-                            x.style.display = "none";
-                        }
-                    }
-
-                    function myFunction1() {
-                        var x = document.getElementById("myDIV1");
-                        if (x.style.display === "none") {
-                            x.style.display = "block";
-                        } else {
-                            x.style.display = "none";
-                        }
-                    }
-
-                    function myFunction2() {
-                        var x = document.getElementById("myDIV2");
-                        if (x.style.display === "none") {
-                            x.style.display = "block";
-                        } else {
-                            x.style.display = "none";
-                        }
-                    }
-
-                    function myFunction3() {
-                        var x = document.getElementById("myDIV3");
-                        if (x.style.display === "none") {
-                            x.style.display = "block";
-                        } else {
-                            x.style.display = "none";
-                        }
-                    }
-		</script>
