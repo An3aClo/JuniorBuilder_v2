@@ -265,16 +265,13 @@
 								<br /><br />
 								@if (!string.IsNullOrWhiteSpace(Model.ForgotPasswordText) && Model.ForgotPasswordLink != null)
 								{
-								<a class="smallButtonLink" href="@Model.ForgotPasswordLink.Url" target="_blank">@Model.ForgotPasswordText</a>
+								<a class="smallButtonLink" href="@Model.ForgotPasswordLink.Url" >@Model.ForgotPasswordText</a>
 								}
 								@if (!string.IsNullOrWhiteSpace(Model.RegisterText) && Model.RegisterLink != null)
 								{
 								<a class="smallButtonLink">|</a>
-								<a class="smallButtonLink" href="@Model.RegisterLink.Url" target="_blank">@Model.RegisterText</a>
+								<a class="smallButtonLink" href="@Model.RegisterLink.Url">@Model.RegisterText</a>
 								}
-								<br />
-								<a class="smallButtonLink" href="/">Click here to act if you are logging in. Note this will be removed</a>
-								<br />
 							</div>
 						</form>
 					</div>
