@@ -1,0 +1,44 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.TestForms>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Core;
+@using Umbraco.Core.Composing
+@using Umbraco.Forms.Core.Services
+@{
+    Layout = "loggedInMaster.cshtml";
+    var recordReaderService = Current.Factory.GetInstance<IRecordReaderService>();
+}
+
+
+<p>This is our forst form</p>
+
+@Html.GetGridHtml(Model, "forThroughGrid")
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.0.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+
+
+@if (TempData["UmbracoForms"] != null)
+{
+    foreach (var form in (List<Guid>)TempData["UmbracoForms"])
+    {
+        Html.RenderAction("RenderFormScripts", "UmbracoForms", new { formid = form, theme = "yourTheme" });
+    }
+}
+
+
+<ul id="comments">
+    @foreach (var record in recordReaderService.GetApprovedRecordsFromPage(Model.Id, 1, 10).Items)
+    {
+        <li>
+            @record.Created.ToString("dd MMMM yyy")
+
+             @if(string.IsNullOrEmpty(record.ValueAsString("surname")))
+             {
+                 <p>hi</p>
+                <strong>@record.RecordFields.Count()</strong>
+             }
+                
+        </li>
+    }
+</ul>
