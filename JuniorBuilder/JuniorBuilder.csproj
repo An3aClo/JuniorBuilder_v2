@@ -297,6 +297,7 @@
     <Content Include="Media\1mehcfo5\lesson2.jpg" />
     <Content Include="Media\254hnyo5\creative-build-4.jpg" />
     <Content Include="Media\2mjdwysu\trophy.png" />
+    <Content Include="Media\2odmnad2\rightpinkarrow.png" />
     <Content Include="Media\2pupnwmm\icon-perceptual.jpg" />
     <Content Include="Media\2s3frvtl\volcano-10.jpg" />
     <Content Include="Media\3k2if3pl\team-3.jpg" />
@@ -308,13 +309,16 @@
     <Content Include="Media\bb3p0cnq\lesson2.jpg" />
     <Content Include="Media\c4vp5xb5\galary8.jpg" />
     <Content Include="Media\dxbbnnho\team-1.jpg" />
+    <Content Include="Media\ek1bflxu\icon-2.png" />
     <Content Include="Media\etunsb5n\icon-motor.jpg" />
     <Content Include="Media\g1xpsmyf\package1.jpg" />
+    <Content Include="Media\gg2jx5bz\icon-3.png" />
     <Content Include="Media\hoyiuhym\lesson4.jpg" />
     <Content Include="Media\ie1h4gdf\creative-build-3.jpg" />
     <Content Include="Media\jukbu5k5\icon-creative.jpg" />
     <Content Include="Media\jvhizod4\icon-social.jpg" />
     <Content Include="Media\kcddi5oh\lesson_1.jpg" />
+    <Content Include="Media\kwfl4daw\icon-4.png" />
     <Content Include="Media\lntp12qe\profileimage.png" />
     <Content Include="Media\me5bxwd2\team-4.jpg" />
     <Content Include="Media\mjickwnv\lesson-trex.jpg" />
@@ -325,12 +329,14 @@
     <Content Include="Media\nwfbde0a\package2.jpg" />
     <Content Include="Media\pu5nmo2x\volcano.png" />
     <Content Include="Media\rg3bfu1b\package4.jpg" />
+    <Content Include="Media\rightPinkArrow.png" />
     <Content Include="Media\rnvhoiwq\icon-social2.jpg" />
     <Content Include="Media\rrhox3o2\lesson3.jpg" />
     <Content Include="Media\sbjlxxuf\icon-speecj.jpg" />
     <Content Include="Media\spaf5fl0\lesson_1.jpg" />
     <Content Include="Media\trlpayh0\galary9.jpg" />
     <Content Include="Media\twrbto2q\galary4.jpg" />
+    <Content Include="Media\u1plbdzh\icon-1.png" />
     <Content Include="Media\vrqpmy0q\lesson_4.jpg" />
     <Content Include="Media\vs1ab5vr\characters2.png" />
     <Content Include="Media\w0uja1i5\galary7.jpg" />
@@ -428,7 +434,6 @@
     <Content Include="vendor\icofont\fonts\icofont.woff" />
     <Content Include="vendor\icofont\fonts\icofont.woff2" />
     <Content Include="vendor\jquery\jquery.min.map" />
-    <Content Include="Views\homePage.cshtml" />
     <Content Include="Views\master.cshtml" />
     <Content Include="Views\contact.cshtml" />
     <Content Include="Views\Partials\Contact\_Contact.cshtml" />
@@ -441,8 +446,8 @@
     <Content Include="Views\loggedInMaster.cshtml" />
     <Content Include="Views\LessonsAndPackages.cshtml" />
     <Content Include="Views\LessonLayout.cshtml" />
-    <Content Include="Views\Package.cshtml" />
     <Content Include="Views\lessonWeekLayout.cshtml" />
+    <Content Include="Views\LoginPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
