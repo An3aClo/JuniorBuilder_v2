@@ -1,0 +1,17 @@
+{
+  "id": "a9385886-a07e-4dd5-b587-8f4d12a6928a",
+  "name": "Send template email to andreacloetekaap@outlook.com",
+  "form": "98a216de-46e6-414e-89e1-a951196dd2ec",
+  "active": true,
+  "includeSensitiveData": "False",
+  "workflowTypeId": "17c61629-d984-4e86-b43b-a8407b3efea9",
+  "executesOn": "Submitted",
+  "settings": {
+    "Email": "andreacloetekaap@outlook.com",
+    "SenderEmail": "",
+    "Subject": "The Form '{form_name}' was submitted",
+    "RazorViewFilePath": "Forms/Emails/Example-Template.cshtml",
+    "Attachment": ""
+  },
+  "sortOrder": 1
+}

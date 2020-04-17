@@ -1,0 +1,125 @@
+{
+  "name": "A test form",
+  "created": "2020-04-17T18:48:37.9424763+02:00",
+  "pages": [
+    {
+      "fieldSets": [
+        {
+          "caption": null,
+          "sortOrder": 0,
+          "id": "7370ea08-7416-4be0-861f-09cc059c179f",
+          "page": "00000000-0000-0000-0000-000000000000",
+          "containers": [
+            {
+              "caption": null,
+              "width": 12,
+              "fields": [
+                {
+                  "caption": "Consent for storing submitted data",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "dataConsent",
+                  "id": "dd783e60-6570-4dec-b2e1-00c8a15fa6ca",
+                  "fieldTypeId": "a72c9df9-3847-47cf-afb8-b86773fd12cd",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": true,
+                  "regex": null,
+                  "requiredErrorMessage": "Consent is required to store and process the data in this form.",
+                  "invalidErrorMessage": null,
+                  "condition": null,
+                  "settings": {
+                    "AcceptCopy": "Yes, I give permission to store and process my data"
+                  },
+                  "preValues": null
+                },
+                {
+                  "caption": "Name",
+                  "tooltip": "This is the name of your child",
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "name",
+                  "id": "fcb40410-7063-43da-a14a-fa606167e2e6",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {
+                    "DefaultValue": "",
+                    "Placeholder": ""
+                  },
+                  "preValues": []
+                },
+                {
+                  "caption": "surname",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "surname",
+                  "id": "07a99e75-c2b6-44cd-8a2d-1808e441cfe1",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {},
+                  "preValues": []
+                }
+              ]
+            }
+          ],
+          "condition": null
+        }
+      ],
+      "caption": null,
+      "sortOrder": 0,
+      "id": "00000000-0000-0000-0000-000000000000",
+      "form": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "id": "98a216de-46e6-414e-89e1-a951196dd2ec",
+  "fieldIndicationType": "MarkMandatoryFields",
+  "indicator": "*",
+  "showValidationSummary": false,
+  "hideFieldValidation": false,
+  "requiredErrorMessage": "Please provide a value for {0}",
+  "invalidErrorMessage": "Please provide a valid value for {0}",
+  "messageOnSubmit": "Thank you",
+  "goToPageOnSubmit": 0,
+  "xPathOnSubmit": null,
+  "manualApproval": false,
+  "storeRecordsLocally": true,
+  "cssClass": null,
+  "disableDefaultStylesheet": false,
+  "useClientDependency": false,
+  "workflows": [
+    "a9385886-a07e-4dd5-b587-8f4d12a6928a"
+  ],
+  "datasource": null,
+  "submitLabel": "Submit",
+  "nextLabel": "Next",
+  "prevLabel": "Previous"
+}
