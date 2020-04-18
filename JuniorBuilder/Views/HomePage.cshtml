@@ -49,6 +49,8 @@
 							<div class="col-md-6 icon-box" data-aos="fade-up">
 								@if (!string.IsNullOrEmpty(Model.FirstIntroBlockTitle) && !string.IsNullOrEmpty(Model.FirstIntroBlockDescription) && !string.IsNullOrEmpty(Model.FirstIntroBlockMoreDescription))
 								{
+
+
 									<i class="bx bx-receipt"></i>
 									<h4><a>@Model.FirstIntroBlockTitle</a></h4>
 									<p>@Model.FirstIntroBlockDescription</p>
@@ -95,6 +97,7 @@
 											}
 										}
 									</script>
+
 								}
 							</div>
 							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
@@ -120,11 +123,13 @@
 											}
 										}
 									</script>
+
 								}
 							</div>
 							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
 								@if (!string.IsNullOrEmpty(Model.SecondIntroBlockTitle) && !string.IsNullOrEmpty(Model.SecondIntroBlockDescription) && !string.IsNullOrEmpty(Model.SecondIntroBlockMoreDescription))
 								{
+
 									<i class="bx bx-receipt"></i>
 									<h4><a>@Model.SecondIntroBlockTitle</a></h4>
 									<p>@Model.SecondIntroBlockDescription</p>
@@ -145,11 +150,13 @@
 											}
 										}
 									</script>
+
 								}
 							</div>
 							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
 								@if (!string.IsNullOrEmpty(Model.FifthIntroBlockTitle) && !string.IsNullOrEmpty(Model.FifthIntroBlockDescription) && !string.IsNullOrEmpty(Model.FifthIntroBlockMoreDescription))
 								{
+
 									<i class="bx bxs-face"></i>
 									<h4><a>@Model.FifthIntroBlockTitle</a></h4>
 									<p>@Model.FifthIntroBlockDescription</p>
@@ -170,11 +177,13 @@
 											}
 										}
 									</script>
+
 								}
 							</div>
 							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
 								@if (!string.IsNullOrEmpty(Model.SixthIntroBlockTitle) && !string.IsNullOrEmpty(Model.SixthIntroBlockDescription) && !string.IsNullOrEmpty(Model.SixthIntroBlockMoreDescription))
 								{
+
 									<i class="bx bxs-face"></i>
 									<h4><a>@Model.SixthIntroBlockTitle</a></h4>
 									<p>@Model.SixthIntroBlockDescription</p>
@@ -196,11 +205,13 @@
 										}
 									</script>
 								}
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</section>
 	<!-- End introduction Section -->
@@ -260,3 +271,63 @@
 </main>
 <!--Back to top-->
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+		</section>
+		<!-- End introduction Section -->
+		<!-- ======= Login Section ======= -->
+		<section id="loginSection" class="contact section-bg">
+			<div class="container">
+				<div class="section-title">
+					@if (!string.IsNullOrWhiteSpace(@Model.IntroductionTitle))
+					{
+					<h2 data-aos="fade-in">@Model.IntroductionTitle</h2>
+					}
+					@if (@Model.IntroductionDescription != null)
+					{
+					<p data-aos="fade-in">@Model.IntroductionDescription</p>
+					}
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-up">
+							<div class="form-row">
+								<div class="col-md-6 form-group">
+									@if (!string.IsNullOrWhiteSpace(@Model.LoginEmailAddressPlaceholder))
+									{
+									<input type="email" class="form-control" name="email" id="email" placeholder="@Model.LoginEmailAddressPlaceholder" data-rule="email" data-msg="Please enter a valid email" />
+									}
+								</div>
+								<div class="col-md-6 form-group">
+									@if (!string.IsNullOrWhiteSpace(@Model.LoginPasswordPlaceholder))
+									{
+									<input type="password" class="form-control" name="password" id="email" placeholder="@Model.LoginPasswordPlaceholder" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+									}
+								</div>
+							</div>
+							<div class="text-center">
+								<br />
+								@if (!string.IsNullOrWhiteSpace(@Model.LoginButtonText) && @Model.LoginButtonLink != null)
+								{
+								<a class="yourKidsButton" href="@Model.LoginButtonLink.Url">@Model.LoginButtonText</a>
+								}
+								<br /><br />
+								@if (!string.IsNullOrWhiteSpace(Model.ForgotPasswordText) && Model.ForgotPasswordLink != null)
+								{
+								<a class="smallButtonLink" href="@Model.ForgotPasswordLink.Url">@Model.ForgotPasswordText</a>
+								}
+								@if (!string.IsNullOrWhiteSpace(Model.RegisterText) && Model.RegisterLink != null)
+								{
+								<a class="smallButtonLink">|</a>
+								<a class="smallButtonLink" href="@Model.RegisterLink.Url">@Model.RegisterText</a>
+								}
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Login Section -->
+	</main>
+	<!--Back to top-->
+	<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
