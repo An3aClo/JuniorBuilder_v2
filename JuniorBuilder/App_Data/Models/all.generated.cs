@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "aafec262bab0904b")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "cfc981095996ff08")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -2065,26 +2065,26 @@ namespace Umbraco.Web.PublishedModels
 		public static string GetThirdIntroBlockTitle(IIntroductionSection that) => that.Value<string>("thirdIntroBlockTitle");
 	}
 
-	/// <summary>Login Page</summary>
-	[PublishedModel("loginPage")]
-	public partial class LoginPage : PublishedContentModel, IFooterContent, IForgotPasswordButton, IHeroSection, IIntroductionSection, ILoginContent, INavigationHeader, IRegisterButton
+	/// <summary>Home Page</summary>
+	[PublishedModel("homePage")]
+	public partial class HomePage : PublishedContentModel, IFooterContent, IForgotPasswordButton, IHeroSection, IIntroductionSection, ILoginContent, INavigationHeader, IRegisterButton
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public new const string ModelTypeAlias = "loginPage";
+		public new const string ModelTypeAlias = "homePage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoginPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HomePage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public LoginPage(IPublishedContent content)
+		public HomePage(IPublishedContent content)
 			: base(content)
 		{ }
 
