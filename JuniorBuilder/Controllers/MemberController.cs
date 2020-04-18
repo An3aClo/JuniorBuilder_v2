@@ -28,7 +28,9 @@ namespace CodeShare.Controllers
                     }
                     else
                     {
-                        return Redirect("/login/");
+                        //return Redirect("/login/");
+                        return Redirect("/lessons-and-packages/");
+                        
                     }
                 }
                 else
@@ -49,7 +51,8 @@ namespace CodeShare.Controllers
             TempData.Clear();
             Session.Clear();
             FormsAuthentication.SignOut();
-            return RedirectToCurrentUmbracoPage();
+            //return RedirectToCurrentUmbracoPage();
+            return RedirectToUmbracoPage(1367);
         }
     }
 }

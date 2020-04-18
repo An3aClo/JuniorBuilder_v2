@@ -28,7 +28,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- End Hero -->		
+	<!-- End Hero -->
 	<!--introduction-->
 	<section id="about" class="about section-bg">
 		<div class="container">
@@ -254,12 +254,12 @@
 							<br /><br />
 							@if (!string.IsNullOrWhiteSpace(Model.ForgotPasswordText) && Model.ForgotPasswordLink != null)
 							{
-							<a class="smallButtonLink" href="@Model.ForgotPasswordLink.Url" >@Model.ForgotPasswordText</a>
+								<a class="smallButtonLink" href="@Model.ForgotPasswordLink.Url">@Model.ForgotPasswordText</a>
 							}
 							@if (!string.IsNullOrWhiteSpace(Model.RegisterText) && Model.RegisterLink != null)
 							{
-							<a class="smallButtonLink">|</a>
-							<a class="smallButtonLink" href="@Model.RegisterLink.Url">@Model.RegisterText</a>
+								<a class="smallButtonLink">|</a>
+								<a class="smallButtonLink" href="@Model.RegisterLink.Url">@Model.RegisterText</a>
 							}
 						</div>
 					</form>
@@ -270,4 +270,6 @@
 	<!-- End Login Section -->
 </main>
 <!--Back to top-->
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>	
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+@{ Html.RenderAction("RenderLogin", "Member"); }

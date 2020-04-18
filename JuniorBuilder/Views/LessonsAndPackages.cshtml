@@ -3,6 +3,25 @@
 @{
 	Layout = "loggedinMaster.cshtml";
 }
+
+@if (Umbraco.MemberIsLoggedOn())
+{
+	using (Html.BeginUmbracoForm("SubmitLogout", "Member", System.Web.Mvc.FormMethod.Post, new { id = "logout" }))
+	{
+		@Html.AntiForgeryToken()
+		var myUser = System.Web.Security.Membership.GetUser();
+		if (myUser != null)
+		{
+			<p><strong>Logged in as</strong> <span>@myUser.UserName</span></p>
+			<button name="login" type="submit"><span>logout</span> <i class="fa fa-arrow-right"></i></button>
+		}
+		var roles = Services.MemberService.GetAllRoles(myUser.UserName);
+		if (roles.Contains("LoggedInMembers"))
+		{
+			<p>Yes you are a member</p>
+		}
+	}
+}
 <main id="main">
 	<!-- ======= Lesson Section ======= -->
 	<section id="lessons" class="services section-bg">
@@ -145,35 +164,35 @@
 			</div>
 			<!--Package on the other side-->
 			@*<br />
-			<hr style=" width:60%;">
-			<br />
-			<div class="row content">
-				<div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-					<img src="assets/img/junior_builder/package2.jpg" class="img-fluid packageImg" alt="">
-				</div>
-				<div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
-					<div class="row">
-						<h3>Corporis temporibus maiores provident</h3>
-						<p class="font-italic">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-							magna aliqua.
-						</p>
-						<p>
-							Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-							velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-							culpa qui officia deserunt mollit anim id est laborum
-						</p>
+				<hr style=" width:60%;">
+				<br />
+				<div class="row content">
+					<div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
+						<img src="assets/img/junior_builder/package2.jpg" class="img-fluid packageImg" alt="">
 					</div>
-					<br />
-					<br />
-					<br />
+					<div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
+						<div class="row">
+							<h3>Corporis temporibus maiores provident</h3>
+							<p class="font-italic">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+								magna aliqua.
+							</p>
+							<p>
+								Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+								velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+								culpa qui officia deserunt mollit anim id est laborum
+							</p>
+						</div>
+						<br />
+						<br />
+						<br />
 
-					<div class="row">
-						<a href="purchase.html" class="yourKidsButton">Purchase</a>
+						<div class="row">
+							<a href="purchase.html" class="yourKidsButton">Purchase</a>
 
+						</div>
 					</div>
-				</div>
-			</div>*@
+				</div>*@
 		</div>
 	</section>
 	<!-- End Packages Section -->
