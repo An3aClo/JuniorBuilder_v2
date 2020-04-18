@@ -591,7 +591,6 @@
     <Content Include="scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Partials\_Login.cshtml" />
-    <Content Include="Views\Partials\_Logout.cshtml" />
     <Content Include="Views\login.cshtml" />
     <Content Include="Views\Lesson.cshtml" />
     <Content Include="Views\loggedInMaster.cshtml" />
