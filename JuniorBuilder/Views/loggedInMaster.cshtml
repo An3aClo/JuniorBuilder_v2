@@ -64,25 +64,45 @@
                             }
                         }
                     }
-                    @if (lessonsAndPackages.NavigationBarButtonList != null)
-                    {
-                        foreach (var button in lessonsAndPackages.NavigationBarButtonList)
+
+                    <li class="marginLeft10">
+                        @if (Umbraco.MemberIsLoggedOn())
                         {
-                            if (!string.IsNullOrWhiteSpace(button.NavigationButtonText) && button.NavigationButtonLink != null)
+                            using (Html.BeginUmbracoForm("SubmitLogout", "Member", System.Web.Mvc.FormMethod.Post, new { id = "logout" }))
                             {
-                                <li class="get-started">
-                                    <a href="@button.NavigationButtonLink.Url">
-                                        @button.NavigationButtonText
-                                    </a>
-                                </li>
+                                @Html.AntiForgeryToken()
+                                var myUser = System.Web.Security.Membership.GetUser();
+                                if (myUser != null)
+                                {
+                                    <button class="buttonLogout" name="login" type="submit"><span>Logout</span> <i class="fa fa-arrow-right"></i></button>                               
+                                }
                             }
                         }
-                    }
+                    </li>
                 </ul>
             </nav>
             <!-- .nav-menu -->
         </div>
     </header>
+
+    @if (Umbraco.MemberIsLoggedOn())
+    {
+        using (Html.BeginUmbracoForm("SubmitLogout", "Member", System.Web.Mvc.FormMethod.Post, new { id = "logout" }))
+        {
+            @Html.AntiForgeryToken()
+            var myUser = System.Web.Security.Membership.GetUser();
+            if (myUser != null)
+            {
+                <p><strong>Logged in as</strong> <span>@myUser.UserName</span></p>
+
+            }
+            var roles = Services.MemberService.GetAllRoles(myUser.UserName);
+            if (roles.Contains("LoggedInMembers"))
+            {
+                <p>Yes you are allowed to see this page</p>
+            }
+        }
+    }
     <!-- End Header -->
 
     @RenderBody()
@@ -102,7 +122,7 @@
                             <p>@lessonsAndPackages.FooterDescription</p>
                         }
                     </div>
-                </div>              
+                </div>
                 <div class="social-links">
                     @if (!string.IsNullOrWhiteSpace(lessonsAndPackages.TwitterLink))
                     {
