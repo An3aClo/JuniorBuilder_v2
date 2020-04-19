@@ -21,7 +21,30 @@ h5,
 h6 {
     font-family: "Raleway", sans-serif;
 }
+button {
+    background: #4aa7db;
+    color: #fff;
+    border-radius: 50px;
+    margin: 2px 0 0 15px;
+    padding: 4px 25px 6px 25px;
+    border: 2px solid #ed3d96;    
+    position: relative;
+    color: #adc7de;
+    padding: 10px 15px;
+    transition: 0.3s;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+}
 
+.buttonLogout {
+    height: 37px;
+    width: 100px;
+    color: white;
+}
+
+.marginLeft10 {
+    margin-left: 10px;
+}
 .packageDivHeight {
     height: 75px;
 }
@@ -37,6 +60,13 @@ h6 {
 .noDisplay {
     display: none;
 }
+
+.loginInputFields {
+    width: 100%;
+    padding: 11px 15px;
+    border-radius: 10px;
+}
+
 /*-------------------------------------------------------------- # Registration --------------------------------------------------------------*/
 .smallButtonLink {
     font-size: 10px;
@@ -1652,7 +1682,11 @@ section {
     font-size: 14px;
     margin-bottom: 0;
 }
-
+.loginBox {
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+    padding: 30px;
+    background: #fff;
+}
 .contact .php-email-form {
     box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
     padding: 30px;
@@ -1705,9 +1739,27 @@ section {
     animation: animate-loading 1s linear infinite;
 }
 
+.pinkBorderButton {
+    background: #4aa7db;
+    color: #fff;
+    border-radius: 50px;
+    margin: 2px 0 0 15px;
+    padding: 4px 25px 6px 25px;
+    border: 2px solid #ed3d96;
+    display: block;
+    position: relative;
+    color: #adc7de;
+    padding: 10px 15px;
+    transition: 0.3s;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+}
+.errorMsg{
+    color:red;
+}
 .contact .php-email-form input,
 .contact .php-email-form textarea {
-    border-radius: 0;
+    border-radius: 0px;
     box-shadow: none;
     font-size: 14px;
 }
@@ -1718,7 +1770,8 @@ section {
 }
 
 .contact .php-email-form input {
-    padding: 20px 15px;
+    padding: 10px 15px;
+    width: 100%;
 }
 
 .contact .php-email-form textarea {
