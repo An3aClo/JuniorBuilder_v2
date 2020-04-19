@@ -11,7 +11,6 @@
                 @Html.TextBoxFor(m => m.Username, new { placeholder = "Username" })
             </div>
             <div class="col-md-6 form-group" style="padding-left: 15px;">
-
                 @Html.PasswordFor(m => m.Password, new { placeholder = "Password" })
             </div>
         </div>
@@ -24,5 +23,22 @@
 else
 {
     //Html.RenderAction("RenderLogout", "Member");
-    <lable>Logged in</lable>
+
+    using (Html.BeginUmbracoForm("SubmitLogin", "Member", System.Web.Mvc.FormMethod.Post, new { id = "/" }))
+    {
+        @Html.AntiForgeryToken()
+        <lable>You are logged in</lable>
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                @Html.TextBoxFor(m => m.Username, new { placeholder = "Username" })
+            </div>
+            <div class="col-md-6 form-group" style="padding-left: 15px;">
+                @Html.PasswordFor(m => m.Password, new { placeholder = "Password" })
+            </div>
+        </div>
+        @Html.ValidationSummary()
+        <div class="text-center">
+            <button class="yourKidsButton" name="login" type="submit">Login</button>
+        </div>
+    }
 }

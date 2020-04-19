@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "cfc981095996ff08")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1e1dbefe58a7ccbe")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -317,22 +317,6 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Introduction title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		string IntroductionTitle { get; }
-
-		/// <summary>Login Button URL</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		global::Umbraco.Core.Models.PublishedContent.IPublishedContent LoginButtonLink { get; }
-
-		/// <summary>Login Button text</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		string LoginButtonText { get; }
-
-		/// <summary>Login Email address placeholder</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		string LoginEmailAddressPlaceholder { get; }
-
-		/// <summary>Login password placeholder</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		string LoginPasswordPlaceholder { get; }
 	}
 
 	/// <summary>Login Section</summary>
@@ -381,50 +365,6 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Introduction title</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		public static string GetIntroductionTitle(ILoginContent that) => that.Value<string>("introductionTitle");
-
-		///<summary>
-		/// Login Button URL: This is the page to where the login button should lead a user after login
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("loginButtonLink")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LoginButtonLink => GetLoginButtonLink(this);
-
-		/// <summary>Static getter for Login Button URL</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static global::Umbraco.Core.Models.PublishedContent.IPublishedContent GetLoginButtonLink(ILoginContent that) => that.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("loginButtonLink");
-
-		///<summary>
-		/// Login Button text: This is the text which will show on the login button
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("loginButtonText")]
-		public string LoginButtonText => GetLoginButtonText(this);
-
-		/// <summary>Static getter for Login Button text</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static string GetLoginButtonText(ILoginContent that) => that.Value<string>("loginButtonText");
-
-		///<summary>
-		/// Login Email address placeholder: This is the text which should show a a placeholder for the email address input field
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("loginEmailAddressPlaceholder")]
-		public string LoginEmailAddressPlaceholder => GetLoginEmailAddressPlaceholder(this);
-
-		/// <summary>Static getter for Login Email address placeholder</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static string GetLoginEmailAddressPlaceholder(ILoginContent that) => that.Value<string>("loginEmailAddressPlaceholder");
-
-		///<summary>
-		/// Login password placeholder: This is the placeholder text which will show in the password input field
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("loginPasswordPlaceholder")]
-		public string LoginPasswordPlaceholder => GetLoginPasswordPlaceholder(this);
-
-		/// <summary>Static getter for Login password placeholder</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static string GetLoginPasswordPlaceholder(ILoginContent that) => that.Value<string>("loginPasswordPlaceholder");
 	}
 
 	// Mixin Content Type with alias "footerContent"
@@ -2362,34 +2302,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("introductionTitle")]
 		public string IntroductionTitle => global::Umbraco.Web.PublishedModels.LoginContent.GetIntroductionTitle(this);
-
-		///<summary>
-		/// Login Button URL: This is the page to where the login button should lead a user after login
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("loginButtonLink")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LoginButtonLink => global::Umbraco.Web.PublishedModels.LoginContent.GetLoginButtonLink(this);
-
-		///<summary>
-		/// Login Button text: This is the text which will show on the login button
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("loginButtonText")]
-		public string LoginButtonText => global::Umbraco.Web.PublishedModels.LoginContent.GetLoginButtonText(this);
-
-		///<summary>
-		/// Login Email address placeholder: This is the text which should show a a placeholder for the email address input field
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("loginEmailAddressPlaceholder")]
-		public string LoginEmailAddressPlaceholder => global::Umbraco.Web.PublishedModels.LoginContent.GetLoginEmailAddressPlaceholder(this);
-
-		///<summary>
-		/// Login password placeholder: This is the placeholder text which will show in the password input field
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("loginPasswordPlaceholder")]
-		public string LoginPasswordPlaceholder => global::Umbraco.Web.PublishedModels.LoginContent.GetLoginPasswordPlaceholder(this);
 
 		///<summary>
 		/// Navigation bar button list: This is a list of all the buttons in the navigation bar
