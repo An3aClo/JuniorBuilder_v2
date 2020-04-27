@@ -1,5 +1,316 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Package>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = "loggedinMaster.cshtml";
+    Layout = "master.cshtml";
 }
+<link href="~/css/tableStyle.css" rel="stylesheet" />
+<section id="loginSection" class="contact section-bg">
+	<div class="container">
+
+
+		@*@if (@Model.InformationBlocks != null)
+		{
+			foreach (var item in @Model.InformationBlocks.Select((value, i) => new { i, value }))
+			{
+				if (@item.i == 0 && @item.value.InformationBlockImage != null)
+				{
+					firstBackgroundImageValue = @item.value.InformationBlockImage.Url;
+				}
+				if (@item.i == 1 && @item.value.InformationBlockImage != null)
+				{
+					secondBackgroundImageValue = @item.value.InformationBlockImage.Url;
+				}
+			}
+		}*@
+
+
+		<div class="section-title">
+			<h2 data-aos="fade-in">Our packages</h2>
+			<p data-aos="fade-in">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="php-email-form" data-aos="fade-up">
+					<div class="main-container">
+						<div class="pricing-2">
+							<div class="container">
+								<br />
+								<div class="row pricing-tables">
+
+									<div class="col-md-3 no-pad-right">
+										<div class="pricing-table feature-list ">
+											<div class="packageHeaderContainer"></div>
+											@if (Model.KeyAspects != null)
+											{
+												<ul class="features indexColumn">
+													@foreach (var key in Model.KeyAspects)
+													{
+														if (!string.IsNullOrWhiteSpace(key.AspectTitle))
+														{
+															<li><strong>@key.AspectTitle</strong></li>
+														}
+													}
+												</ul>
+											}
+										</div>
+									</div>
+									<!--Bronze-->
+									<div class="col-md-3 no-pad hidden-sm">
+										<div class="pricing-table">
+											<div class="packageHeaderContainer">
+												@if (Model.TableContentList != null)
+												{
+													foreach (var package in Model.TableContentList.Select((value, i) => new { i, value }))
+													{
+														if (package.i == 0 && package.value.PackageImageRepresentive != null)
+														{
+															<img class="packageImageContainer" src="@package.value.PackageImageRepresentive.Url" />
+														}
+													}
+												}
+												@if (Model.TableContentList != null)
+												{
+													foreach (var package in Model.TableContentList.Select((value, i) => new { i, value }))
+													{
+														if (package.i == 0 && package.value.PackageTitle != null)
+														{
+															<h1 class="packageHeaderPadding"><strong>@package.value.PackageTitle</strong></h1>
+														}
+													}
+												}
+											</div>
+											<ul class="features">
+												@if (Model.KeyAspects != null)
+												{
+													foreach (var key in Model.KeyAspects)
+													{
+														if (!string.IsNullOrWhiteSpace(key.BronzeValue))
+														{
+															<li><strong>@key.BronzeValue</strong></li>
+														}	
+														else if (key.PackagesIncluded != null)
+														{
+															var haveBronze = false;
+															foreach (var item in key.PackagesIncluded)
+															{
+																if (item.Equals("Bronze"))
+																{
+																	haveBronze = true;
+																}
+															}
+															if (haveBronze)
+															{
+
+																<li><i class="icofont-check packagCheckIcon"></i></li>
+															}
+															else
+															{
+																<li><i class="icofont-close packagCheckIcon"></i></li>
+                                                            }
+                                                        }
+                                                    }
+                                                }
+											</ul>
+												@if (Model.TableContentList != null)
+												{
+													foreach (var package in Model.TableContentList.Select((value, i) => new { i, value }))
+													{
+														if (package.i == 0)
+														{
+															if (package.value.Amount != null)
+															{
+																<div class="price">
+																	<span class="sub">R</span>
+																	<span class="amount">@package.value.Amount</span>
+																</div>
+															}
+															if (package.value.ButtonTextOfPackage != null && package.value.ButtonNavigationLink != null)
+															{
+																<a href="@package.value.ButtonNavigationLink.Url" class="btn btn-primary">
+																	@package.value.ButtonTextOfPackage
+																</a>
+															}
+														}
+													}
+												}
+										</div>
+									</div>
+									<!--Bronze end-->
+									<!--Silver-->
+									<div class="col-md-3 no-pad hidden-sm">
+										<div class="pricing-table">
+											@if (Model.TableContentList != null)
+											{
+												foreach (var package in Model.TableContentList.Select((value, i) => new { i, value }))
+												{
+													if (package.i == 1 && package.value.PackageImageRepresentive != null)
+													{
+														<div class="packageImageContainer">
+															<img class="packageImageContainer" src="@package.value.PackageImageRepresentive.Url" />
+														</div>
+													}
+												}
+											}
+											@if (Model.TableContentList != null)
+											{
+												foreach (var package in Model.TableContentList.Select((value, i) => new { i, value }))
+												{
+													if (package.i == 1 && package.value.PackageTitle != null)
+													{
+														<h1 class="packageHeaderPadding"><strong>@package.value.PackageTitle</strong></h1>
+													}
+												}
+											}
+											<ul class="features">
+												@if (Model.KeyAspects != null)
+												{
+													foreach (var key in Model.KeyAspects)
+													{
+
+														if (!string.IsNullOrWhiteSpace(key.SilverValue))
+														{
+															<li><strong>@key.SilverValue</strong></li>
+
+														}
+													    else if (key.PackagesIncluded != null)
+														{
+															var haveSilver = false;
+															foreach (var item in key.PackagesIncluded)
+															{																
+																if (item.Equals("Silver"))
+																{
+																	haveSilver = true;
+                                                                }
+                                                            }
+                                                            if (haveSilver)
+                                                            {
+																<li><i class="icofont-check packagCheckIcon"></i></li>
+                                                            }
+                                                            else 
+															{ 
+																<li><i class="icofont-close packagCheckIcon"></i></li>
+															}
+                                                        }
+													}
+												}
+											</ul>
+												@if (Model.TableContentList != null)
+												{
+													foreach (var package in Model.TableContentList.Select((value, i) => new { i, value }))
+													{
+														if (package.i == 1)
+														{
+															if (package.value.Amount != null)
+															{
+																<div class="price">
+																	<span class="sub">R</span>
+																	<span class="amount">@package.value.Amount</span>
+																</div>
+															}
+															if (package.value.ButtonTextOfPackage != null && package.value.ButtonNavigationLink != null)
+															{
+																<a href="@package.value.ButtonNavigationLink.Url" class="btn btn-primary">
+																	@package.value.ButtonTextOfPackage
+																</a>
+															}
+														}
+													}
+												}
+										</div>
+									</div>
+									<!--Silver end-->
+									<!--Gold-->
+									<div class="col-md-3 no-pad-left hidden-sm">
+										<div class="pricing-table">
+
+											@if (Model.TableContentList != null)
+											{
+												foreach (var package in Model.TableContentList.Select((value, i) => new { i, value }))
+												{
+													if (package.i == 2 && package.value.PackageImageRepresentive != null)
+													{
+														<div class="packageImageContainer">
+															<img class="packageImageContainer" src="@package.value.PackageImageRepresentive.Url" />
+														</div>
+													}
+												}
+											}
+											@if (Model.TableContentList != null)
+											{
+												foreach (var package in Model.TableContentList.Select((value, i) => new { i, value }))
+												{
+													if (package.i == 2 && package.value.PackageTitle != null)
+													{
+														<h1 class="packageHeaderPadding"><strong>@package.value.PackageTitle</strong></h1>
+													}
+												}
+											}
+
+											<ul class="features">
+												@if (Model.KeyAspects != null)
+												{
+													foreach (var key in Model.KeyAspects)
+													{
+														if (!string.IsNullOrWhiteSpace(key.GoldValue))
+														{
+															<li><strong>@key.GoldValue</strong></li>
+														}
+														else if (key.PackagesIncluded != null)
+														{
+															var haveGold = false;
+															foreach (var item in key.PackagesIncluded)
+															{
+																if (item.Equals("Gold"))
+																{
+																	haveGold = true;
+																}
+															}
+															if (haveGold)
+															{
+																<li><i class="icofont-check packagCheckIcon"></i></li>
+															}
+															else
+															{
+																<li><i class="icofont-close packagCheckIcon"></i></li>
+															}
+														}
+													}
+												}
+											</ul>
+
+											@if (Model.TableContentList != null)
+											{
+												foreach (var package in Model.TableContentList.Select((value, i) => new { i, value }))
+												{
+													if (package.i == 2)
+													{
+														if (package.value.Amount != null)
+														{
+															<div class="price">
+																<span class="sub">R</span>
+																<span class="amount">@package.value.Amount</span>
+															</div>
+														}
+														if (package.value.ButtonTextOfPackage != null && package.value.ButtonNavigationLink != null)
+														{
+															<a href="@package.value.ButtonNavigationLink.Url" class="btn btn-primary">
+																@package.value.ButtonTextOfPackage
+															</a>
+														}
+													}
+												}
+											}
+										</div>
+									</div>
+									<!--Gold end-->
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+

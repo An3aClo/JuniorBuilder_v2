@@ -1199,7 +1199,7 @@ section {
         
     }*/
 .intro {
-    background: url('../Media/no3gmnee/site-header-2.jpg') center center no-repeat;
+    /*background: url('../Media/no3gmnee/site-header-2.jpg') center center no-repeat;*/
 }
 .about .image .intro {    
     background-size: cover;
@@ -1957,4 +1957,33 @@ section {
         float: none;
         text-align: center;
     }
+}
+
+.packageHeaderContainer {
+    max-height: 125px;
+    min-height: 125px;
+}
+
+.packageImageContainer {
+    max-height: 50px;
+    min-height: 50px;
+}
+
+.packageHeaderPadding {
+    margin-bottom: 1.5rem;
+}
+
+.packagCheckIcon {
+    font-size: 20px;
+    padding-right: 4px;
+    color: #ed3d96;
+}
+.introductionVideo {
+    padding-left: 20%;
+    padding-right: 25%;
+}
+
+.skillBox {
+    max-height: 300px;
+    max-width: 300px;
 }
