@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "8d1d9df538ad0da3")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.5")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2937608c5e04d936")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 
 // FILE: models.generated.cs
@@ -1625,6 +1625,10 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		string FourthIntroBlockTitle { get; }
 
+		/// <summary>Introduction image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		global::Umbraco.Core.Models.PublishedContent.IPublishedContent IntroductionImage { get; }
+
 		/// <summary>Introduction description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		global::System.Web.IHtmlString IntroductionSectionIntroductionDescription { get; }
@@ -1795,6 +1799,17 @@ namespace Umbraco.Web.PublishedModels
 		public static string GetFourthIntroBlockTitle(IIntroductionSection that) => that.Value<string>("fourthIntroBlockTitle");
 
 		///<summary>
+		/// Introduction image: This is the introduction image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("introductionImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent IntroductionImage => GetIntroductionImage(this);
+
+		/// <summary>Static getter for Introduction image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static global::Umbraco.Core.Models.PublishedContent.IPublishedContent GetIntroductionImage(IIntroductionSection that) => that.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("introductionImage");
+
+		///<summary>
 		/// Introduction description: This is the description of the intoduction
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
@@ -1918,7 +1933,7 @@ namespace Umbraco.Web.PublishedModels
 
 	/// <summary>Home page components</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IFooterContent, IForgotPasswordButton, IHeroSection, IIntroductionSection, ILoginContent, INavigationHeader, IRegisterButton
+	public partial class HomePage : PublishedContentModel, IFooterContent, IForgotPasswordButton, IHeroSection, IIntroductionSection, IIntroductionVideoContent, ILoginContent, INavigationHeader, IRegisterButton, ISkillDevelopmentSectionComponents
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -2124,6 +2139,13 @@ namespace Umbraco.Web.PublishedModels
 		public string FourthIntroBlockTitle => global::Umbraco.Web.PublishedModels.IntroductionSection.GetFourthIntroBlockTitle(this);
 
 		///<summary>
+		/// Introduction image: This is the introduction image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("introductionImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent IntroductionImage => global::Umbraco.Web.PublishedModels.IntroductionSection.GetIntroductionImage(this);
+
+		///<summary>
 		/// Introduction description: This is the description of the intoduction
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
@@ -2201,6 +2223,27 @@ namespace Umbraco.Web.PublishedModels
 		public string ThirdIntroBlockTitle => global::Umbraco.Web.PublishedModels.IntroductionSection.GetThirdIntroBlockTitle(this);
 
 		///<summary>
+		/// Introduction video: This is the embedded link of a YouTube video
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("introductionVideo")]
+		public string IntroductionVideo => global::Umbraco.Web.PublishedModels.IntroductionVideoContent.GetIntroductionVideo(this);
+
+		///<summary>
+		/// Video section description: This is a description of the video section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("videoSectionDescription")]
+		public global::System.Web.IHtmlString VideoSectionDescription => global::Umbraco.Web.PublishedModels.IntroductionVideoContent.GetVideoSectionDescription(this);
+
+		///<summary>
+		/// Video section header: This is the header of the video section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("videoSectionHeader")]
+		public string VideoSectionHeader => global::Umbraco.Web.PublishedModels.IntroductionVideoContent.GetVideoSectionHeader(this);
+
+		///<summary>
 		/// Introduction description: This is an introduction for the login page
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
@@ -2255,6 +2298,27 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("registerText")]
 		public string RegisterText => global::Umbraco.Web.PublishedModels.RegisterButton.GetRegisterText(this);
+
+		///<summary>
+		/// Skill list: This is a list of all the skills
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("skillList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SkillComponents> SkillList => global::Umbraco.Web.PublishedModels.SkillDevelopmentSectionComponents.GetSkillList(this);
+
+		///<summary>
+		/// Skill section description: This is the description of the skill development section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("skillSectionDescription")]
+		public global::System.Web.IHtmlString SkillSectionDescription => global::Umbraco.Web.PublishedModels.SkillDevelopmentSectionComponents.GetSkillSectionDescription(this);
+
+		///<summary>
+		/// Skill section title: This is the title of the skill development section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("skillSectionTitle")]
+		public string SkillSectionTitle => global::Umbraco.Web.PublishedModels.SkillDevelopmentSectionComponents.GetSkillSectionTitle(this);
 	}
 
 	// Mixin Content Type with alias "forgotPasswordButton"
@@ -2548,9 +2612,26 @@ namespace Umbraco.Web.PublishedModels
 		public string SilverValue => this.Value<string>("silverValue");
 	}
 
+	// Mixin Content Type with alias "introductionVideoContent"
+	/// <summary>Introduction video content</summary>
+	public partial interface IIntroductionVideoContent : IPublishedContent
+	{
+		/// <summary>Introduction video</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string IntroductionVideo { get; }
+
+		/// <summary>Video section description</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		global::System.Web.IHtmlString VideoSectionDescription { get; }
+
+		/// <summary>Video section header</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string VideoSectionHeader { get; }
+	}
+
 	/// <summary>Introduction video content</summary>
 	[PublishedModel("introductionVideoContent")]
-	public partial class IntroductionVideoContent : PublishedContentModel
+	public partial class IntroductionVideoContent : PublishedContentModel, IIntroductionVideoContent
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -2574,11 +2655,160 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Introduction video: This is an introduction videos from YouTube
+		/// Introduction video: This is the embedded link of a YouTube video
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("introductionVideo")]
-		public global::System.Web.IHtmlString IntroductionVideo => this.Value<global::System.Web.IHtmlString>("introductionVideo");
+		public string IntroductionVideo => GetIntroductionVideo(this);
+
+		/// <summary>Static getter for Introduction video</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetIntroductionVideo(IIntroductionVideoContent that) => that.Value<string>("introductionVideo");
+
+		///<summary>
+		/// Video section description: This is a description of the video section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("videoSectionDescription")]
+		public global::System.Web.IHtmlString VideoSectionDescription => GetVideoSectionDescription(this);
+
+		/// <summary>Static getter for Video section description</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static global::System.Web.IHtmlString GetVideoSectionDescription(IIntroductionVideoContent that) => that.Value<global::System.Web.IHtmlString>("videoSectionDescription");
+
+		///<summary>
+		/// Video section header: This is the header of the video section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("videoSectionHeader")]
+		public string VideoSectionHeader => GetVideoSectionHeader(this);
+
+		/// <summary>Static getter for Video section header</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetVideoSectionHeader(IIntroductionVideoContent that) => that.Value<string>("videoSectionHeader");
+	}
+
+	/// <summary>Skill components</summary>
+	[PublishedModel("skillComponents")]
+	public partial class SkillComponents : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "skillComponents";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SkillComponents, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public SkillComponents(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Skill development description: This is a description of the skill
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("skillDevelopmentDescription")]
+		public global::System.Web.IHtmlString SkillDevelopmentDescription => this.Value<global::System.Web.IHtmlString>("skillDevelopmentDescription");
+
+		///<summary>
+		/// Skill development header: This is the header of the skill
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("skillDevelopmentHeader")]
+		public string SkillDevelopmentHeader => this.Value<string>("skillDevelopmentHeader");
+
+		///<summary>
+		/// Skill development image: This is the skill development image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("skillDevelopmentImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent SkillDevelopmentImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("skillDevelopmentImage");
+	}
+
+	// Mixin Content Type with alias "skillDevelopmentSectionComponents"
+	/// <summary>Skill development section components</summary>
+	public partial interface ISkillDevelopmentSectionComponents : IPublishedContent
+	{
+		/// <summary>Skill list</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SkillComponents> SkillList { get; }
+
+		/// <summary>Skill section description</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		global::System.Web.IHtmlString SkillSectionDescription { get; }
+
+		/// <summary>Skill section title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		string SkillSectionTitle { get; }
+	}
+
+	/// <summary>Skill development section components</summary>
+	[PublishedModel("skillDevelopmentSectionComponents")]
+	public partial class SkillDevelopmentSectionComponents : PublishedContentModel, ISkillDevelopmentSectionComponents
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "skillDevelopmentSectionComponents";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SkillDevelopmentSectionComponents, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public SkillDevelopmentSectionComponents(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Skill list: This is a list of all the skills
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("skillList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SkillComponents> SkillList => GetSkillList(this);
+
+		/// <summary>Static getter for Skill list</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SkillComponents> GetSkillList(ISkillDevelopmentSectionComponents that) => that.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SkillComponents>>("skillList");
+
+		///<summary>
+		/// Skill section description: This is the description of the skill development section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("skillSectionDescription")]
+		public global::System.Web.IHtmlString SkillSectionDescription => GetSkillSectionDescription(this);
+
+		/// <summary>Static getter for Skill section description</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static global::System.Web.IHtmlString GetSkillSectionDescription(ISkillDevelopmentSectionComponents that) => that.Value<global::System.Web.IHtmlString>("skillSectionDescription");
+
+		///<summary>
+		/// Skill section title: This is the title of the skill development section
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("skillSectionTitle")]
+		public string SkillSectionTitle => GetSkillSectionTitle(this);
+
+		/// <summary>Static getter for Skill section title</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static string GetSkillSectionTitle(ISkillDevelopmentSectionComponents that) => that.Value<string>("skillSectionTitle");
 	}
 
 	/// <summary>Folder</summary>
