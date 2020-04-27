@@ -431,6 +431,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\tableStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Media\0lse1eh5\features-3.svg" />
@@ -497,6 +498,8 @@
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\contactform.json" />
     <Content Include="App_Plugins\UmbracoForms\Data\Templates\commentform.json" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="scripts\jquery-3.4.1.js" />
     <Content Include="scripts\jquery-3.4.1.min.js" />
@@ -594,7 +597,6 @@
     <Content Include="Views\login.cshtml" />
     <Content Include="Views\Lesson.cshtml" />
     <Content Include="Views\loggedInMaster.cshtml" />
-    <Content Include="Views\LessonsAndPackages.cshtml" />
     <Content Include="Views\LessonLayout.cshtml" />
     <Content Include="Views\lessonWeekLayout.cshtml" />
     <Content Include="Views\LoginPage.cshtml" />
@@ -637,6 +639,7 @@
     <Content Include="Views\MacroPartials\RenderUmbracoFormScripts.cshtml" />
     <Content Include="Views\MacroPartials\InsertUmbracoFormWithTheme.cshtml" />
     <Content Include="Views\HomePage.cshtml" />
+    <Content Include="Views\Package.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
