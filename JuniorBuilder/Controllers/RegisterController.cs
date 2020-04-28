@@ -22,10 +22,10 @@ namespace JuniorBuilder.Controllers
                 return CurrentUmbracoPage();
             }            
 
-            var member = memberService.CreateMember(model.EmailAddress, model.EmailAddress, model.Name, "member");
-            //memberService.SavePassword(member, model.Password);  --Does not work arent allowed
+            var member = memberService.CreateMemberWithIdentity(model.EmailAddress, model.EmailAddress, model.Name, "member");
+            memberService.SavePassword(member, model.Password);
             Members.Login(model.EmailAddress, model.Password);
-            memberService.Save(member);
+         
 
             return Redirect("/lessons");
         }

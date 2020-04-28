@@ -1,44 +1,70 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<JuniorBuilder.Models.LoginModel>
-@using Umbraco.Web
+﻿@using JuniorBuilder.Controllers
+@model Umbraco.Web.Models.LoginModel
 
-@if (!Umbraco.MemberIsLoggedOn())
+@using (Html.BeginUmbracoForm<LoginController>("Login"))
 {
-    using (Html.BeginUmbracoForm("SubmitLogin", "Member", System.Web.Mvc.FormMethod.Post, new { id = "/" }))
-    {
-        @Html.AntiForgeryToken()
-        <div class="form-row">
-            <div class="col-md-6 form-group">
-                @Html.TextBoxFor(m => m.Username, new { placeholder = "Username" })
-            </div>
-            <div class="col-md-6 form-group" style="padding-left: 15px;">
-                @Html.PasswordFor(m => m.Password, new { placeholder = "Password" })
-            </div>
-        </div>
-        @Html.ValidationSummary() 
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+
+        @Html.LabelFor(model => model.Username)
+        @Html.EditorFor(model => model.Username)
+        @Html.ValidationMessageFor(model => model.Username)  
+
+        @Html.LabelFor(model => model.Password)
+        @Html.EditorFor(model => model.Password)
+        @Html.ValidationMessageFor(model => model.Password)
+
         <div class="text-center">
             <button class="yourKidsButton" name="login" type="submit">Login</button>
         </div>
-    }
-}
-else
-{
-    //Html.RenderAction("RenderLogout", "Member");
 
-    using (Html.BeginUmbracoForm("SubmitLogin", "Member", System.Web.Mvc.FormMethod.Post, new { id = "/" }))
-    {
-        @Html.AntiForgeryToken()
-        <lable>You are logged in</lable>
-        <div class="form-row">
-            <div class="col-md-6 form-group">
-                @Html.TextBoxFor(m => m.Username, new { placeholder = "Username" })
-            </div>
-            <div class="col-md-6 form-group" style="padding-left: 15px;">
-                @Html.PasswordFor(m => m.Password, new { placeholder = "Password" })
-            </div>
-        </div>
-        @Html.ValidationSummary()
-        <div class="text-center">
-            <button class="yourKidsButton" name="login" type="submit">Login</button>
-        </div>
-    }
+    </fieldset>
 }
+
+
+@*@inherits Umbraco.Web.Mvc.UmbracoViewPage<JuniorBuilder.Models.LoginModel>
+    @using Umbraco.Web
+
+    @if (!Umbraco.MemberIsLoggedOn())
+    {
+        using (Html.BeginUmbracoForm("SubmitLogin", "Member", System.Web.Mvc.FormMethod.Post, new { id = "/" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    @Html.TextBoxFor(m => m.Username, new { placeholder = "Username" })
+                </div>
+                <div class="col-md-6 form-group" style="padding-left: 15px;">
+                    @Html.PasswordFor(m => m.Password, new { placeholder = "Password" })
+                </div>
+            </div>
+            @Html.ValidationSummary()
+            <div class="text-center">
+                <button class="yourKidsButton" name="login" type="submit">Login</button>
+            </div>
+        }
+    }
+    else
+    {
+        //Html.RenderAction("RenderLogout", "Member");
+
+        using (Html.BeginUmbracoForm("SubmitLogin", "Member", System.Web.Mvc.FormMethod.Post, new { id = "/" }))
+        {
+            @Html.AntiForgeryToken()
+            <lable>You are logged in</lable>
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    @Html.TextBoxFor(m => m.Username, new { placeholder = "Username" })
+                </div>
+                <div class="col-md-6 form-group" style="padding-left: 15px;">
+                    @Html.PasswordFor(m => m.Password, new { placeholder = "Password" })
+                </div>
+            </div>
+            @Html.ValidationSummary()
+            <div class="text-center">
+                <button class="yourKidsButton" name="login" type="submit">Login</button>
+            </div>
+        }
+    }*@

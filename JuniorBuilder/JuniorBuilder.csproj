@@ -538,10 +538,11 @@
   <ItemGroup>
     <Compile Include="Controllers\ContactSurfaceController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
-    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\LoginModel1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

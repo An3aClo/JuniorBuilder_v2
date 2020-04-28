@@ -2,7 +2,7 @@
 
 namespace JuniorBuilder.Models
 {
-    public class LoginModel
+    public class LoginModel1
     {
         [Display(Name = "Username")]
         [Required]

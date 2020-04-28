@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using JuniorBuilder.Models;
 using System.Net.Mail;
 
-namespace JuniorBuilder.SurfaceController
+namespace JuniorBuilder.Controllers
 {
     public class ContactSurfaceController : Umbraco.Web.Mvc.SurfaceController
     {

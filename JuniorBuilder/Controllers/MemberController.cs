@@ -9,12 +9,12 @@ namespace CodeShare.Controllers
     {
         public ActionResult RenderLogin()
         {
-            return PartialView("_Login", new LoginModel());
+            return PartialView("_Login", new LoginModel1());
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SubmitLogin(LoginModel model, string returnUrl)
+        public ActionResult SubmitLogin(LoginModel1 model, string returnUrl)
         {
             if (ModelState.IsValid)
             {

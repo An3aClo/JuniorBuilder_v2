@@ -1,0 +1,26 @@
+﻿using JuniorBuilder.Models;
+using System.Web.Mvc;
+using Umbraco.Web.Models;
+using Umbraco.Web.Mvc;
+
+namespace JuniorBuilder.Controllers
+{
+    public class LoginController : Umbraco.Web.Mvc.SurfaceController
+    {
+        public ActionResult Login(LoginModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return CurrentUmbracoPage();
+            }
+
+            if (Members.Login(model.Username, model.Password))
+            {
+                return Redirect("/lessons");
+            }
+
+            ModelState.AddModelError("", "Invalid login");
+            return CurrentUmbracoPage();
+        }
+    }
+}
