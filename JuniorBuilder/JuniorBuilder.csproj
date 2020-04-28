@@ -542,7 +542,6 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
-    <Compile Include="Models\LoginModel1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -642,9 +641,9 @@
     <Content Include="Views\HomePage.cshtml" />
     <Content Include="Views\Package.cshtml" />
     <Content Include="Views\Lessons.cshtml" />
-    <Content Include="Views\Register.cshtml" />
     <Content Include="Views\Partials\_Register.cshtml" />
-    <Content Include="Views\login.cshtml" />
+    <Content Include="Views\LoginPage.cshtml" />
+    <Content Include="Views\register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

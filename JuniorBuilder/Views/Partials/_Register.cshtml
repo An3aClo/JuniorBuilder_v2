@@ -4,25 +4,37 @@
 @using (Html.BeginUmbracoForm<RegisterController>("Register"))
 {
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
 
     <fieldset>
-
-        @Html.LabelFor(model => model.Name)
-        @Html.EditorFor(model => model.Name)
-        @Html.ValidationMessageFor(model => model.Name)
-
-        @Html.LabelFor(model => model.EmailAddress)
-        @Html.EditorFor(model => model.EmailAddress)
-        @Html.ValidationMessageFor(model => model.EmailAddress)
-
-        @Html.LabelFor(model => model.Password)
-        @Html.EditorFor(model => model.Password)
-        @Html.ValidationMessageFor(model => model.Password)
-
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                <div class="registerLables">
+                    @Html.LabelFor(model => model.Name)
+                </div>                
+                @Html.TextBoxFor(model => model.Name, new { placeholder = "Name and surname" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+            <div class="col-md-6 form-group" style="padding-left: 15px;">
+                <div class="registerLables">
+                    @Html.LabelFor(model => model.EmailAddress)
+                </div>
+                @Html.TextBoxFor(model => model.EmailAddress, new { placeholder = "Email" })
+                @Html.ValidationMessageFor(model => model.EmailAddress)
+                </div>
+            </div>
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                <div class="registerLables">
+                    @Html.LabelFor(model => model.Password)
+                </div>              
+                @Html.PasswordFor(model => model.Password, new { placeholder = "Password" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+         
+        </div>
+        @Html.ValidationSummary(true)
         <div class="text-center">
             <button class="yourKidsButton" name="login" type="submit">Register</button>
         </div>
-
     </fieldset>
 }

@@ -16,6 +16,7 @@ namespace JuniorBuilder.Models
         [Display(Name = "Password")]
         [Required]
         [DataType(DataType.Password)]
+        [MinLength(10)]
         public string Password { get; set; }
     }
 }

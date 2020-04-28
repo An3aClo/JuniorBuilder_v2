@@ -7,39 +7,6 @@ namespace CodeShare.Controllers
 {
     public class MemberController : SurfaceController
     {
-        public ActionResult RenderLogin()
-        {
-            return PartialView("_Login", new LoginModel1());
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult SubmitLogin(LoginModel1 model, string returnUrl)
-        {
-            if (ModelState.IsValid)
-            {
-                if (Membership.ValidateUser(model.Username, model.Password))
-                {
-                    FormsAuthentication.SetAuthCookie(model.Username, false);
-                    UrlHelper myHelper = new UrlHelper(HttpContext.Request.RequestContext);
-                    if (myHelper.IsLocalUrl(returnUrl))
-                    {
-                        return Redirect(returnUrl);
-                    }
-                    else
-                    {
-                        //return Redirect("/login/");
-                        return Redirect("/lessons-and-packages/");                        
-                    }
-                }
-                else
-                {
-                    ModelState.AddModelError("", "The username or password provided is incorrect.");
-                }
-            }
-            return CurrentUmbracoPage();
-        }
-
         public ActionResult RenderLogout()
         {
             return PartialView("_Logout", null);

@@ -1987,3 +1987,6 @@ section {
     max-height: 300px;
     max-width: 300px;
 }
+.registerLables {
+    color:black;
+}
