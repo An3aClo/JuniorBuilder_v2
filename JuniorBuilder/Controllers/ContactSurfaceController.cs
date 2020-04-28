@@ -3,9 +3,9 @@ using System.Web.Mvc;
 using JuniorBuilder.Models;
 using System.Net.Mail;
 
-namespace JuniorBuilder.Controllers
+namespace JuniorBuilder.SurfaceController
 {
-    public class ContactSurfaceController : SurfaceController
+    public class ContactSurfaceController : Umbraco.Web.Mvc.SurfaceController
     {
         public const string PARTIAL_VIEW_FOLDER = "~/Views/Partials/Contact/";
         public ActionResult RenderForm()

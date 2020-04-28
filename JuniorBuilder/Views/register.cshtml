@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using JuniorBuilder.Models
+@{
+	Layout = null;
+}
+
+@* the fun starts here *@
+
+<p>Our register page now</p>
+
+@{ Html.RenderPartial("~/Views/Partials/_Register.cshtml", new RegisterModel()); }

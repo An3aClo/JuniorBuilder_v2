@@ -1,0 +1,28 @@
+﻿@using JuniorBuilder.Controllers
+@model JuniorBuilder.Models.RegisterModel
+
+@using (Html.BeginUmbracoForm<RegisterController>("Register"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+
+        @Html.LabelFor(model => model.EmailAddress)
+        @Html.EditorFor(model => model.EmailAddress)
+        @Html.ValidationMessageFor(model => model.EmailAddress)
+
+        @Html.LabelFor(model => model.Password)
+        @Html.EditorFor(model => model.Password)
+        @Html.ValidationMessageFor(model => model.Password)
+
+        <div class="text-center">
+            <button class="yourKidsButton" name="login" type="submit">Register</button>
+        </div>
+
+    </fieldset>
+}

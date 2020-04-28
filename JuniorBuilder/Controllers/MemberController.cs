@@ -29,8 +29,7 @@ namespace CodeShare.Controllers
                     else
                     {
                         //return Redirect("/login/");
-                        return Redirect("/lessons-and-packages/");
-                        
+                        return Redirect("/lessons-and-packages/");                        
                     }
                 }
                 else
