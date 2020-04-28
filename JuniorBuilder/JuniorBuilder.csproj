@@ -538,8 +538,10 @@
   <ItemGroup>
     <Compile Include="Controllers\ContactSurfaceController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Models\ContactModel.cs" />
-    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -594,12 +596,10 @@
     <Content Include="scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Partials\_Login.cshtml" />
-    <Content Include="Views\login.cshtml" />
     <Content Include="Views\Lesson.cshtml" />
     <Content Include="Views\loggedInMaster.cshtml" />
     <Content Include="Views\LessonLayout.cshtml" />
     <Content Include="Views\lessonWeekLayout.cshtml" />
-    <Content Include="Views\LoginPage.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\default\Submitted.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\default\ScrollToFormScript.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\default\Script.cshtml" />
@@ -640,6 +640,10 @@
     <Content Include="Views\MacroPartials\InsertUmbracoFormWithTheme.cshtml" />
     <Content Include="Views\HomePage.cshtml" />
     <Content Include="Views\Package.cshtml" />
+    <Content Include="Views\Lessons.cshtml" />
+    <Content Include="Views\Partials\_Register.cshtml" />
+    <Content Include="Views\LoginPage.cshtml" />
+    <Content Include="Views\register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -647,7 +651,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Login\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

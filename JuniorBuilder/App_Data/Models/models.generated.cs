@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2937608c5e04d936")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4e9118d4dfc46b3")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -82,32 +82,6 @@ namespace Umbraco.Web.PublishedModels
 
 		// ctor
 		public Contact(IPublishedContent content)
-			: base(content)
-		{ }
-
-		// properties
-	}
-
-	/// <summary>login</summary>
-	[PublishedModel("login")]
-	public partial class Login : PublishedContentModel
-	{
-		// helpers
-#pragma warning disable 0109 // new is redundant
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public new const string ModelTypeAlias = "login";
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public new static IPublishedContentType GetModelContentType()
-			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Login, TValue>> selector)
-			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-#pragma warning restore 0109
-
-		// ctor
-		public Login(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -1917,9 +1891,9 @@ namespace Umbraco.Web.PublishedModels
 		public static string GetThirdIntroBlockTitle(IIntroductionSection that) => that.Value<string>("thirdIntroBlockTitle");
 	}
 
-	/// <summary>Home page components</summary>
+	/// <summary>Home page</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IFooterContent, IForgotPasswordButton, IHeroSection, IIntroductionSection, IIntroductionVideoContent, ILoginContent, INavigationHeader, IRegisterButton, ISkillDevelopmentSectionComponents
+	public partial class HomePage : PublishedContentModel, IFooterContent, IHeroSection, IIntroductionSection, IIntroductionVideoContent, INavigationHeader, ISkillDevelopmentSectionComponents
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -2025,20 +1999,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("versionNumber")]
 		public string VersionNumber => global::Umbraco.Web.PublishedModels.FooterContent.GetVersionNumber(this);
-
-		///<summary>
-		/// Forgot password link: This is to where the forgot password should go
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("forgotPasswordLink")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ForgotPasswordLink => global::Umbraco.Web.PublishedModels.ForgotPasswordButton.GetForgotPasswordLink(this);
-
-		///<summary>
-		/// Forgot password text: This is the text of the forgot password button
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("forgotPasswordText")]
-		public string ForgotPasswordText => global::Umbraco.Web.PublishedModels.ForgotPasswordButton.GetForgotPasswordText(this);
 
 		///<summary>
 		/// Hero description: This is the description of the hero section
@@ -2230,20 +2190,6 @@ namespace Umbraco.Web.PublishedModels
 		public string VideoSectionHeader => global::Umbraco.Web.PublishedModels.IntroductionVideoContent.GetVideoSectionHeader(this);
 
 		///<summary>
-		/// Introduction description: This is an introduction for the login page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("introductionDescription")]
-		public global::System.Web.IHtmlString IntroductionDescription => global::Umbraco.Web.PublishedModels.LoginContent.GetIntroductionDescription(this);
-
-		///<summary>
-		/// Introduction title: This is the title of the intorduction
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("introductionTitle")]
-		public string IntroductionTitle => global::Umbraco.Web.PublishedModels.LoginContent.GetIntroductionTitle(this);
-
-		///<summary>
 		/// Navigation bar button list: This is a list of all the buttons in the navigation bar
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
@@ -2270,20 +2216,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("navigationHeaderText")]
 		public string NavigationHeaderText => global::Umbraco.Web.PublishedModels.NavigationHeader.GetNavigationHeaderText(this);
-
-		///<summary>
-		/// Register link: This is the page to where the register button should open
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("registerLink")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent RegisterLink => global::Umbraco.Web.PublishedModels.RegisterButton.GetRegisterLink(this);
-
-		///<summary>
-		/// Register text: This is the text of the register button
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("registerText")]
-		public string RegisterText => global::Umbraco.Web.PublishedModels.RegisterButton.GetRegisterText(this);
 
 		///<summary>
 		/// Skill list: This is a list of all the skills
@@ -2797,6 +2729,114 @@ namespace Umbraco.Web.PublishedModels
 		public static string GetSkillSectionTitle(ISkillDevelopmentSectionComponents that) => that.Value<string>("skillSectionTitle");
 	}
 
+	/// <summary>Register page</summary>
+	[PublishedModel("registerPage")]
+	public partial class RegisterPage : PublishedContentModel, ILoginContent
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "registerPage";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<RegisterPage, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public RegisterPage(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Introduction description: This is an introduction for the login page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("introductionDescription")]
+		public global::System.Web.IHtmlString IntroductionDescription => global::Umbraco.Web.PublishedModels.LoginContent.GetIntroductionDescription(this);
+
+		///<summary>
+		/// Introduction title: This is the title of the intorduction
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("introductionTitle")]
+		public string IntroductionTitle => global::Umbraco.Web.PublishedModels.LoginContent.GetIntroductionTitle(this);
+	}
+
+	/// <summary>Login page</summary>
+	[PublishedModel("loginPage")]
+	public partial class LoginPage : PublishedContentModel, IForgotPasswordButton, ILoginContent, IRegisterButton
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "loginPage";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<LoginPage, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public LoginPage(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Forgot password link: This is to where the forgot password should go
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("forgotPasswordLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ForgotPasswordLink => global::Umbraco.Web.PublishedModels.ForgotPasswordButton.GetForgotPasswordLink(this);
+
+		///<summary>
+		/// Forgot password text: This is the text of the forgot password button
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("forgotPasswordText")]
+		public string ForgotPasswordText => global::Umbraco.Web.PublishedModels.ForgotPasswordButton.GetForgotPasswordText(this);
+
+		///<summary>
+		/// Introduction description: This is an introduction for the login page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("introductionDescription")]
+		public global::System.Web.IHtmlString IntroductionDescription => global::Umbraco.Web.PublishedModels.LoginContent.GetIntroductionDescription(this);
+
+		///<summary>
+		/// Introduction title: This is the title of the intorduction
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("introductionTitle")]
+		public string IntroductionTitle => global::Umbraco.Web.PublishedModels.LoginContent.GetIntroductionTitle(this);
+
+		///<summary>
+		/// Register link: This is the page to where the register button should open
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("registerLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent RegisterLink => global::Umbraco.Web.PublishedModels.RegisterButton.GetRegisterLink(this);
+
+		///<summary>
+		/// Register text: This is the text of the register button
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("registerText")]
+		public string RegisterText => global::Umbraco.Web.PublishedModels.RegisterButton.GetRegisterText(this);
+	}
+
 	/// <summary>Folder</summary>
 	[PublishedModel("Folder")]
 	public partial class Folder : PublishedContentModel
@@ -3018,6 +3058,109 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("umbracoMemberPasswordRetrievalQuestion")]
 		public global::System.DateTime UmbracoMemberPasswordRetrievalQuestion => this.Value<global::System.DateTime>("umbracoMemberPasswordRetrievalQuestion");
+	}
+
+	/// <summary>News Member</summary>
+	[PublishedModel("newsMember")]
+	public partial class NewsMember : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "newsMember";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Member;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NewsMember, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public NewsMember(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Avatar
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("avatar")]
+		public string Avatar => this.Value<string>("avatar");
+
+		///<summary>
+		/// Bio
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("bio")]
+		public global::System.Web.IHtmlString Bio => this.Value<global::System.Web.IHtmlString>("bio");
+
+		///<summary>
+		/// Is Approved
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("umbracoMemberApproved")]
+		public bool UmbracoMemberApproved => this.Value<bool>("umbracoMemberApproved");
+
+		///<summary>
+		/// Comments
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("umbracoMemberComments")]
+		public string UmbracoMemberComments => this.Value<string>("umbracoMemberComments");
+
+		///<summary>
+		/// Failed Password Attempts
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("umbracoMemberFailedPasswordAttempts")]
+		public int UmbracoMemberFailedPasswordAttempts => this.Value<int>("umbracoMemberFailedPasswordAttempts");
+
+		///<summary>
+		/// Last Lockout Date
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("umbracoMemberLastLockoutDate")]
+		public global::System.DateTime UmbracoMemberLastLockoutDate => this.Value<global::System.DateTime>("umbracoMemberLastLockoutDate");
+
+		///<summary>
+		/// Last Login Date
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("umbracoMemberLastLogin")]
+		public global::System.DateTime UmbracoMemberLastLogin => this.Value<global::System.DateTime>("umbracoMemberLastLogin");
+
+		///<summary>
+		/// Last Password Change Date
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("umbracoMemberLastPasswordChangeDate")]
+		public global::System.DateTime UmbracoMemberLastPasswordChangeDate => this.Value<global::System.DateTime>("umbracoMemberLastPasswordChangeDate");
+
+		///<summary>
+		/// Is Locked Out
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("umbracoMemberLockedOut")]
+		public bool UmbracoMemberLockedOut => this.Value<bool>("umbracoMemberLockedOut");
+
+		///<summary>
+		/// Password Answer
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("umbracoMemberPasswordRetrievalAnswer")]
+		public string UmbracoMemberPasswordRetrievalAnswer => this.Value<string>("umbracoMemberPasswordRetrievalAnswer");
+
+		///<summary>
+		/// Password Question
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("umbracoMemberPasswordRetrievalQuestion")]
+		public string UmbracoMemberPasswordRetrievalQuestion => this.Value<string>("umbracoMemberPasswordRetrievalQuestion");
 	}
 
 }
