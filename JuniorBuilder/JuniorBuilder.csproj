@@ -536,10 +536,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AddChildController.cs" />
     <Compile Include="Controllers\ContactSurfaceController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Models\AddChildModel.cs" />
     <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -644,6 +646,9 @@
     <Content Include="Views\Partials\_Register.cshtml" />
     <Content Include="Views\LoginPage.cshtml" />
     <Content Include="Views\register.cshtml" />
+    <Content Include="Views\addChild.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Partials\_AddChild.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -652,6 +657,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\AddChild\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <PropertyGroup>

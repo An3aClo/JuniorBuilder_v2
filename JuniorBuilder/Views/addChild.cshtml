@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using JuniorBuilder.Models
+@{
+	Layout = null;
+}
+
+@* the fun starts here *@
+
+<p>Add a child</p>
+
+@{ Html.RenderPartial("~/Views/Partials/_AddChild.cshtml", new AddChildModel()); }
