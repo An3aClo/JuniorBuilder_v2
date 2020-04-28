@@ -1,10 +1,8 @@
 ﻿@using JuniorBuilder.Controllers
 @model JuniorBuilder.Models.RegisterModel
-
 @using (Html.BeginUmbracoForm<RegisterController>("Register"))
 {
     @Html.AntiForgeryToken()
-
     <fieldset>
         <div class="form-row">
             <div class="col-md-6 form-group">

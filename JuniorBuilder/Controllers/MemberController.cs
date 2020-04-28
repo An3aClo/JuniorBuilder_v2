@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Security;
 using Umbraco.Web.Mvc;
-using JuniorBuilder.Models;
 
 namespace CodeShare.Controllers
 {
@@ -17,7 +16,6 @@ namespace CodeShare.Controllers
             TempData.Clear();
             Session.Clear();
             FormsAuthentication.SignOut();
-            //return RedirectToCurrentUmbracoPage();
             return RedirectToUmbracoPage(1367);
         }
     }

@@ -1,7 +1,6 @@
 ﻿using JuniorBuilder.Models;
 using System;
 using System.Web.Mvc;
-using Umbraco.Web.Mvc;
 
 namespace JuniorBuilder.Controllers
 {
@@ -9,7 +8,6 @@ namespace JuniorBuilder.Controllers
     {
         public ActionResult Register(RegisterModel model)
         {
-
             if (!ModelState.IsValid)
             {
                 return CurrentUmbracoPage();
@@ -34,9 +32,7 @@ namespace JuniorBuilder.Controllers
             {     
                 ModelState.AddModelError("", "Error occured while registering");
                 return CurrentUmbracoPage();
-            }       
-         
-           
+            }  
         }
     }
 }

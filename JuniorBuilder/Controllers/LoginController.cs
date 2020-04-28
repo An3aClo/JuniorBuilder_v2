@@ -1,7 +1,5 @@
-﻿using JuniorBuilder.Models;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Umbraco.Web.Models;
-using Umbraco.Web.Mvc;
 
 namespace JuniorBuilder.Controllers
 {

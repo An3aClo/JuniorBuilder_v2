@@ -653,7 +653,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Login\" />
-    <Folder Include="Views\Register\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
