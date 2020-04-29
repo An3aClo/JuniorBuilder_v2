@@ -14,7 +14,7 @@ namespace JuniorBuilder.Controllers
 
             if (Members.Login(model.Username, model.Password))
             {
-                return Redirect("/lessons");
+                return Redirect("/your-kids");
             }
 
             ModelState.AddModelError("", "Invalid login");
