@@ -1,11 +1,66 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using JuniorBuilder.Models
 @{
-	Layout = null;
+	Layout = "loggedinMaster.cshtml";
+	var myUser = System.Web.Security.Membership.GetUser();
+	var allKidsOfSameParent = Services.MemberService.GetMembersByPropertyValue("parentEmail", myUser.Email);
 }
+@if (allKidsOfSameParent.Count() != 0)
+{	
+	<main id="main">
+		<!-- ======= Child detail Section ======= -->
+		<section id="features" class="features section-bg">
+			<div class="container">
+				<div class="section-title">
+					<h2 data-aos="fade-in">Child Information</h2>
+					<p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+				</div>
 
-@* the fun starts here *@
+				@foreach (var kid in allKidsOfSameParent)
+				{
+					<div class="row content">
+						@*<div class="col-md-3" data-aos="fade-right">
+							<img src="assets/img/features-1.svg" class="img-fluid-your-kids" alt="">
+						</div>*@
+						<div class="col-md-12 pt-4" data-aos="fade-left">
+							<a href="childInformation.html"><h3>@kid.Username</h3></a>
 
-<p>Add a child</p>
+							<div class="row trophyRowPaddingBottom">
+								<div class="col-md-1">
+									<img src="~/Media/2mjdwysu/trophy.png" class="img-fluid-your-kids trophyIcon center" alt="">
+								</div>
+								<div class="col-md-11 trophyText trophyTextMobile ">
+									<p> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								</div>
+							</div>						
 
-@{ Html.RenderPartial("~/Views/Partials/_AddChild.cshtml", new AddChildModel()); }
+
+							<div class="row">
+								<div class="col-md-10 col-xl-10 col-sm-offset-0">
+								</div>
+								<div class="col-xl-2 col-md-2 col-sm-12">
+									<a href="lessons.html" class="yourKidsButton">Get Started</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br />
+					<hr>
+				}
+				<div class="section-title markCompleteText">
+					<p data-aos="fade-in">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+					<div class="markCompleteButton">
+						<a href="addChild.html" class="yourKidsButton">Add a child</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	<!-- End Child detail Section -->
+	</main>
+	<!-- End #main -->
+}
+else
+{
+	Html.RenderPartial("~/Views/Partials/_AddChild.cshtml", new AddChildModel());
+}
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>

@@ -9,7 +9,7 @@ a {
 }
 
 a:hover {
-    color: #ed3d96;
+    color: black;
     text-decoration: none;
 }
 
@@ -34,12 +34,6 @@ button {
     transition: 0.3s;
     font-size: 14px;
     font-family: "Open Sans", sans-serif;
-}
-
-.buttonLogout {
-    height: 37px;
-    width: 100px;
-    color: white;
 }
 
 .marginLeft10 {
@@ -1989,4 +1983,38 @@ section {
 }
 .registerLables {
     color:black;
+}
+
+.trophyIcon {
+    max-height: 50px;
+    min-height: 50px;
+    max-width:50px;
+    min-width: 50px;
+}
+
+.trophyText {
+    margin-left: -20px;
+    margin-top: 10px;
+}
+
+.trophyRowPaddingBottom {
+    padding-bottom: 10px;
+}
+
+trophyTextMobile {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 10px;
+}
+
+.buttonLogout {
+    height: 37px;
+    width: 100px;
+    color: white;
+}
+
+.buttonLogoutDiv :hover {
+    background: #ed3d96;
+    color: #212529;
+    font-weight: 600;
 }

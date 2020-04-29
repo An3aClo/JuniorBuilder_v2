@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "eeaaab2dd0bf2b6")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bcd525c12619511")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -2863,6 +2863,95 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 	}
 
+	/// <summary>Trophy detail</summary>
+	[PublishedModel("trophyDetail")]
+	public partial class TrophyDetail : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "trophyDetail";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TrophyDetail, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public TrophyDetail(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Add child button link: This is the page to where the user will be taken if the button is clicked
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("addChildButtonLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent AddChildButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("addChildButtonLink");
+
+		///<summary>
+		/// Add child button wording: The wording of the add child button
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("addChildButtonWording")]
+		public string AddChildButtonWording => this.Value<string>("addChildButtonWording");
+
+		///<summary>
+		/// Next lesson button link: This is the page to where the user will be taken to.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("nextLessonButtonLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent NextLessonButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("nextLessonButtonLink");
+
+		///<summary>
+		/// Next lesson button text: This is the text of the button
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("nextLessonButtonText")]
+		public string NextLessonButtonText => this.Value<string>("nextLessonButtonText");
+
+		///<summary>
+		/// Trophy image: This is the trophy which will be given
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("trophyImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent TrophyImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("trophyImage");
+
+		///<summary>
+		/// Trophy page conclusion: This is the conclusion of the trophy page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("trophyPageConclusion")]
+		public global::System.Web.IHtmlString TrophyPageConclusion => this.Value<global::System.Web.IHtmlString>("trophyPageConclusion");
+
+		///<summary>
+		/// Trophy  page header: This is the header of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("trophyPageHeader")]
+		public string TrophyPageHeader => this.Value<string>("trophyPageHeader");
+
+		///<summary>
+		/// Trophy page introduction: This is the introduction of the trophy page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("trophyPageIntroduction")]
+		public global::System.Web.IHtmlString TrophyPageIntroduction => this.Value<global::System.Web.IHtmlString>("trophyPageIntroduction");
+
+		///<summary>
+		/// Trophy wording: This is what the trophy will say
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("trophyWording")]
+		public string TrophyWording => this.Value<string>("trophyWording");
+	}
+
 	/// <summary>Folder</summary>
 	[PublishedModel("Folder")]
 	public partial class Folder : PublishedContentModel
@@ -3086,116 +3175,6 @@ namespace Umbraco.Web.PublishedModels
 		public global::System.DateTime UmbracoMemberPasswordRetrievalQuestion => this.Value<global::System.DateTime>("umbracoMemberPasswordRetrievalQuestion");
 	}
 
-	/// <summary>News Member</summary>
-	[PublishedModel("newsMember")]
-	public partial class NewsMember : PublishedContentModel
-	{
-		// helpers
-#pragma warning disable 0109 // new is redundant
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public new const string ModelTypeAlias = "newsMember";
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Member;
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public new static IPublishedContentType GetModelContentType()
-			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<NewsMember, TValue>> selector)
-			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-#pragma warning restore 0109
-
-		// ctor
-		public NewsMember(IPublishedContent content)
-			: base(content)
-		{ }
-
-		// properties
-
-		///<summary>
-		/// Avatar
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("avatar")]
-		public string Avatar => this.Value<string>("avatar");
-
-		///<summary>
-		/// Bio
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("bio")]
-		public global::System.Web.IHtmlString Bio => this.Value<global::System.Web.IHtmlString>("bio");
-
-		///<summary>
-		/// Parent email: This is the parent of the email
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("parentEmail")]
-		public string ParentEmail => this.Value<string>("parentEmail");
-
-		///<summary>
-		/// Is Approved
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("umbracoMemberApproved")]
-		public bool UmbracoMemberApproved => this.Value<bool>("umbracoMemberApproved");
-
-		///<summary>
-		/// Comments
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("umbracoMemberComments")]
-		public string UmbracoMemberComments => this.Value<string>("umbracoMemberComments");
-
-		///<summary>
-		/// Failed Password Attempts
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("umbracoMemberFailedPasswordAttempts")]
-		public int UmbracoMemberFailedPasswordAttempts => this.Value<int>("umbracoMemberFailedPasswordAttempts");
-
-		///<summary>
-		/// Last Lockout Date
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("umbracoMemberLastLockoutDate")]
-		public global::System.DateTime UmbracoMemberLastLockoutDate => this.Value<global::System.DateTime>("umbracoMemberLastLockoutDate");
-
-		///<summary>
-		/// Last Login Date
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("umbracoMemberLastLogin")]
-		public global::System.DateTime UmbracoMemberLastLogin => this.Value<global::System.DateTime>("umbracoMemberLastLogin");
-
-		///<summary>
-		/// Last Password Change Date
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("umbracoMemberLastPasswordChangeDate")]
-		public global::System.DateTime UmbracoMemberLastPasswordChangeDate => this.Value<global::System.DateTime>("umbracoMemberLastPasswordChangeDate");
-
-		///<summary>
-		/// Is Locked Out
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("umbracoMemberLockedOut")]
-		public bool UmbracoMemberLockedOut => this.Value<bool>("umbracoMemberLockedOut");
-
-		///<summary>
-		/// Password Answer
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("umbracoMemberPasswordRetrievalAnswer")]
-		public string UmbracoMemberPasswordRetrievalAnswer => this.Value<string>("umbracoMemberPasswordRetrievalAnswer");
-
-		///<summary>
-		/// Password Question
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("umbracoMemberPasswordRetrievalQuestion")]
-		public string UmbracoMemberPasswordRetrievalQuestion => this.Value<string>("umbracoMemberPasswordRetrievalQuestion");
-	}
-
 	/// <summary>Child Member</summary>
 	[PublishedModel("childMember")]
 	public partial class ChildMember : PublishedContentModel
@@ -3222,11 +3201,53 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Age of child: This is the age of the child
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("ageOfChild")]
+		public string AgeOfChild => this.Value<string>("ageOfChild");
+
+		///<summary>
+		/// Avatar of child: This is the avatar of the child
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("avatarOfChild")]
+		public string AvatarOfChild => this.Value<string>("avatarOfChild");
+
+		///<summary>
+		/// Child bio: This is a bio of the child
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("childBio")]
+		public string ChildBio => this.Value<string>("childBio");
+
+		///<summary>
+		/// Date of birth of child
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("dateOfBirthOfChild")]
+		public string DateOfBirthOfChild => this.Value<string>("dateOfBirthOfChild");
+
+		///<summary>
+		/// Gender of child: This is the gender of the child
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("genderOfChild")]
+		public string GenderOfChild => this.Value<string>("genderOfChild");
+
+		///<summary>
 		/// parent Email: This is the email of the parent
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("parentEmail")]
 		public string ParentEmail => this.Value<string>("parentEmail");
+
+		///<summary>
+		/// TShirt size of child: This is the T-shirt size of the child
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("tShirtSizeOfChild")]
+		public string TShirtSizeOfChild => this.Value<string>("tShirtSizeOfChild");
 
 		///<summary>
 		/// Is Approved

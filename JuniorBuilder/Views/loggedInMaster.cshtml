@@ -74,10 +74,12 @@
                                 var myUser = System.Web.Security.Membership.GetUser();
                                 if (myUser != null)
                                 {
-                                    <button class="buttonLogout" name="login" type="submit"><span>Logout</span> <i class="fa fa-arrow-right"></i></button>                               
+                                   <div class="buttonLogoutDiv">
+                                         <button class="buttonLogout" name="login" type="submit"><span>Logout</span> </button>
+                                   </div>
                                 }
                             }
-                        }
+                         }                        
                     </li>
                 </ul>
             </nav>
@@ -100,7 +102,7 @@
             if (roles.Contains("LoggedInMembers"))
             {
                 <p>Yes you are allowed to see this page</p>
-            }
+            }         
         }
     }
     <!-- End Header -->
