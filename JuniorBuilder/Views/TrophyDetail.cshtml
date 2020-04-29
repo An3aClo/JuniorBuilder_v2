@@ -1,84 +1,98 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.TrophyDetail>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = "loggedinMaster.cshtml";
-	var myUser = System.Web.Security.Membership.GetUser();
-	var allKidsOfSameParent = Services.MemberService.GetMembersByPropertyValue("parentEmail", myUser.Email);
-}
-@if (allKidsOfSameParent.Count() != 0)
-{
-	<main id="main">
-		<!-- ======= Child detail Section ======= -->
-		<section id="features" class="features section-bg">
-			<div class="container">
-				<div class="section-title">
-					@if (!string.IsNullOrWhiteSpace(Model.TrophyPageHeader))
-					{
-						<h2 data-aos="fade-in">@Model.TrophyPageHeader</h2>
-					}
-					@if (Model.TrophyPageIntroduction != null)
-					{
-						<p data-aos="fade-in">@Model.TrophyPageIntroduction</p>
-					}
-				</div>
-				@foreach (var kid in allKidsOfSameParent)
-				{
-					<div class="row content">
-						@*<div class="col-md-3" data-aos="fade-right">
-								<img src="assets/img/features-1.svg" class="img-fluid-your-kids" alt="">
-							</div>*@
-						<div class="col-md-12 pt-4" data-aos="fade-left">
-							<a href="childInformation.html"><h3>@kid.Username</h3></a>
+    try
+    {
+        if (Umbraco.MemberIsLoggedOn())
+        {
+            Layout = "loggedinMaster.cshtml";
+            var myUser = System.Web.Security.Membership.GetUser();
+            var allKidsOfSameParent = Services.MemberService.GetMembersByPropertyValue("parentEmail", myUser.Email);
+            if (allKidsOfSameParent.Count() != 0)
+            {
+                <main id="main">
+                    <!-- ======= Child detail Section ======= -->
+                    <section id="features" class="features section-bg">
+                        <div class="container">
+                            <div class="section-title">
+                                @if (!string.IsNullOrWhiteSpace(Model.TrophyPageHeader))
+                                {
+                                    <h2 data-aos="fade-in">@Model.TrophyPageHeader</h2>
+                                }
+                                @if (Model.TrophyPageIntroduction != null)
+                                {
+                                    <p data-aos="fade-in">@Model.TrophyPageIntroduction</p>
+                                }
+                            </div>
+                            @foreach (var kid in allKidsOfSameParent)
+                            {
+                                <div class="row content">
+                                    @*<div class="col-md-3" data-aos="fade-right">
+                                            <img src="assets/img/features-1.svg" class="img-fluid-your-kids" alt="">
+                                        </div>*@
+                                    <div class="col-md-12 pt-4" data-aos="fade-left">
+                                        <a href="childInformation.html"><h3>@kid.Username</h3></a>
 
-							<div class="row trophyRowPaddingBottom">
-								<div class="col-md-1">
-									@if (Model.TrophyImage != null)
-									{
-										<img src="@Model.TrophyImage.Url" class="img-fluid-your-kids trophyIcon center" alt="">
-									}
-								</div>
-								<div class="col-md-11 trophyText trophyTextMobile ">
-									@if (!string.IsNullOrWhiteSpace(Model.TrophyWording))
-									{
-										<p>@Model.TrophyWording</p>
-									}
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-10 col-xl-10 col-sm-offset-0">
-								</div>
-								<div class="col-xl-2 col-md-2 col-sm-12">
-									@if (!string.IsNullOrWhiteSpace(Model.NextLessonButtonText) && Model.NextLessonButtonLink != null)
-									{
-										<a href="@Model.NextLessonButtonLink.Url" class="yourKidsButton">@Model.NextLessonButtonText</a>
-									}
+                                        <div class="row trophyRowPaddingBottom">
+                                            <div class="col-md-1">
+                                                @if (Model.TrophyImage != null)
+                                                {
+                                                    <img src="@Model.TrophyImage.Url" class="img-fluid-your-kids trophyIcon center" alt="">
+                                                }
+                                            </div>
+                                            <div class="col-md-11 trophyText trophyTextMobile ">
+                                                @if (!string.IsNullOrWhiteSpace(Model.TrophyWording))
+                                                {
+                                                    <p>@Model.TrophyWording</p>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-10 col-xl-10 col-sm-offset-0">
+                                            </div>
+                                            <div class="col-xl-2 col-md-2 col-sm-12">
+                                                @if (!string.IsNullOrWhiteSpace(Model.NextLessonButtonText) && Model.NextLessonButtonLink != null)
+                                                {
+                                                    <a href="@Model.NextLessonButtonLink.Url" class="yourKidsButton">@Model.NextLessonButtonText</a>
+                                                }
 
-								</div>
-							</div>
-						</div>
-					</div>
-					<br />
-					<hr>
-				}
-			<div class="section-title markCompleteText">
-				@if (Model.TrophyPageConclusion != null)
-				{
-					<p data-aos="fade-in">@Model.TrophyPageConclusion</p>
-				}
-				<div class="markCompleteButton">
-					@if (!string.IsNullOrWhiteSpace(Model.AddChildButtonWording) && Model.AddChildButtonLink != null)
-                    {
-						<a href="@Model.AddChildButtonLink.Url" class="yourKidsButton">@Model.AddChildButtonWording</a>
-                    }					
-				</div>
-			</div>
-			</div>
-		</section><!-- End Child detail Section -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <hr>
+                            }
+                            <div class="section-title markCompleteText">
+                                @if (Model.TrophyPageConclusion != null)
+                                {
+                                    <p data-aos="fade-in">@Model.TrophyPageConclusion</p>
+                                }
+                                <div class="markCompleteButton">
+                                    @if (!string.IsNullOrWhiteSpace(Model.AddChildButtonWording) && Model.AddChildButtonLink != null)
+                                    {
+                                        <a href="@Model.AddChildButtonLink.Url" class="yourKidsButton">@Model.AddChildButtonWording</a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </section><!-- End Child detail Section -->
 
-	</main><!-- End #main -->
+                </main><!-- End #main -->
+            }
+            else
+            {
+                Response.Redirect("/");
+            }
+                <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+        }
+        else
+        {
+            Response.Redirect("/login");
+        }
+    }
+    catch (Exception)
+    {
+        Response.Redirect("/login");
+    }
 }
-else
-{
-    Response.Redirect("/");
-}
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>

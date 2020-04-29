@@ -1,38 +1,47 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using JuniorBuilder.Models
-@{
-	Layout = "loggedinMaster.cshtml";
-	var myUser = System.Web.Security.Membership.GetUser();
-	var allKidsOfSameParent = Services.MemberService.GetMembersByPropertyValue("parentEmail", myUser.Email);
-}
-
-
-
-<main id="main">
-	<!-- ======= Login Section ======= -->
-	<section id="loginSection" class="contact section-bg">
-		<div class="container">
-			<div class="section-title">
-				<h2 data-aos="fade-in">Add child</h2>
-				<p data-aos="fade-in">
-					Aenean varius tellus in ligula vulputate, id facilisis massa faucibus.
-					Etiam suscipit magna quis orci varius scelerisque. Vivamus non nisl dignissim, convallis libero eget, aliquam tortor.
-					Etiam vehicula ipsum dolor, vitae auctor odio venenatis eget. Aenean id lacinia elit, et placerat dui. Nam dignissim ut velit sit amet tincidunt.
-					Phasellus dui urna, gravida ac commodo et, ultrices ut mauris. Phasellus eget fringilla nibh. Nulla quis nisi fermentum, viverra nulla et, congue erat.
-				</p>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="php-email-form" data-aos="fade-up">
-						<div class="errorMsg">
-							@{ Html.RenderPartial("~/Views/Partials/_AddChild.cshtml", new AddChildModel()); }
+@{	
+	try
+	{		
+		if (Umbraco.MemberIsLoggedOn())
+		{
+			Layout = "loggedinMaster.cshtml";
+			<main id="main">
+				<!-- ======= Login Section ======= -->
+				<section id="loginSection" class="contact section-bg">
+					<div class="container">
+						<div class="section-title">
+							<h2 data-aos="fade-in">Add child</h2>
+							<p data-aos="fade-in">
+								Aenean varius tellus in ligula vulputate, id facilisis massa faucibus.
+								Etiam suscipit magna quis orci varius scelerisque. Vivamus non nisl dignissim, convallis libero eget, aliquam tortor.
+								Etiam vehicula ipsum dolor, vitae auctor odio venenatis eget. Aenean id lacinia elit, et placerat dui. Nam dignissim ut velit sit amet tincidunt.
+								Phasellus dui urna, gravida ac commodo et, ultrices ut mauris. Phasellus eget fringilla nibh. Nulla quis nisi fermentum, viverra nulla et, congue erat.
+							</p>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="php-email-form" data-aos="fade-up">
+									<div class="errorMsg">
+										@{ Html.RenderPartial("~/Views/Partials/_AddChild.cshtml", new AddChildModel()); }
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Login Section -->
-</main>
-<!--Back to top-->
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+				</section>
+				<!-- End Login Section -->
+			</main>
+			<!--Back to top-->
+			<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+		}
+		else
+		{
+			Response.Redirect("/login");
+		}
+	}
+	catch (Exception)
+	{
+		Response.Redirect("/login");
+	}
+}
