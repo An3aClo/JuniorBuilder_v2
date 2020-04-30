@@ -1,11 +1,11 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.LessonLayout>
 @using ContentModels = Umbraco.Web.PublishedModels;
-@{   
+@{
     try
     {
         if (Umbraco.MemberIsLoggedOn())
         {
-             Layout = "loggedinMaster.cshtml";
+            Layout = "loggedinMaster.cshtml";
             <main id="main">
                 <!-- Lesson layout -->
                 <section class="page-section" id="about">
@@ -41,16 +41,26 @@
                                                         <div class="timeline-body">
                                                             <p class="text-muted">@week.WeekDescription</p>
                                                         </div>
-                                                        <br />
-                                                        @if (!string.IsNullOrWhiteSpace(week.WeekButtonText) && week.WeekButtonLink != null)
-                                                        {
-                                                            <div class="row">
-                                                                <div class="col-md-8"></div>
-                                                                <div class="col-md-4">
-                                                                    <a href="@week.WeekButtonLink.Url" class="yourKidsButtonOutline">@week.WeekButtonText</a>
-                                                                </div>
+                                                        <div class="row trophyRowPaddingBottom">                                                           
+                                                            <div class="col-md-12 trophyText trophyTextMobile ">
+                                                                @if (week.WeekLevels != null)
+                                                                {
+                                                                    foreach (var level in week.WeekLevels)
+                                                                    {
+                                                                        <ul class="listInList">
+                                                                            @if (!string.IsNullOrWhiteSpace(level.LevelName) && level.LevelPageLink != null)
+                                                                            {
+                                                                                <li class="listItemMarginBottom">
+                                                                                    <i class="icofont-ui-edit listItemCheckIcon"></i> 
+                                                                                    <a href="@level.LevelPageLink.Url" class="levelItem">@level.LevelName</a>
+                                                                                </li>
+                                                                            }                                                                          
+                                                                        </ul>
+                                                                    }
+                                                                }
+
                                                             </div>
-                                                        }
+                                                        </div>
                                                     </div>
                                                 </li>
                                             }

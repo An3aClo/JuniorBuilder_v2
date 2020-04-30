@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bd43ea4de0ee8649")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.7")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "de55f77ec499d9ad")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -692,7 +692,7 @@ namespace Umbraco.Web.PublishedModels
 
 	/// <summary>Lessons components</summary>
 	[PublishedModel("lessons")]
-	public partial class Lessons : PublishedContentModel, IFreeLesson, ILoggedInFooterContent, INavigationHeader
+	public partial class Lessons : PublishedContentModel, ILoggedInFooterContent, INavigationHeader
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -735,48 +735,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("lessonsSectionHeader")]
 		public string LessonsSectionHeader => this.Value<string>("lessonsSectionHeader");
-
-		///<summary>
-		/// Free lesson button link: This is the page to where the user should be taken to to read more
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("freeLessonButtonLink")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent FreeLessonButtonLink => global::Umbraco.Web.PublishedModels.FreeLesson.GetFreeLessonButtonLink(this);
-
-		///<summary>
-		/// Lesson button text: This is the text on the button which prompt a user to read more
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("freeLessonButtonText")]
-		public string FreeLessonButtonText => global::Umbraco.Web.PublishedModels.FreeLesson.GetFreeLessonButtonText(this);
-
-		///<summary>
-		/// Free lesson image: This is a small image associated with the lesson
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("freeLessonImage")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent FreeLessonImage => global::Umbraco.Web.PublishedModels.FreeLesson.GetFreeLessonImage(this);
-
-		///<summary>
-		/// Free lesson short description: This is a short introduction description to the lesson. User will be able to read more on the lessons page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("freeLessonShortDescription")]
-		public global::System.Web.IHtmlString FreeLessonShortDescription => global::Umbraco.Web.PublishedModels.FreeLesson.GetFreeLessonShortDescription(this);
-
-		///<summary>
-		/// Free lesson title: This is the name of the package
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("freeLessonTitle")]
-		public string FreeLessonTitle => global::Umbraco.Web.PublishedModels.FreeLesson.GetFreeLessonTitle(this);
-
-		///<summary>
-		/// Lesson lay out page: This is a lesson layout page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("lessonLayOutPage")]
-		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> LessonLayOutPage => global::Umbraco.Web.PublishedModels.FreeLesson.GetLessonLayOutPage(this);
 
 		///<summary>
 		/// Copy Right text: This is the copy right text in the footer
@@ -1279,27 +1237,6 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Week activities: These are the activities in the week
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("weekActivities")]
-		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> WeekActivities => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("weekActivities");
-
-		///<summary>
-		/// Week button link: This is the link to where the button will take a user
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("weekButtonLink")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent WeekButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("weekButtonLink");
-
-		///<summary>
-		/// Week button text: This is the text of the button to lead the user to the lesson
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("weekButtonText")]
-		public string WeekButtonText => this.Value<string>("weekButtonText");
-
-		///<summary>
 		/// Week count: This is the week count
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
@@ -1312,6 +1249,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("weekDescription")]
 		public global::System.Web.IHtmlString WeekDescription => this.Value<global::System.Web.IHtmlString>("weekDescription");
+
+		///<summary>
+		/// Week levels: This is the levels of the week
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("weekLevels")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.WeekLayoutLevel> WeekLevels => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.WeekLayoutLevel>>("weekLevels");
 
 		///<summary>
 		/// Week title: This is the title of the week
@@ -3022,125 +2966,44 @@ namespace Umbraco.Web.PublishedModels
 		public string TrophyWording => this.Value<string>("trophyWording");
 	}
 
-	// Mixin Content Type with alias "freeLesson"
-	/// <summary>Free lesson</summary>
-	public partial interface IFreeLesson : IPublishedContent
-	{
-		/// <summary>Free lesson button link</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		global::Umbraco.Core.Models.PublishedContent.IPublishedContent FreeLessonButtonLink { get; }
-
-		/// <summary>Lesson button text</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		string FreeLessonButtonText { get; }
-
-		/// <summary>Free lesson image</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		global::Umbraco.Core.Models.PublishedContent.IPublishedContent FreeLessonImage { get; }
-
-		/// <summary>Free lesson short description</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		global::System.Web.IHtmlString FreeLessonShortDescription { get; }
-
-		/// <summary>Free lesson title</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		string FreeLessonTitle { get; }
-
-		/// <summary>Lesson lay out page</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> LessonLayOutPage { get; }
-	}
-
-	/// <summary>Free lesson</summary>
-	[PublishedModel("freeLesson")]
-	public partial class FreeLesson : PublishedContentModel, IFreeLesson
+	/// <summary>Week level layout</summary>
+	[PublishedModel("weekLayoutLevel")]
+	public partial class WeekLayoutLevel : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public new const string ModelTypeAlias = "freeLesson";
+		public new const string ModelTypeAlias = "weekLayoutLevel";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FreeLesson, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<WeekLayoutLevel, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public FreeLesson(IPublishedContent content)
+		public WeekLayoutLevel(IPublishedElement content)
 			: base(content)
 		{ }
 
 		// properties
 
 		///<summary>
-		/// Free lesson button link: This is the page to where the user should be taken to to read more
+		/// Level name: The name of the level
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("freeLessonButtonLink")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent FreeLessonButtonLink => GetFreeLessonButtonLink(this);
-
-		/// <summary>Static getter for Free lesson button link</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static global::Umbraco.Core.Models.PublishedContent.IPublishedContent GetFreeLessonButtonLink(IFreeLesson that) => that.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("freeLessonButtonLink");
+		[ImplementPropertyType("levelName")]
+		public string LevelName => this.Value<string>("levelName");
 
 		///<summary>
-		/// Lesson button text: This is the text on the button which prompt a user to read more
+		/// Level page link: This is the page to where the level will open to
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("freeLessonButtonText")]
-		public string FreeLessonButtonText => GetFreeLessonButtonText(this);
-
-		/// <summary>Static getter for Lesson button text</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static string GetFreeLessonButtonText(IFreeLesson that) => that.Value<string>("freeLessonButtonText");
-
-		///<summary>
-		/// Free lesson image: This is a small image associated with the lesson
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("freeLessonImage")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent FreeLessonImage => GetFreeLessonImage(this);
-
-		/// <summary>Static getter for Free lesson image</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static global::Umbraco.Core.Models.PublishedContent.IPublishedContent GetFreeLessonImage(IFreeLesson that) => that.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("freeLessonImage");
-
-		///<summary>
-		/// Free lesson short description: This is a short introduction description to the lesson. User will be able to read more on the lessons page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("freeLessonShortDescription")]
-		public global::System.Web.IHtmlString FreeLessonShortDescription => GetFreeLessonShortDescription(this);
-
-		/// <summary>Static getter for Free lesson short description</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static global::System.Web.IHtmlString GetFreeLessonShortDescription(IFreeLesson that) => that.Value<global::System.Web.IHtmlString>("freeLessonShortDescription");
-
-		///<summary>
-		/// Free lesson title: This is the name of the package
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("freeLessonTitle")]
-		public string FreeLessonTitle => GetFreeLessonTitle(this);
-
-		/// <summary>Static getter for Free lesson title</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static string GetFreeLessonTitle(IFreeLesson that) => that.Value<string>("freeLessonTitle");
-
-		///<summary>
-		/// Lesson lay out page: This is a lesson layout page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("lessonLayOutPage")]
-		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> LessonLayOutPage => GetLessonLayOutPage(this);
-
-		/// <summary>Static getter for Lesson lay out page</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		public static global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> GetLessonLayOutPage(IFreeLesson that) => that.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("lessonLayOutPage");
+		[ImplementPropertyType("levelPageLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LevelPageLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("levelPageLink");
 	}
 
 	/// <summary>Folder</summary>
