@@ -304,7 +304,7 @@ button {
 
     .timeline > li {
         min-height: 100px;
-        margin-bottom: 100px;
+        margin-bottom: 0px;
     }
 
     .timeline > li .timeline-panel {
@@ -2017,4 +2017,19 @@ trophyTextMobile {
     background: #ed3d96;
     color: #212529;
     font-weight: 600;
+}
+
+.listInList {
+    list-style-type: none;
+}
+.listItemMarginBottom {
+    margin-bottom: 10px;
+}
+.listItemCheckIcon {
+    font-size: 20px;
+    padding-right: 10px;
+    color: #ed3d96;
+}
+.levelItem:hover {
+    text-decoration: underline;
 }

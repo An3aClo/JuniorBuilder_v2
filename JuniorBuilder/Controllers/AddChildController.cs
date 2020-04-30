@@ -25,7 +25,8 @@ namespace JuniorBuilder.Controllers
                 var kidsEmaill = model.Name + "@email.com";
                 var member = memberService.CreateMemberWithIdentity(model.Name, kidsEmaill, model.Name, "childMember");                
                 member.SetValue("parentEmail", parentEmail);
-                memberService.Save(member);    
+                member.SetValue("childPaymentStatus", "Unpaid");
+                memberService.Save(member);
                 return Redirect("/your-kids");
             }
             catch (Exception)

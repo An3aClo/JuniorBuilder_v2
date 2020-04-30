@@ -31,7 +31,7 @@
                                             <img src="assets/img/features-1.svg" class="img-fluid-your-kids" alt="">
                                         </div>*@
                                     <div class="col-md-12 pt-4" data-aos="fade-left">
-                                        <a href="childInformation.html"><h3>@kid.Username</h3></a>                                       
+                                        <a><h3>@kid.Username</h3></a>                                       
                                         <div class="row trophyRowPaddingBottom">
                                             <div class="col-md-1">
                                                 @if (Model.TrophyImage != null)
@@ -52,7 +52,7 @@
                                             <div class="col-xl-2 col-md-2 col-sm-12">
                                                 @if (!string.IsNullOrWhiteSpace(Model.NextLessonButtonText) && Model.NextLessonButtonLink != null)
                                                 {
-                                                    var nextPageWithId = @Model.NextLessonButtonLink.Url + kid.Id;
+                                                    var nextPageWithId = @Model.NextLessonButtonLink.Url + "?" + kid.Id;
                                                     <a href="@nextPageWithId" class="yourKidsButton">@Model.NextLessonButtonText</a>
                                                 }
 

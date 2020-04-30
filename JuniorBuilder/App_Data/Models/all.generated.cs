@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "bcd525c12619511")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b82becf37dd832c")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -578,6 +578,27 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Is this lesson a bronze lesson?: Choose if this is a bronze lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("bronzeLesson")]
+		public bool BronzeLesson => this.Value<bool>("bronzeLesson");
+
+		///<summary>
+		/// Is this lesson a free lesson?: Choose if this is a free lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("freeLesson")]
+		public bool FreeLesson => this.Value<bool>("freeLesson");
+
+		///<summary>
+		/// Is this lesson a gold lesson?: Choose if this is a gold lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("goldLesson")]
+		public bool GoldLesson => this.Value<bool>("goldLesson");
+
+		///<summary>
 		/// Lesson button link: This is the page to where the user should be taken to to read more
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
@@ -660,6 +681,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("lessonTitle")]
 		public string LessonTitle => this.Value<string>("lessonTitle");
+
+		///<summary>
+		/// Is this lesson a silver lesson?: Choose if this is a silver lesson
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("silverLesson")]
+		public bool SilverLesson => this.Value<bool>("silverLesson");
 
 		///<summary>
 		/// Lesson detail describtion: This is the description of the lesson details page
@@ -1223,27 +1251,6 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Week activities: These are the activities in the week
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("weekActivities")]
-		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> WeekActivities => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("weekActivities");
-
-		///<summary>
-		/// Week button link: This is the link to where the button will take a user
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("weekButtonLink")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent WeekButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("weekButtonLink");
-
-		///<summary>
-		/// Week button text: This is the text of the button to lead the user to the lesson
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("weekButtonText")]
-		public string WeekButtonText => this.Value<string>("weekButtonText");
-
-		///<summary>
 		/// Week count: This is the week count
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
@@ -1256,6 +1263,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("weekDescription")]
 		public global::System.Web.IHtmlString WeekDescription => this.Value<global::System.Web.IHtmlString>("weekDescription");
+
+		///<summary>
+		/// Week levels: This is the levels of the week
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("weekLevels")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.WeekLayoutLevel> WeekLevels => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.WeekLayoutLevel>>("weekLevels");
 
 		///<summary>
 		/// Week title: This is the title of the week
@@ -2966,6 +2980,46 @@ namespace Umbraco.Web.PublishedModels
 		public string TrophyWording => this.Value<string>("trophyWording");
 	}
 
+	/// <summary>Week level layout</summary>
+	[PublishedModel("weekLayoutLevel")]
+	public partial class WeekLayoutLevel : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "weekLayoutLevel";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<WeekLayoutLevel, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public WeekLayoutLevel(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Level name: The name of the level
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("levelName")]
+		public string LevelName => this.Value<string>("levelName");
+
+		///<summary>
+		/// Level page link: This is the page to where the level will open to
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("levelPageLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LevelPageLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("levelPageLink");
+	}
+
 	/// <summary>Folder</summary>
 	[PublishedModel("Folder")]
 	public partial class Folder : PublishedContentModel
@@ -3215,39 +3269,18 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Age of child: This is the age of the child
+		/// Child lessons completed: These are the level of a lesson which is completed
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("ageOfChild")]
-		public string AgeOfChild => this.Value<string>("ageOfChild");
+		[ImplementPropertyType("childLessonsCompleted")]
+		public global::System.Web.IHtmlString ChildLessonsCompleted => this.Value<global::System.Web.IHtmlString>("childLessonsCompleted");
 
 		///<summary>
-		/// Avatar of child: This is the avatar of the child
+		/// Child payment status: This is the state of which the payment is in
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("avatarOfChild")]
-		public string AvatarOfChild => this.Value<string>("avatarOfChild");
-
-		///<summary>
-		/// Child bio: This is a bio of the child
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("childBio")]
-		public string ChildBio => this.Value<string>("childBio");
-
-		///<summary>
-		/// Date of birth of child
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("dateOfBirthOfChild")]
-		public string DateOfBirthOfChild => this.Value<string>("dateOfBirthOfChild");
-
-		///<summary>
-		/// Gender of child: This is the gender of the child
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("genderOfChild")]
-		public string GenderOfChild => this.Value<string>("genderOfChild");
+		[ImplementPropertyType("childPaymentStatus")]
+		public string ChildPaymentStatus => this.Value<string>("childPaymentStatus");
 
 		///<summary>
 		/// parent Email: This is the email of the parent
@@ -3255,13 +3288,6 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("parentEmail")]
 		public string ParentEmail => this.Value<string>("parentEmail");
-
-		///<summary>
-		/// TShirt size of child: This is the T-shirt size of the child
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("tShirtSizeOfChild")]
-		public string TShirtSizeOfChild => this.Value<string>("tShirtSizeOfChild");
 
 		///<summary>
 		/// Is Approved
