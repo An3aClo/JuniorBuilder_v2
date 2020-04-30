@@ -1,11 +1,19 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Lessons>
 @using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Web
 @{
     try
     {
+        
         if (Umbraco.MemberIsLoggedOn())
         {
             Layout = "loggedinMaster.cshtml";
+            var Id = Request.RawUrl;
+            var tempID = Id.Split('?').Last();
+            int kidID = tempID.AsInt();
+            var kid = Services.MemberService.GetById(kidID);
+            var kidPaymentStatus = kid.GetValue<string>("childPaymentStatus");
+
             <main id="main">
                 <!-- ======= Lesson Section ======= -->
                 <section id="lessons" class="services section-bg">
@@ -23,37 +31,285 @@
                         <div class="row">
                             @if (Model.LessonList != null)
                             {
-                                foreach (Lesson lesson in Model.LessonList)
+                                if (kidPaymentStatus.ToLower().Equals("unpaid"))
                                 {
-                                    <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
-                                        <div class="card">
-                                            <div class="card-img">
-                                                @if (lesson.LessonImage != null)
-                                                {
-                                                    <img class="imgCard" src="@lesson.LessonImage.Url" alt="Lesson image">
-                                                }
-                                            </div>
-                                            <div class="card-body">
-                                                @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
-                                                {
-                                                    <h5 class="card-title"><a href="@lesson.LessonButtonLink.Url">@lesson.LessonTitle</a></h5>
-                                                }
-                                                @if (lesson.LessonShortDescription != null)
-                                                {
-                                                    <p class="card-text">@lesson.LessonShortDescription</p>
-                                                }
-                                                <div class="read-more">
-                                                    @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
-                                                    {
-                                                        <a href="@lesson.LessonButtonLink.Url">
-                                                            <i class="icofont-arrow-right"></i>
-                                                            @lesson.LessonButtonText
-                                                        </a>
-                                                    }
+                                    foreach (Lesson lesson in Model.LessonList)
+                                    {
+                                        if (lesson.FreeLesson)
+                                        {
+                                            <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
+                                                <div class="card">
+                                                    <div class="card-img">
+                                                        @if (lesson.LessonImage != null)
+                                                        {
+                                                            <img class="imgCard" src="@lesson.LessonImage.Url" alt="Lesson image">
+                                                        }
+                                                    </div>
+                                                    <div class="card-body">
+                                                        @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
+                                                        {
+                                                            <h5 class="card-title"><a href="@lesson.LessonButtonLink.Url">@lesson.LessonTitle</a></h5>
+                                                        }
+                                                        @if (lesson.LessonShortDescription != null)
+                                                        {
+                                                            <p class="card-text">@lesson.LessonShortDescription</p>
+                                                        }
+                                                        <div class="read-more">
+                                                            @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
+                                                            {
+                                                                <a href="@lesson.LessonButtonLink.Url">
+                                                                    <i class="icofont-arrow-right"></i>
+                                                                    @lesson.LessonButtonText
+                                                                </a>
+                                                            }
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
+                                                <div class="card">
+                                                    <div class="card-img">
+                                                        @if (lesson.LessonImage != null)
+                                                        {
+                                                            <img class="imgCard" src="@lesson.LessonImage.Url" alt="Lesson image">
+                                                        }
+                                                    </div>
+                                                    <div class="card-body">
+                                                        @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
+                                                        {
+                                                            <h5 class="card-title"><a href="https://www.payfast.co.za/about-us">@lesson.LessonTitle</a></h5>
+                                                        }
+                                                        @if (lesson.LessonShortDescription != null)
+                                                        {
+                                                            <p class="card-text">@lesson.LessonShortDescription</p>
+                                                        }
+                                                        <div class="read-more">
+                                                            @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
+                                                            {
+                                                                <a href="https://www.payfast.co.za/about-us">
+                                                                    <i class="icofont-arrow-right"></i>
+                                                                    Purchase
+                                                                </a>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                }
+                                else if (kidPaymentStatus.ToLower().Equals("bronze"))
+                                {
+                                    foreach (Lesson lesson in Model.LessonList)
+                                    {
+                                        if (lesson.BronzeLesson || lesson.FreeLesson)
+                                        {
+                                            <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
+                                                <div class="card">
+                                                    <div class="card-img">
+                                                        @if (lesson.LessonImage != null)
+                                                        {
+                                                            <img class="imgCard" src="@lesson.LessonImage.Url" alt="Lesson image">
+                                                        }
+                                                    </div>
+                                                    <div class="card-body">
+                                                        @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
+                                                        {
+                                                            <h5 class="card-title"><a href="@lesson.LessonButtonLink.Url">@lesson.LessonTitle</a></h5>
+                                                        }
+                                                        @if (lesson.LessonShortDescription != null)
+                                                        {
+                                                            <p class="card-text">@lesson.LessonShortDescription</p>
+                                                        }
+                                                        <div class="read-more">
+                                                            @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
+                                                            {
+                                                                <a href="@lesson.LessonButtonLink.Url">
+                                                                    <i class="icofont-arrow-right"></i>
+                                                                    @lesson.LessonButtonText
+                                                                </a>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
+                                                <div class="card">
+                                                    <div class="card-img">
+                                                        @if (lesson.LessonImage != null)
+                                                        {
+                                                            <img class="imgCard" src="@lesson.LessonImage.Url" alt="Lesson image">
+                                                        }
+                                                    </div>
+                                                    <div class="card-body">
+                                                        @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
+                                                        {
+                                                            <h5 class="card-title"><a href="https://www.payfast.co.za/about-us">@lesson.LessonTitle</a></h5>
+                                                        }
+                                                        @if (lesson.LessonShortDescription != null)
+                                                        {
+                                                            <p class="card-text">@lesson.LessonShortDescription</p>
+                                                        }
+                                                        <div class="read-more">
+                                                            @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
+                                                            {
+                                                                <a href="https://www.payfast.co.za/about-us">
+                                                                    <i class="icofont-arrow-right"></i>
+                                                                    Purchase
+                                                                </a>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                }
+                                else if (kidPaymentStatus.ToLower().Equals("silver"))
+                                {
+                                    foreach (Lesson lesson in Model.LessonList)
+                                    {
+                                        if (lesson.SilverLesson || lesson.FreeLesson)
+                                        {
+                                            <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
+                                                <div class="card">
+                                                    <div class="card-img">
+                                                        @if (lesson.LessonImage != null)
+                                                        {
+                                                            <img class="imgCard" src="@lesson.LessonImage.Url" alt="Lesson image">
+                                                        }
+                                                    </div>
+                                                    <div class="card-body">
+                                                        @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
+                                                        {
+                                                            <h5 class="card-title"><a href="@lesson.LessonButtonLink.Url">@lesson.LessonTitle</a></h5>
+                                                        }
+                                                        @if (lesson.LessonShortDescription != null)
+                                                        {
+                                                            <p class="card-text">@lesson.LessonShortDescription</p>
+                                                        }
+                                                        <div class="read-more">
+                                                            @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
+                                                            {
+                                                                <a href="@lesson.LessonButtonLink.Url">
+                                                                    <i class="icofont-arrow-right"></i>
+                                                                    @lesson.LessonButtonText
+                                                                </a>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
+                                                <div class="card">
+                                                    <div class="card-img">
+                                                        @if (lesson.LessonImage != null)
+                                                        {
+                                                            <img class="imgCard" src="@lesson.LessonImage.Url" alt="Lesson image">
+                                                        }
+                                                    </div>
+                                                    <div class="card-body">
+                                                        @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
+                                                        {
+                                                            <h5 class="card-title"><a href="https://www.payfast.co.za/about-us">@lesson.LessonTitle</a></h5>
+                                                        }
+                                                        @if (lesson.LessonShortDescription != null)
+                                                        {
+                                                            <p class="card-text">@lesson.LessonShortDescription</p>
+                                                        }
+                                                        <div class="read-more">
+                                                            @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
+                                                            {
+                                                                <a href="https://www.payfast.co.za/about-us">
+                                                                    <i class="icofont-arrow-right"></i>
+                                                                    Purchase
+                                                                </a>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                }
+                                else if (kidPaymentStatus.ToLower().Equals("gold"))
+                                {
+                                    foreach (Lesson lesson in Model.LessonList)
+                                    {
+                                        if (lesson.GoldLesson || lesson.FreeLesson)
+                                        {
+                                            <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
+                                                <div class="card">
+                                                    <div class="card-img">
+                                                        @if (lesson.LessonImage != null)
+                                                        {
+                                                            <img class="imgCard" src="@lesson.LessonImage.Url" alt="Lesson image">
+                                                        }
+                                                    </div>
+                                                    <div class="card-body">
+                                                        @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
+                                                        {
+                                                            <h5 class="card-title"><a href="@lesson.LessonButtonLink.Url">@lesson.LessonTitle</a></h5>
+                                                        }
+                                                        @if (lesson.LessonShortDescription != null)
+                                                        {
+                                                            <p class="card-text">@lesson.LessonShortDescription</p>
+                                                        }
+                                                        <div class="read-more">
+                                                            @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
+                                                            {
+                                                                <a href="@lesson.LessonButtonLink.Url">
+                                                                    <i class="icofont-arrow-right"></i>
+                                                                    @lesson.LessonButtonText
+                                                                </a>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
+                                                <div class="card">
+                                                    <div class="card-img">
+                                                        @if (lesson.LessonImage != null)
+                                                        {
+                                                            <img class="imgCard" src="@lesson.LessonImage.Url" alt="Lesson image">
+                                                        }
+                                                    </div>
+                                                    <div class="card-body">
+                                                        @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
+                                                        {
+                                                            <h5 class="card-title"><a href="https://www.payfast.co.za/about-us">@lesson.LessonTitle</a></h5>
+                                                        }
+                                                        @if (lesson.LessonShortDescription != null)
+                                                        {
+                                                            <p class="card-text">@lesson.LessonShortDescription</p>
+                                                        }
+                                                        <div class="read-more">
+                                                            @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
+                                                            {
+                                                                <a href="https://www.payfast.co.za/about-us">
+                                                                    <i class="icofont-arrow-right"></i>
+                                                                    Purchase
+                                                                </a>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
                                 }
                             }
                         </div>
