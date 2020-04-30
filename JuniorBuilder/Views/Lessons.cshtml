@@ -3,8 +3,7 @@
 @using Umbraco.Web
 @{
     try
-    {
-        
+    {    
         if (Umbraco.MemberIsLoggedOn())
         {
             Layout = "loggedinMaster.cshtml";
@@ -13,7 +12,7 @@
             int kidID = tempID.AsInt();
             var kid = Services.MemberService.GetById(kidID);
             var kidPaymentStatus = kid.GetValue<string>("childPaymentStatus");
-
+            var nextPageWithId = "";
             <main id="main">
                 <!-- ======= Lesson Section ======= -->
                 <section id="lessons" class="services section-bg">
@@ -48,7 +47,8 @@
                                                     <div class="card-body">
                                                         @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
                                                         {
-                                                            <h5 class="card-title"><a href="@lesson.LessonButtonLink.Url">@lesson.LessonTitle</a></h5>
+                                                            nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
+                                                            <h5 class="card-title"><a href="@nextPageWithId">@lesson.LessonTitle</a></h5>
                                                         }
                                                         @if (lesson.LessonShortDescription != null)
                                                         {
@@ -57,7 +57,8 @@
                                                         <div class="read-more">
                                                             @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
                                                             {
-                                                                <a href="@lesson.LessonButtonLink.Url">
+                                                                nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
+                                                                <a href="@nextPageWithId">
                                                                     <i class="icofont-arrow-right"></i>
                                                                     @lesson.LessonButtonText
                                                                 </a>
@@ -80,21 +81,24 @@
                                                     <div class="card-body">
                                                         @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
                                                         {
+                                                            <!--Pass Id to payment page-->
+                                                             nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
                                                             <h5 class="card-title"><a href="https://www.payfast.co.za/about-us">@lesson.LessonTitle</a></h5>
                                                         }
                                                         @if (lesson.LessonShortDescription != null)
                                                         {
                                                             <p class="card-text">@lesson.LessonShortDescription</p>
                                                         }
-                                                        <div class="read-more">
-                                                            @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
-                                                            {
-                                                                <a href="https://www.payfast.co.za/about-us">
-                                                                    <i class="icofont-arrow-right"></i>
-                                                                    Purchase
-                                                                </a>
-                                                            }
-                                                        </div>
+                                                    <div class="read-more">
+                                                        @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
+                                                        {
+                                                            <!--Pass Id to payment page-->
+                                                            <a href="https://www.payfast.co.za/about-us">
+                                                                <i class="icofont-arrow-right"></i>
+                                                                Purchase
+                                                            </a>
+                                                        }
+                                                    </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -118,7 +122,8 @@
                                                     <div class="card-body">
                                                         @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
                                                         {
-                                                            <h5 class="card-title"><a href="@lesson.LessonButtonLink.Url">@lesson.LessonTitle</a></h5>
+                                                            nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
+                                                            <h5 class="card-title"><a href="@nextPageWithId">@lesson.LessonTitle</a></h5>
                                                         }
                                                         @if (lesson.LessonShortDescription != null)
                                                         {
@@ -127,7 +132,8 @@
                                                         <div class="read-more">
                                                             @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
                                                             {
-                                                                <a href="@lesson.LessonButtonLink.Url">
+                                                                nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
+                                                                <a href="@nextPageWithId">
                                                                     <i class="icofont-arrow-right"></i>
                                                                     @lesson.LessonButtonText
                                                                 </a>
@@ -150,6 +156,8 @@
                                                     <div class="card-body">
                                                         @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
                                                         {
+                                                            <!--Pass Id to payment-->
+                                                            nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
                                                             <h5 class="card-title"><a href="https://www.payfast.co.za/about-us">@lesson.LessonTitle</a></h5>
                                                         }
                                                         @if (lesson.LessonShortDescription != null)
@@ -159,6 +167,8 @@
                                                         <div class="read-more">
                                                             @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
                                                             {
+                                                                <!--Pass Id to payment-->
+                                                                nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
                                                                 <a href="https://www.payfast.co.za/about-us">
                                                                     <i class="icofont-arrow-right"></i>
                                                                     Purchase
@@ -188,7 +198,8 @@
                                                     <div class="card-body">
                                                         @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
                                                         {
-                                                            <h5 class="card-title"><a href="@lesson.LessonButtonLink.Url">@lesson.LessonTitle</a></h5>
+                                                            nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
+                                                            <h5 class="card-title"><a href="@nextPageWithId">@lesson.LessonTitle</a></h5>
                                                         }
                                                         @if (lesson.LessonShortDescription != null)
                                                         {
@@ -197,7 +208,8 @@
                                                         <div class="read-more">
                                                             @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
                                                             {
-                                                                <a href="@lesson.LessonButtonLink.Url">
+                                                                nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
+                                                                <a href="@nextPageWithId">
                                                                     <i class="icofont-arrow-right"></i>
                                                                     @lesson.LessonButtonText
                                                                 </a>
@@ -220,6 +232,8 @@
                                                     <div class="card-body">
                                                         @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
                                                         {
+                                                            <!--Pass Id to payment-->
+                                                            nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
                                                             <h5 class="card-title"><a href="https://www.payfast.co.za/about-us">@lesson.LessonTitle</a></h5>
                                                         }
                                                         @if (lesson.LessonShortDescription != null)
@@ -229,6 +243,8 @@
                                                         <div class="read-more">
                                                             @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
                                                             {
+                                                                 <!--Pass Id to payment-->
+                                                            nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
                                                                 <a href="https://www.payfast.co.za/about-us">
                                                                     <i class="icofont-arrow-right"></i>
                                                                     Purchase
@@ -258,7 +274,8 @@
                                                     <div class="card-body">
                                                         @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
                                                         {
-                                                            <h5 class="card-title"><a href="@lesson.LessonButtonLink.Url">@lesson.LessonTitle</a></h5>
+                                                            nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
+                                                            <h5 class="card-title"><a href="@nextPageWithId">@lesson.LessonTitle</a></h5>
                                                         }
                                                         @if (lesson.LessonShortDescription != null)
                                                         {
@@ -267,7 +284,8 @@
                                                         <div class="read-more">
                                                             @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
                                                             {
-                                                                <a href="@lesson.LessonButtonLink.Url">
+                                                                nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
+                                                                <a href="@nextPageWithId">
                                                                     <i class="icofont-arrow-right"></i>
                                                                     @lesson.LessonButtonText
                                                                 </a>
@@ -290,6 +308,8 @@
                                                     <div class="card-body">
                                                         @if (!string.IsNullOrWhiteSpace(lesson.LessonTitle) && lesson.LessonButtonLink != null)
                                                         {
+                                                            <!--Pass Id to payment-->
+                                                            nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
                                                             <h5 class="card-title"><a href="https://www.payfast.co.za/about-us">@lesson.LessonTitle</a></h5>
                                                         }
                                                         @if (lesson.LessonShortDescription != null)
@@ -299,6 +319,8 @@
                                                         <div class="read-more">
                                                             @if (!string.IsNullOrWhiteSpace(lesson.LessonButtonText) && lesson.LessonButtonLink != null)
                                                             {
+                                                                <!--Pass Id to payment-->
+                                                                nextPageWithId = lesson.LessonButtonLink.Url + "?" + kidID;
                                                                 <a href="https://www.payfast.co.za/about-us">
                                                                     <i class="icofont-arrow-right"></i>
                                                                     Purchase

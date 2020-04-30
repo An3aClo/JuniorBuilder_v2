@@ -6,6 +6,11 @@
         if (Umbraco.MemberIsLoggedOn())
         {
             Layout = "loggedinMaster.cshtml";
+            var Id = Request.RawUrl;
+            var tempID = Id.Split('?').Last();
+            int kidID = tempID.AsInt();
+            var kid = Services.MemberService.GetById(kidID);
+            var nextPageWithId = "";
             <main id="main">
                 <!-- Lesson layout -->
                 <section class="page-section" id="about">
@@ -50,9 +55,10 @@
                                                                         <ul class="listInList">
                                                                             @if (!string.IsNullOrWhiteSpace(level.LevelName) && level.LevelPageLink != null)
                                                                             {
+                                                                                nextPageWithId = level.LevelPageLink.Url + "?" + kidID;
                                                                                 <li class="listItemMarginBottom">
                                                                                     <i class="icofont-ui-edit listItemCheckIcon"></i> 
-                                                                                    <a href="@level.LevelPageLink.Url" class="levelItem">@level.LevelName</a>
+                                                                                    <a href="@nextPageWithId" class="levelItem">@level.LevelName</a>
                                                                                 </li>
                                                                             }                                                                          
                                                                         </ul>
