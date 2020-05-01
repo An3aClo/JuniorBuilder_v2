@@ -14,6 +14,7 @@ namespace JuniorBuilder.Controllers
 
             if (Members.Login(model.Username, model.Password))
             {
+                Members.Login(model.Username, model.Password);
                 return Redirect("/your-kids");
             }
 

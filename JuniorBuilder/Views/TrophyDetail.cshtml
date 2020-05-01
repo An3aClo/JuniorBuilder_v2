@@ -7,9 +7,16 @@
         {
             Layout = "loggedinMaster.cshtml";
             var myUser = System.Web.Security.Membership.GetUser();
-            var allKidsOfSameParent = Services.MemberService.GetMembersByPropertyValue("parentEmail", myUser.Email);
-            if (allKidsOfSameParent.Count() != 0)
+
+            var parentUserer = Services.MemberService.GetByUsername(myUser.UserName);
+            var myUserChildStatus = parentUserer.GetValue<string>("haveChildren");
+            if (myUserChildStatus.ToLower() == "nochild")
+            {     
+                Response.Redirect("/add-child/");
+            }
+            else if (myUserChildStatus.ToLower() == "havechild")
             {
+                var allKidsOfSameParent = Services.MemberService.GetMembersByPropertyValue("parentEmail", myUser.Email);              
                 <main id="main">
                     <!-- ======= Child detail Section ======= -->
                     <section id="features" class="features section-bg">
@@ -31,7 +38,7 @@
                                             <img src="assets/img/features-1.svg" class="img-fluid-your-kids" alt="">
                                         </div>*@
                                     <div class="col-md-12 pt-4" data-aos="fade-left">
-                                        <a><h3>@kid.Username</h3></a>                                       
+                                        <a><h3>@kid.Username</h3></a>
                                         <div class="row trophyRowPaddingBottom">
                                             <div class="col-md-1">
                                                 @if (Model.TrophyImage != null)
@@ -76,15 +83,11 @@
                                 </div>
                             </div>
                         </div>
-                    </section><!-- End Child detail Section -->
-
+                    </section>
+                    <!-- End Child detail Section -->
                 </main><!-- End #main -->
-            }
-            else
-            {
-                Response.Redirect("/");
-            }
                 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+            }
         }
         else
         {

@@ -17,7 +17,6 @@ namespace JuniorBuilder.Controllers
                 return CurrentUmbracoPage();
             }
             var memberService = Services.MemberService;
-
             try
             {
                 var parentProfile = System.Web.Security.Membership.GetUser();
@@ -27,6 +26,9 @@ namespace JuniorBuilder.Controllers
                 member.SetValue("parentEmail", parentEmail);
                 member.SetValue("childPaymentStatus", "Unpaid");
                 memberService.Save(member);
+                var parent =  memberService.GetByUsername(parentProfile.UserName);
+                parent.SetValue("haveChildren", "HaveChild");
+                memberService.Save(parent);
                 return Redirect("/your-kids");
             }
             catch (Exception)
