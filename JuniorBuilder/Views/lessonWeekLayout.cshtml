@@ -1,28 +1,13 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.LessonWeekLayout>
 @using ContentModels = Umbraco.Web.PublishedModels;
+
 @{
     try
     {
         if (Umbraco.MemberIsLoggedOn())
         {
             Layout = "loggedinMaster.cshtml";
-            var Id = Request.RawUrl;
-            var tempID = Id.Split('?').Last();
-            int kidID = tempID.AsInt();
-            var kid = Services.MemberService.GetById(kidID);
-
-            var oldValue = kid.GetValue<string>("childPaymentStatus");
-
-            var memberService = Services.MemberService;
-
-            kid.SetValue("childLessonsCompleted", "hi");
-            memberService.Save(kid);
-
-
-            var kidPaymentStatus1 = kid.GetValue<string>("childPaymentStatus");
-            var newValue = oldValue + kidPaymentStatus1;
-            <p>@newValue</p>
-
+          
             <!-- ======= Model ======= -->
             <div class="container">
                 <!-- Modal -->
@@ -151,12 +136,6 @@
                                             {
                                                 <p data-aos="fade-in">@Model.PageConclusion</p>
                                             }
-                                            @if (!string.IsNullOrWhiteSpace(Model.PageButtonText) && Model.PageButtonLink != null)
-                                            {
-                                                <div class="markCompleteButton">
-                                                    <a href="@Model.PageButtonLink.Url" class="yourKidsButton" data-toggle="modal" data-target="#myModal">@Model.PageButtonText</a>
-                                                </div>
-                                            }
                                         </div>
                                     </form>
                                 </div>
@@ -171,22 +150,34 @@
                                 </div>
                             </div>
                         }
-                        <!--Conclution section-->
-                        @if (!Model.ClassStoryTimeSection)
+                        <!--Conclution section-->                 
+
+                        @if (Umbraco.MemberIsLoggedOn())
                         {
-                            <div class="section-title markCompleteText">
-                                @if (Model.PageConclusion != null)
-                                {
-                                    <p data-aos="fade-in">@Model.PageConclusion</p>
+                            using (Html.BeginUmbracoForm("SubmitLevel", "Member", System.Web.Mvc.FormMethod.Post, new { id = "levelSubmit" }))
+                            {
+                                Html.AntiForgeryToken();
+                                var myUser = System.Web.Security.Membership.GetUser();
+                                if (myUser != null)
+                                {                                    
+                                    <div class="section-title markCompleteText">
+                                        @if (!Model.ClassStoryTimeSection)
+                                        {
+                                            if (Model.PageConclusion != null)
+                                            {
+                                                <p data-aos="fade-in">@Model.PageConclusion</p>
+                                            }
+                                        }
+                                        <br />
+                                        @if (!string.IsNullOrWhiteSpace(Model.PageButtonText) && Model.PageButtonLink != null)
+                                        {
+                                                <div class="markCompleteButton">
+                                                <button class="yourKidsButton" name="login" type="submit"><span>Complete</span> </button>
+                                            </div>
+                                        }
+                                    </div>                                  
                                 }
-                                <br />
-                                @if (!string.IsNullOrWhiteSpace(Model.PageButtonText) && Model.PageButtonLink != null)
-                                {
-                                    <div class="markCompleteButton">
-                                        <a href="@Model.PageButtonLink.Url" class="yourKidsButton" data-toggle="modal" data-target="#myModal">@Model.PageButtonText</a>
-                                    </div>
-                                }
-                            </div>
+                            }
                         }
                     </div>
                 </section>
