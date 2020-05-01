@@ -53,18 +53,29 @@
                                                 }
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-10 col-xl-10 col-sm-offset-0">
-                                            </div>
-                                            <div class="col-xl-2 col-md-2 col-sm-12">
-                                                @if (!string.IsNullOrWhiteSpace(Model.NextLessonButtonText) && Model.NextLessonButtonLink != null)
+                                        @*@{
+                                            var oldValue = kid.GetValue<string>("childLessonsCompleted");
+                                            if (oldValue != null)
+                                            {
+                                                var arrayOfAllOldValues = oldValue.Split('?');
+                                                foreach( var level in arrayOfAllOldValues)
                                                 {
-                                                    var nextPageWithId = @Model.NextLessonButtonLink.Url + "?" + kid.Id;
-                                                    <a href="@nextPageWithId" class="yourKidsButton">@Model.NextLessonButtonText</a>
+                                                    <p>Level</p>
                                                 }
+                                            }
+                                        }*@
+                                            <div class="row">
+                                                <div class="col-md-10 col-xl-10 col-sm-offset-0">
+                                                </div>
+                                                <div class="col-xl-2 col-md-2 col-sm-12">
+                                                    @if (!string.IsNullOrWhiteSpace(Model.NextLessonButtonText) && Model.NextLessonButtonLink != null)
+                                                    {
+                                                        var nextPageWithId = @Model.NextLessonButtonLink.Url + "?" + kid.Id;
+                                                        <a href="@nextPageWithId" class="yourKidsButton">@Model.NextLessonButtonText</a>
+                                                    }
 
+                                                </div>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <br />
