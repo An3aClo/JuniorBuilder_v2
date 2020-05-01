@@ -6,33 +6,9 @@
     {
         if (Umbraco.MemberIsLoggedOn())
         {
-            Layout = "loggedinMaster.cshtml";
-          
-            <!-- ======= Model ======= -->
-            <div class="container">
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog">
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Completed Sucesfully</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <p>Congratulation! You have marked this week as completed.</p>
-                            </div>
-                            @if (Model.PageButtonLink != null)
-                            {
-                                <div class="modal-footer">
-                                    <a href="@Model.PageButtonLink.Url" class="btn btn-default">Close</a>
-                                </div>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <main id="main">
+            Layout = "loggedinMaster.cshtml";          
+        
+            <main id="main">        
                 <section class="page-section" id="about">
                     <div class="container">
                         <!-- Main heading-->
@@ -150,16 +126,49 @@
                                 </div>
                             </div>
                         }
-                        <!--Conclution section-->                 
+                        <!--Conclution section-->
+                        @{
+                            var url = Request.RawUrl;
+                            var tempID = url.Split('?').Last();
+                            int kidID = tempID.AsInt();
+                            var kid = Services.MemberService.GetById(kidID);
 
-                        @if (Umbraco.MemberIsLoggedOn())
-                        {
-                            using (Html.BeginUmbracoForm("SubmitLevel", "Member", System.Web.Mvc.FormMethod.Post, new { id = "levelSubmit" }))
+                            var urlEntries = url.Split('/');
+                            var lessonName = urlEntries[2].ToString();
+
+                            var oldValue = kid.GetValue<string>("childLessonsCompleted");
+                            if (oldValue != null)
                             {
-                                Html.AntiForgeryToken();
-                                var myUser = System.Web.Security.Membership.GetUser();
-                                if (myUser != null)
-                                {                                    
+                                var arrayOfAllOldValues = oldValue.Split('?');
+                                if (!arrayOfAllOldValues.Contains(lessonName))
+                                {
+                                    using (Html.BeginUmbracoForm("SubmitLevel", "Member", System.Web.Mvc.FormMethod.Post, new { id = "levelSubmit" }))
+                                    {
+                                        Html.AntiForgeryToken();
+                                        var myUser = System.Web.Security.Membership.GetUser();
+                                        if (myUser != null)
+                                        {
+                                            <div class="section-title markCompleteText">
+                                                @if (!Model.ClassStoryTimeSection)
+                                                {
+                                                    if (Model.PageConclusion != null)
+                                                    {
+                                                        <p data-aos="fade-in">@Model.PageConclusion</p>
+                                                    }
+                                                }
+                                                <br />
+                                                @if (!string.IsNullOrWhiteSpace(Model.PageButtonText) && Model.PageButtonLink != null)
+                                                {
+                                                    <div class="markCompleteButton">
+                                                        <button class="yourKidsButton" name="login" type="submit"><span>Complete</span> </button>
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+                                    }
+                                }
+                                else
+                                {
                                     <div class="section-title markCompleteText">
                                         @if (!Model.ClassStoryTimeSection)
                                         {
@@ -171,11 +180,13 @@
                                         <br />
                                         @if (!string.IsNullOrWhiteSpace(Model.PageButtonText) && Model.PageButtonLink != null)
                                         {
-                                                <div class="markCompleteButton">
-                                                <button class="yourKidsButton" name="login" type="submit"><span>Complete</span> </button>
+                                            <div class="markCompleteButton">
+                                                <button disabled class="yourKidsButton" name="login" type="submit"><span>Complete</span> </button>
                                             </div>
+                                            <p>Lesson already completed</p>
+                                            <p><span><a href=""></a>View Trophy</span>|<span>Do more levels</span></p>
                                         }
-                                    </div>                                  
+                                    </div>
                                 }
                             }
                         }
