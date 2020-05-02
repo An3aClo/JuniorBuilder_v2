@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7d54d3ca45f215f2")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "919f9e74d2647081")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -1333,6 +1333,27 @@ namespace Umbraco.Web.PublishedModels
 		public string ClassTitle => this.Value<string>("classTitle");
 
 		///<summary>
+		/// Level completed wording
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("levelCompletedWording")]
+		public string LevelCompletedWording => this.Value<string>("levelCompletedWording");
+
+		///<summary>
+		/// Level page button link: This is to where the user will be taken if they  want to do more levels
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("levelPageButtonLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LevelPageButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("levelPageButtonLink");
+
+		///<summary>
+		/// Level page button wording
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("levelPageButtonWording")]
+		public string LevelPageButtonWording => this.Value<string>("levelPageButtonWording");
+
+		///<summary>
 		/// Page button link: This is to where the user will be navigated to
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
@@ -1366,6 +1387,20 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("pageMainSectionTitle")]
 		public string PageMainSectionTitle => this.Value<string>("pageMainSectionTitle");
+
+		///<summary>
+		/// Trophy page button link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("trophyPageButtonLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent TrophyPageButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("trophyPageButtonLink");
+
+		///<summary>
+		/// Trophy page button wording: This text will indicate the user to view their trophies
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("trophyPageButtonWording")]
+		public string TrophyPageButtonWording => this.Value<string>("trophyPageButtonWording");
 	}
 
 	/// <summary>Lesson information blocks</summary>

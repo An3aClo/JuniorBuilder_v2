@@ -21,38 +21,9 @@
                             {
                                 <p data-aos="fade-in">@Model.PageMainSectionDescription</p>
                             }
-                        </div>
-                        <!-- Information blocks -->
-                        @if (Model.ClassInformationBlockList != null)
-                        {
-                            foreach (var infoBlock in Model.ClassInformationBlockList)
-                            {
-                                if (!string.IsNullOrWhiteSpace(infoBlock.InformationBlockTitle) && infoBlock.InformationBlockContent != null)
-                                {
-                                    var functionName = @infoBlock.InformationBlockTitle;
-                                    <div data-aos="fade-right" class="col-lg-12">
-                                        <div id="myMainDiv" class="row funfactBlock">
-                                            <p>@infoBlock.InformationBlockTitle</p>
-                                        </div>
-                                        <div id="test2" class="funfactInformationOnlyBox">
-                                            @infoBlock.InformationBlockContent
-                                        </div>
-                                    </div>
-                                }
-                            }
-                        }
+                        </div>                    
                         <br />
-                        <!--Secondary header-->
-                        <div class="section-title">
-                            @if (!string.IsNullOrWhiteSpace(Model.PageSecondSectionTitle))
-                            {
-                                <h2 data-aos="fade-in">@Model.PageSecondSectionTitle</h2>
-                            }
-                            @if (Model.PageSecondSectionDescription != null)
-                            {
-                                <p data-aos="fade-in">@Model.PageSecondSectionDescription</p>
-                            }
-                        </div>
+                        
                         <div class="row content">
                             <!--Class image-->
                             @if (Model.ClassImage != null)
@@ -92,40 +63,8 @@
                                     }
                                 }
                             </div>
-                        </div>
-                        <!-- ======= story time section ======= -->
-                        <!--Story time section-->
-                        @if (Model.ClassStoryTimeSection)
-                        {
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <form action="forms/contact.php" method="post" role="form" class="php-email-form" data-aos="fade-up">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="storyTitle" id="subject" placeholder="Your story title" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea class="form-control" name="stiry" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Your story "></textarea>
-                                        </div>
-                                        <!--Story time conclution section-->
-                                        <div class="section-title markCompleteText">
-                                            @if (Model.PageConclusion != null)
-                                            {
-                                                <p data-aos="fade-in">@Model.PageConclusion</p>
-                                            }
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        }
-                        <!--Conclution image-->
-                        @if (Model.ClassConclusionImage != null)
-                        {
-                            <div class="section-title markCompleteText">
-                                <div class="col-md-12" data-aos="fade-right">
-                                    <img src="@Model.ClassConclusionImage.Url" class="img-fluid center" alt="">
-                                </div>
-                            </div>
-                        }
+                        </div>                    
+                  
                         <!--Conclution section-->
                         @{
                             var url = Request.RawUrl;
@@ -149,13 +88,12 @@
                                         if (myUser != null)
                                         {
                                             <div class="section-title markCompleteText">
-                                                @if (!Model.ClassStoryTimeSection)
-                                                {
-                                                    if (Model.PageConclusion != null)
+                                             
+                                                   @if (Model.PageConclusion != null)
                                                     {
                                                         <p data-aos="fade-in">@Model.PageConclusion</p>
                                                     }
-                                                }
+                                                
                                                 <br />
                                                 @if (!string.IsNullOrWhiteSpace(Model.PageButtonText) && Model.PageButtonLink != null)
                                                 {
@@ -170,21 +108,30 @@
                                 else
                                 {
                                     <div class="section-title markCompleteText">
-                                        @if (!Model.ClassStoryTimeSection)
+                                      
+                                        @if (Model.PageConclusion != null)
                                         {
-                                            if (Model.PageConclusion != null)
-                                            {
-                                                <p data-aos="fade-in">@Model.PageConclusion</p>
-                                            }
+                                            <p data-aos="fade-in">@Model.PageConclusion</p>
                                         }
-                                        <br />
                                         @if (!string.IsNullOrWhiteSpace(Model.PageButtonText) && Model.PageButtonLink != null)
                                         {
                                             <div class="markCompleteButton">
                                                 <button disabled class="yourKidsButton" name="login" type="submit"><span>Complete</span> </button>
                                             </div>
-                                            <p>Lesson already completed</p>
-                                            <p><span><a href=""></a>View Trophy</span>|<span>Do more levels</span></p>
+                                            if (!string.IsNullOrWhiteSpace(Model.LevelCompletedWording))
+                                            {
+                                                 <p>@Model.LevelCompletedWording</p>
+                                            }
+
+                                            if (!string.IsNullOrWhiteSpace(Model.TrophyPageButtonWording) && Model.TrophyPageButtonLink != null && !string.IsNullOrWhiteSpace(Model.LevelPageButtonWording) && Model.LevelPageButtonLink != null)
+                                            {
+                                                 <p class="smallButtonLink">
+                                                    <span><a href="@Model.TrophyPageButtonLink.Url">@Model.TrophyPageButtonWording</a></span>
+                                                    |
+                                                    <span><a href="@Model.LevelPageButtonLink.Url">@Model.LevelPageButtonWording</a></span>
+                                                 </p>
+                                            }
+                                           
                                         }
                                     </div>
                                 }
