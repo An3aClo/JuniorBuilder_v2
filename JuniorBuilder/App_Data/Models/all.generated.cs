@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "aeba12759cad41ce")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2601fd8d3a1ba3c5")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1305,13 +1305,6 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Class conclusion image: This is a small image to round off the week layout
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("classConclusionImage")]
-		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ClassConclusionImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("classConclusionImage");
-
-		///<summary>
 		/// Class description: This is a description of the class for the week
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
@@ -1326,13 +1319,6 @@ namespace Umbraco.Web.PublishedModels
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ClassImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("classImage");
 
 		///<summary>
-		/// Class information block list: This is a list of information blocks associated with the week
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("classInformationBlockList")]
-		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonInformationBlocks> ClassInformationBlockList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonInformationBlocks>>("classInformationBlockList");
-
-		///<summary>
 		/// Class step list: This is a list of steps to follow
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
@@ -1340,18 +1326,32 @@ namespace Umbraco.Web.PublishedModels
 		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonSteps> ClassStepList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.LessonSteps>>("classStepList");
 
 		///<summary>
-		/// Class story time section: This is the story time section when toggle is active there will be a input field for a story title and text box for a story
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("classStoryTimeSection")]
-		public bool ClassStoryTimeSection => this.Value<bool>("classStoryTimeSection");
-
-		///<summary>
 		/// Class title: This is a title which represent the class of the week
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("classTitle")]
 		public string ClassTitle => this.Value<string>("classTitle");
+
+		///<summary>
+		/// Level completed wording
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("levelCompletedWording")]
+		public string LevelCompletedWording => this.Value<string>("levelCompletedWording");
+
+		///<summary>
+		/// Level page button link: This is to where the user will be taken if they  want to do more levels
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("levelPageButtonLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LevelPageButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("levelPageButtonLink");
+
+		///<summary>
+		/// Level page button wording
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("levelPageButtonWording")]
+		public string LevelPageButtonWording => this.Value<string>("levelPageButtonWording");
 
 		///<summary>
 		/// Page button link: This is to where the user will be navigated to
@@ -1389,32 +1389,18 @@ namespace Umbraco.Web.PublishedModels
 		public string PageMainSectionTitle => this.Value<string>("pageMainSectionTitle");
 
 		///<summary>
-		/// Page second second description: This is the second description on the page
+		/// Trophy page button link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("pageSecondSectionDescription")]
-		public global::System.Web.IHtmlString PageSecondSectionDescription => this.Value<global::System.Web.IHtmlString>("pageSecondSectionDescription");
+		[ImplementPropertyType("trophyPageButtonLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent TrophyPageButtonLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("trophyPageButtonLink");
 
 		///<summary>
-		/// Page second section title: This is a second title on the page
+		/// Trophy page button wording: This text will indicate the user to view their trophies
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("pageSecondSectionTitle")]
-		public string PageSecondSectionTitle => this.Value<string>("pageSecondSectionTitle");
-
-		///<summary>
-		/// Story time story placeholder text: This is text which will show in the input field of the story block as a place holder
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("storyTimeStoryPlaceholderText")]
-		public string StoryTimeStoryPlaceholderText => this.Value<string>("storyTimeStoryPlaceholderText");
-
-		///<summary>
-		/// Story time title placeholder text: This is text which will show in the input field of the title block as a place holder
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
-		[ImplementPropertyType("storyTimeTitlePlaceholderText")]
-		public string StoryTimeTitlePlaceholderText => this.Value<string>("storyTimeTitlePlaceholderText");
+		[ImplementPropertyType("trophyPageButtonWording")]
+		public string TrophyPageButtonWording => this.Value<string>("trophyPageButtonWording");
 	}
 
 	/// <summary>Lesson information blocks</summary>
@@ -2945,11 +2931,25 @@ namespace Umbraco.Web.PublishedModels
 		public string NextLessonButtonText => this.Value<string>("nextLessonButtonText");
 
 		///<summary>
-		/// Trophy image: This is the trophy which will be given
+		/// Trophy received image: This is the trophy which will be given
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("trophyImage")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent TrophyImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("trophyImage");
+
+		///<summary>
+		/// Trophy not received image: This is the image which will show in no levels are completed yet
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("trophyNotReceivedImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent TrophyNotReceivedImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("trophyNotReceivedImage");
+
+		///<summary>
+		/// Trophy not received wording: This is wording to motivate the child to complete levels
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("trophyNotReceivedWording")]
+		public global::System.Web.IHtmlString TrophyNotReceivedWording => this.Value<global::System.Web.IHtmlString>("trophyNotReceivedWording");
 
 		///<summary>
 		/// Trophy page conclusion: This is the conclusion of the trophy page
@@ -2973,11 +2973,11 @@ namespace Umbraco.Web.PublishedModels
 		public global::System.Web.IHtmlString TrophyPageIntroduction => this.Value<global::System.Web.IHtmlString>("trophyPageIntroduction");
 
 		///<summary>
-		/// Trophy wording: This is what the trophy will say
+		/// Trophy received wording: This is what the trophy will say
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("trophyWording")]
-		public string TrophyWording => this.Value<string>("trophyWording");
+		public global::System.Web.IHtmlString TrophyWording => this.Value<global::System.Web.IHtmlString>("trophyWording");
 	}
 
 	/// <summary>Week level layout</summary>
@@ -3018,6 +3018,53 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("levelPageLink")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LevelPageLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("levelPageLink");
+	}
+
+	/// <summary>Parent</summary>
+	[PublishedModel("parent")]
+	public partial class Parent : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "parent";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Parent, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Parent(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Page conclusion: This is the conclusion of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageConclusion")]
+		public global::System.Web.IHtmlString PageConclusion => this.Value<global::System.Web.IHtmlString>("pageConclusion");
+
+		///<summary>
+		/// Page header: The header of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageHeader")]
+		public string PageHeader => this.Value<string>("pageHeader");
+
+		///<summary>
+		/// Page introduction: An introduction for the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageIntroduction")]
+		public global::System.Web.IHtmlString PageIntroduction => this.Value<global::System.Web.IHtmlString>("pageIntroduction");
 	}
 
 	/// <summary>Folder</summary>
@@ -3280,7 +3327,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("childLessonsCompleted")]
-		public global::System.Web.IHtmlString ChildLessonsCompleted => this.Value<global::System.Web.IHtmlString>("childLessonsCompleted");
+		public string ChildLessonsCompleted => this.Value<string>("childLessonsCompleted");
 
 		///<summary>
 		/// Child payment status: This is the state of which the payment is in

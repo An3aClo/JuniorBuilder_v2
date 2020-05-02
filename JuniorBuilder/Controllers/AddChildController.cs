@@ -21,10 +21,12 @@ namespace JuniorBuilder.Controllers
             {
                 var parentProfile = System.Web.Security.Membership.GetUser();
                 var parentEmail = parentProfile.Email;
-                var kidsEmaill = model.Name + "@email.com";
+                string trimpedName = model.Name.Replace(" ", "");
+                var kidsEmaill = trimpedName + "@email.com";
                 var member = memberService.CreateMemberWithIdentity(model.Name, kidsEmaill, model.Name, "childMember");                
                 member.SetValue("parentEmail", parentEmail);
                 member.SetValue("childPaymentStatus", "Unpaid");
+                member.SetValue("childLessonsCompleted", "?");                
                 memberService.Save(member);
                 var parent =  memberService.GetByUsername(parentProfile.UserName);
                 parent.SetValue("haveChildren", "HaveChild");

@@ -38,44 +38,69 @@
                                             <img src="assets/img/features-1.svg" class="img-fluid-your-kids" alt="">
                                         </div>*@
                                     <div class="col-md-12 pt-4" data-aos="fade-left">
-                                        <a><h3>@kid.Username</h3></a>
-                                        <div class="row trophyRowPaddingBottom">
-                                            <div class="col-md-1">
-                                                @if (Model.TrophyImage != null)
-                                                {
-                                                    <img src="@Model.TrophyImage.Url" class="img-fluid-your-kids trophyIcon center" alt="">
-                                                }
+
+                                        <div class="row">
+                                            <div class="col-xl-10 col-md-9 col-sm-8 col-6">
+                                                <a><h3>@kid.Username</h3></a>
                                             </div>
-                                            <div class="col-md-11 trophyText trophyTextMobile ">
-                                                @if (!string.IsNullOrWhiteSpace(Model.TrophyWording))
+                                            <div class="col-xl-2 col-md-3 col-sm-4 col-6">
+                                                @if (!string.IsNullOrWhiteSpace(Model.NextLessonButtonText) && Model.NextLessonButtonLink != null)
                                                 {
-                                                    <p>@Model.TrophyWording</p>
+                                                    var nextPageWithId = @Model.NextLessonButtonLink.Url + "?" + kid.Id;
+                                                    <a href="@nextPageWithId" class="yourKidsButton">@Model.NextLessonButtonText</a>
                                                 }
+
                                             </div>
                                         </div>
-                                        @*@{
+                                        @{
                                             var oldValue = kid.GetValue<string>("childLessonsCompleted");
                                             if (oldValue != null)
                                             {
                                                 var arrayOfAllOldValues = oldValue.Split('?');
-                                                foreach( var level in arrayOfAllOldValues)
+                                                if (arrayOfAllOldValues.Length > 2)
                                                 {
-                                                    <p>Level</p>
-                                                }
-                                            }
-                                        }*@
-                                            <div class="row">
-                                                <div class="col-md-10 col-xl-10 col-sm-offset-0">
-                                                </div>
-                                                <div class="col-xl-2 col-md-2 col-sm-12">
-                                                    @if (!string.IsNullOrWhiteSpace(Model.NextLessonButtonText) && Model.NextLessonButtonLink != null)
+                                                    foreach (var level in arrayOfAllOldValues)
                                                     {
-                                                        var nextPageWithId = @Model.NextLessonButtonLink.Url + "?" + kid.Id;
-                                                        <a href="@nextPageWithId" class="yourKidsButton">@Model.NextLessonButtonText</a>
+                                                        if (!string.IsNullOrWhiteSpace(level))
+                                                        {
+                                                            <div class="row trophyRowPaddingBottom">
+                                                                <div class="col-md-1">
+                                                                    @if (Model.TrophyImage != null)
+                                                                    {
+                                                                        <img src="@Model.TrophyImage.Url" class="img-fluid-your-kids trophyIcon center" alt="">
+                                                                    }
+                                                                </div>
+                                                                <div class="col-md-11  trophyTextMobile ">
+                                                                    @if (Model.TrophyWording != null)
+                                                                    {
+                                                                        <p>@Model.TrophyWording</p>
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        }
                                                     }
+                                                }
+                                                else
+                                                {
+                                                    <div class="row trophyRowPaddingBottom">
+                                                        <div class="col-md-1">
+                                                            @if (Model.TrophyNotReceivedImage != null)
+                                                            {
+                                                                <img src="@Model.TrophyNotReceivedImage.Url" class="img-fluid-your-kids trophyIcon center" alt="">
+                                                            }
+                                                        </div>
+                                                        <div class="col-md-11  trophyTextMobile ">
+                                                            @if (Model.TrophyNotReceivedWording != null)
+                                                            {
+                                                                <p>@Model.TrophyNotReceivedWording</p>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                }
 
-                                                </div>
-                                            </div>
+                                            }
+                                        }
+
                                     </div>
                                 </div>
                                 <br />

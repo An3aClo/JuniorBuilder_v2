@@ -22,12 +22,12 @@ h6 {
     font-family: "Raleway", sans-serif;
 }
 button {
-    background: #4aa7db;
+    background: #ed3d96;
     color: #fff;
     border-radius: 50px;
     margin: 2px 0 0 15px;
     padding: 4px 25px 6px 25px;
-    border: 2px solid #ed3d96;    
+    border: 2px solid #ed3d96;
     position: relative;
     color: #adc7de;
     padding: 10px 15px;
@@ -389,6 +389,15 @@ button {
 .readMoreArrow {
     margin-left: 55px;
     font-size: 20px;
+}
+
+.funfactBlockAllRound {
+    padding-top: 12px;
+    padding-left: 12px;
+    text-align: left;
+    background-color: #ed3d96;
+    color: white;
+    border-radius: 10px 10px 10px 10px;
 }
 
 .funfactBlock {
@@ -2011,6 +2020,7 @@ trophyTextMobile {
     height: 37px;
     width: 100px;
     color: white;
+    min-width:100%
 }
 
 .buttonLogoutDiv :hover {
@@ -2032,4 +2042,8 @@ trophyTextMobile {
 }
 .levelItem:hover {
     text-decoration: underline;
+}
+.personalInfoDiv {
+    border: 1px solid #ed3d96;
+    border-radius:10px;
 }
