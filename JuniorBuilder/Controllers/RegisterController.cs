@@ -25,6 +25,8 @@ namespace JuniorBuilder.Controllers
             {
                 var member = memberService.CreateMemberWithIdentity(model.EmailAddress, model.EmailAddress, model.Name, "member");
                 member.SetValue("haveChildren", "NoChild");
+                member.SetValue("umbracoMemberPasswordRetrievalQuestion", "Where were you born?");
+                member.SetValue("umbracoMemberPasswordRetrievalAnswer", model.PasswordQuestionAnswer);
                 memberService.SavePassword(member, model.Password);
                 Members.Login(model.EmailAddress, model.Password);
                 memberService.Save(member);

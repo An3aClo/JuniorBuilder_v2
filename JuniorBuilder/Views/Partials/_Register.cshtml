@@ -23,12 +23,20 @@
         <div class="form-row">
             <div class="col-md-6 form-group">
                 <div class="registerLables">
+                    @Html.LabelFor(model => model.PasswordQuestionAnswer)
+                </div>
+                @Html.TextBoxFor(model => model.PasswordQuestionAnswer, new { placeholder = "Your answer for the security question" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+            <div class="col-md-6 form-group">
+                <div class="registerLables">
                     @Html.LabelFor(model => model.Password)
-                </div>              
+                </div>
                 @Html.PasswordFor(model => model.Password, new { placeholder = "Password" })
                 @Html.ValidationMessageFor(model => model.Password)
             </div>
-         
+
         </div>
         @Html.ValidationSummary(true)
         <div class="text-center">

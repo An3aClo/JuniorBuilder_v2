@@ -8,13 +8,7 @@
 			Layout = "loggedinMaster.cshtml";
 			var myUser = System.Web.Security.Membership.GetUser();
 			var parentUserer = Services.MemberService.GetByUsername(myUser.UserName);
-			var myUserChildStatus = parentUserer.GetValue<string>("haveChildren");
-			if (myUserChildStatus.ToLower() == "nochild")
-			{
-				Response.Redirect("/add-child/");
-			}
-			else if (myUserChildStatus.ToLower() == "havechild")
-			{
+			var myUserChildStatus = parentUserer.GetValue<string>("haveChildren");		
 				var allKidsOfSameParent = Services.MemberService.GetMembersByPropertyValue("parentEmail", myUser.Email);
 				<main id="main">
 					<!-- ======= Child detail Section ======= -->
@@ -116,19 +110,28 @@
 											<div class="col-6">
 												<label>@myUser.PasswordQuestion</label>
 											</div>
-										</div>
-									</div>
-								
+										</div>									
+									</div>								
 								</div>
-
-
 								<div class="row funfactBlockAllRound">
 									<p>Child detail</p>
 								</div>
 								<div id="myDIV" class="funfactInformationExpandedBox">									
-										<div class="col-lg-12" data-aos="fade-up">
+									<div class="col-lg-12" data-aos="fade-up">
+
+										@if (myUserChildStatus.ToLower() == "nochild")
+										{
+											<br />
+											<div class="form-group row">
+												<div class="col-12">
+													<label>No child assiciacte please add a child</label>
+												</div>												
+											</div>
+										}
+										else if (myUserChildStatus.ToLower() == "havechild")
+										{
 											<hr />
-											@foreach (var kid in allKidsOfSameParent)
+											foreach (var kid in allKidsOfSameParent)
 											{
 												<div class="form-group row">
 													<div class="col-6">
@@ -173,7 +176,10 @@
 													}
 												}
 												<hr />
-											}										
+											}
+										}
+
+
 									</div>
 								</div>
 
@@ -190,7 +196,7 @@
 					<!-- End Child detail Section -->
 				</main><!-- End #main -->
 				<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-			}
+			
 		}
 		else
 		{

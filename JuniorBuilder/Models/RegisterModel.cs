@@ -13,6 +13,10 @@ namespace JuniorBuilder.Models
         [EmailAddress]
         public string EmailAddress { get; set; }
 
+        [Display(Name = "Security question: Where were you born?")]
+        [Required]
+        public string PasswordQuestionAnswer { get; set; }
+
         [Display(Name = "Password")]
         [Required]
         [DataType(DataType.Password)]
