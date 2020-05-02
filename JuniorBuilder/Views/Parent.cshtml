@@ -1,0 +1,204 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Parent>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	try
+	{
+		if (Umbraco.MemberIsLoggedOn())
+		{
+			Layout = "loggedinMaster.cshtml";
+			var myUser = System.Web.Security.Membership.GetUser();
+			var parentUserer = Services.MemberService.GetByUsername(myUser.UserName);
+			var myUserChildStatus = parentUserer.GetValue<string>("haveChildren");
+			if (myUserChildStatus.ToLower() == "nochild")
+			{
+				Response.Redirect("/add-child/");
+			}
+			else if (myUserChildStatus.ToLower() == "havechild")
+			{
+				var allKidsOfSameParent = Services.MemberService.GetMembersByPropertyValue("parentEmail", myUser.Email);
+				<main id="main">
+					<!-- ======= Child detail Section ======= -->
+					<section id="features" class="features section-bg">
+						<div class="container">
+							<div class="section-title">
+								@if (!string.IsNullOrWhiteSpace(Model.PageHeader))
+								{
+									<h2 data-aos="fade-in">@Model.PageHeader</h2>
+								}
+								@if (Model.PageIntroduction != null)
+								{
+									<p data-aos="fade-in">@Model.PageIntroduction</p>
+								}
+							</div>
+							<div class="col-lg-12 personalInfoDiv">
+
+								<div class="row funfactBlockAllRound">
+									<p>Person Detail</p>
+								</div>
+								<div id="myDIV1" class="">
+									<br />
+									<div class="col-lg-12" data-aos="fade-up">
+										<div class="form-group row">
+											<div class="col-6">
+												<label>Username:</label>
+											</div>
+											<div class="col-6">
+												<label>@myUser.UserName</label>
+											</div>
+										</div>
+										<div class="form-group row">
+											<div class="col-6">
+												<label>Email address:</label>
+											</div>
+											<div class="col-6">
+												<label>@myUser.Email</label>
+											</div>
+										</div>
+										<div class="form-group row">
+											<div class="col-6">
+												<label>Do have children associated:</label>
+											</div>
+											<div class="col-6">
+												@if (myUserChildStatus.ToLower() == "nochild")
+												{
+													<label>No</label>
+												}
+												else if (myUserChildStatus.ToLower() == "havechild")
+												{
+													<label>Yes</label>
+												}
+											</div>
+										</div>
+										<div class="form-group row">
+											<div class="col-6">
+												<label>Email address:</label>
+											</div>
+											<div class="col-6">
+												<label>@myUser.CreationDate</label>
+											</div>
+										</div>
+										<div class="form-group row">
+											<div class="col-6">
+												<label>Last date active:</label>
+											</div>
+											<div class="col-6">
+												<label>@myUser.LastActivityDate</label>
+											</div>
+										</div>
+										<div class="form-group row">
+											<div class="col-6">
+												<label>Last logout:</label>
+											</div>
+											<div class="col-6">
+												<label>@myUser.LastLockoutDate</label>
+											</div>
+										</div>
+										<div class="form-group row">
+											<div class="col-6">
+												<label>Last login:</label>
+											</div>
+											<div class="col-6">
+												<label>@myUser.LastLoginDate</label>
+											</div>
+										</div>
+										<div class="form-group row">
+											<div class="col-6">
+												<label>Last password change:</label>
+											</div>
+											<div class="col-6">
+												<label>@myUser.LastPasswordChangedDate</label>
+											</div>
+										</div>
+										<div class="form-group row">
+											<div class="col-6">
+												<label>Password reset question:</label>
+											</div>
+											<div class="col-6">
+												<label>@myUser.PasswordQuestion</label>
+											</div>
+										</div>
+									</div>
+								
+								</div>
+
+
+								<div class="row funfactBlockAllRound">
+									<p>Child detail</p>
+								</div>
+								<div id="myDIV" class="funfactInformationExpandedBox">									
+										<div class="col-lg-12" data-aos="fade-up">
+											<hr />
+											@foreach (var kid in allKidsOfSameParent)
+											{
+												<div class="form-group row">
+													<div class="col-6">
+														<label>Name of child:</label>
+													</div>
+													<div class="col-6">
+														<label>@kid.Username</label>
+													</div>
+												</div>
+												var oldValue = kid.GetValue<string>("childLessonsCompleted");
+												if (oldValue != null)
+												{
+													var arrayOfAllOldValues = oldValue.Split('?');
+													if (arrayOfAllOldValues.Length > 2)
+													{
+														<div class="form-group row">
+															<div class="col-6">
+																<label>Achievments of child:</label>
+															</div>
+															<div class="col-6">
+																@foreach (var level in arrayOfAllOldValues)
+																{
+																	if (!string.IsNullOrWhiteSpace(level))
+																	{
+																		<label>@level</label><br />
+																	}
+																}
+
+															</div>
+														</div>
+													}
+													else
+													{
+														<div class="form-group row">
+															<div class="col-6">
+																<label>Achievments of child:</label>
+															</div>
+															<div class="col-6">
+																<label>None</label><br />
+															</div>
+														</div>
+													}
+												}
+												<hr />
+											}										
+									</div>
+								</div>
+
+
+							</div>
+							<div class="section-title markCompleteText">
+								@if (Model.PageConclusion != null)
+								{
+									<p data-aos="fade-in">@Model.PageConclusion</p>
+								}
+							</div>
+						</div>
+					</section>
+					<!-- End Child detail Section -->
+				</main><!-- End #main -->
+				<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+			}
+		}
+		else
+		{
+			Response.Redirect("/login");
+		}
+	}
+	catch (Exception)
+	{
+		Response.Redirect("/login");
+	}
+}

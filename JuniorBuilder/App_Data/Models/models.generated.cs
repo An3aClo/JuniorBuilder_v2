@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c06ed52e6105a041")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "473e5423a3348477")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -3004,6 +3004,53 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("levelPageLink")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent LevelPageLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("levelPageLink");
+	}
+
+	/// <summary>Parent</summary>
+	[PublishedModel("parent")]
+	public partial class Parent : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "parent";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Parent, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Parent(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Page conclusion: This is the conclusion of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageConclusion")]
+		public global::System.Web.IHtmlString PageConclusion => this.Value<global::System.Web.IHtmlString>("pageConclusion");
+
+		///<summary>
+		/// Page header: The header of the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageHeader")]
+		public string PageHeader => this.Value<string>("pageHeader");
+
+		///<summary>
+		/// Page introduction: An introduction for the page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pageIntroduction")]
+		public global::System.Web.IHtmlString PageIntroduction => this.Value<global::System.Web.IHtmlString>("pageIntroduction");
 	}
 
 	/// <summary>Folder</summary>
