@@ -25,6 +25,7 @@ namespace JuniorBuilder.Controllers
                 var member = memberService.CreateMemberWithIdentity(model.Name, kidsEmaill, model.Name, "childMember");                
                 member.SetValue("parentEmail", parentEmail);
                 member.SetValue("childPaymentStatus", "Unpaid");
+                member.SetValue("childLessonsCompleted", "?");                
                 memberService.Save(member);
                 var parent =  memberService.GetByUsername(parentProfile.UserName);
                 parent.SetValue("haveChildren", "HaveChild");
