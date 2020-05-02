@@ -2020,6 +2020,7 @@ trophyTextMobile {
     height: 37px;
     width: 100px;
     color: white;
+    min-width:100%
 }
 
 .buttonLogoutDiv :hover {

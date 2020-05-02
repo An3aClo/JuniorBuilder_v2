@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "473e5423a3348477")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "2601fd8d3a1ba3c5")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
