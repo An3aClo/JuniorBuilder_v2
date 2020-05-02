@@ -1,13 +1,11 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.LessonWeekLayout>
 @using ContentModels = Umbraco.Web.PublishedModels;
-
 @{
     try
     {
         if (Umbraco.MemberIsLoggedOn())
         {
-            Layout = "loggedinMaster.cshtml";          
-        
+            Layout = "loggedinMaster.cshtml";    
             <main id="main">        
                 <section class="page-section" id="about">
                     <div class="container">
@@ -22,8 +20,7 @@
                                 <p data-aos="fade-in">@Model.PageMainSectionDescription</p>
                             }
                         </div>                    
-                        <br />
-                        
+                        <br />                        
                         <div class="row content">
                             <!--Class image-->
                             @if (Model.ClassImage != null)
@@ -63,18 +60,15 @@
                                     }
                                 }
                             </div>
-                        </div>                    
-                  
+                        </div>    
                         <!--Conclution section-->
                         @{
                             var url = Request.RawUrl;
                             var tempID = url.Split('?').Last();
                             int kidID = tempID.AsInt();
                             var kid = Services.MemberService.GetById(kidID);
-
                             var urlEntries = url.Split('/');
                             var lessonName = urlEntries[2].ToString();
-
                             var oldValue = kid.GetValue<string>("childLessonsCompleted");
                             if (oldValue != null)
                             {
@@ -87,14 +81,11 @@
                                         var myUser = System.Web.Security.Membership.GetUser();
                                         if (myUser != null)
                                         {
-                                            <div class="section-title markCompleteText">
-                                             
-                                                   @if (Model.PageConclusion != null)
-                                                    {
-                                                        <p data-aos="fade-in">@Model.PageConclusion</p>
-                                                    }
-                                                
-                                                <br />
+                                            <div class="section-title markCompleteText">                                             
+                                                @if (Model.PageConclusion != null)
+                                                {
+                                                    <p data-aos="fade-in">@Model.PageConclusion</p>
+                                                }      
                                                 @if (!string.IsNullOrWhiteSpace(Model.PageButtonText) && Model.PageButtonLink != null)
                                                 {
                                                     <div class="markCompleteButton">
@@ -107,8 +98,7 @@
                                 }
                                 else
                                 {
-                                    <div class="section-title markCompleteText">
-                                      
+                                    <div class="section-title markCompleteText">                                      
                                         @if (Model.PageConclusion != null)
                                         {
                                             <p data-aos="fade-in">@Model.PageConclusion</p>
@@ -122,7 +112,6 @@
                                             {
                                                  <p>@Model.LevelCompletedWording</p>
                                             }
-
                                             if (!string.IsNullOrWhiteSpace(Model.TrophyPageButtonWording) && Model.TrophyPageButtonLink != null && !string.IsNullOrWhiteSpace(Model.LevelPageButtonWording) && Model.LevelPageButtonLink != null)
                                             {
                                                  <p class="smallButtonLink">
@@ -130,8 +119,7 @@
                                                     |
                                                     <span><a href="@Model.LevelPageButtonLink.Url">@Model.LevelPageButtonWording</a></span>
                                                  </p>
-                                            }
-                                           
+                                            }                                           
                                         }
                                     </div>
                                 }
