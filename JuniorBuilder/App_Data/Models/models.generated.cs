@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "919f9e74d2647081")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c06ed52e6105a041")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -2935,7 +2935,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("trophyNotReceivedWording")]
-		public string TrophyNotReceivedWording => this.Value<string>("trophyNotReceivedWording");
+		public global::System.Web.IHtmlString TrophyNotReceivedWording => this.Value<global::System.Web.IHtmlString>("trophyNotReceivedWording");
 
 		///<summary>
 		/// Trophy page conclusion: This is the conclusion of the trophy page
@@ -2963,7 +2963,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("trophyWording")]
-		public string TrophyWording => this.Value<string>("trophyWording");
+		public global::System.Web.IHtmlString TrophyWording => this.Value<global::System.Web.IHtmlString>("trophyWording");
 	}
 
 	/// <summary>Week level layout</summary>

@@ -70,8 +70,8 @@
                                                                         <img src="@Model.TrophyImage.Url" class="img-fluid-your-kids trophyIcon center" alt="">
                                                                     }
                                                                 </div>
-                                                                <div class="col-md-11 trophyText trophyTextMobile ">
-                                                                    @if (!string.IsNullOrWhiteSpace(Model.TrophyWording))
+                                                                <div class="col-md-11  trophyTextMobile ">
+                                                                    @if (Model.TrophyWording != null)
                                                                     {
                                                                         <p>@Model.TrophyWording</p>
                                                                     }
@@ -89,8 +89,8 @@
                                                                 <img src="@Model.TrophyNotReceivedImage.Url" class="img-fluid-your-kids trophyIcon center" alt="">
                                                             }
                                                         </div>
-                                                        <div class="col-md-11 trophyText trophyTextMobile ">
-                                                            @if (!string.IsNullOrWhiteSpace(Model.TrophyNotReceivedWording))
+                                                        <div class="col-md-11  trophyTextMobile ">
+                                                            @if (Model.TrophyNotReceivedWording != null)
                                                             {
                                                                 <p>@Model.TrophyNotReceivedWording</p>
                                                             }
