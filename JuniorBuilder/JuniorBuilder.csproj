@@ -541,9 +541,11 @@
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\ResetPasswordController.cs" />
     <Compile Include="Models\AddChildModel.cs" />
     <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Models\ResetPasswordModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -651,6 +653,9 @@
     <Content Include="Views\Partials\_AddChild.cshtml" />
     <Content Include="Views\TrophyDetail.cshtml" />
     <Content Include="Views\Parent.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Partials\_ResetPassword.cshtml" />
+    <Content Include="Views\resetPassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -661,6 +666,7 @@
   <ItemGroup>
     <Folder Include="Views\AddChild\" />
     <Folder Include="Views\Login\" />
+    <Folder Include="Views\ResetPassword\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
