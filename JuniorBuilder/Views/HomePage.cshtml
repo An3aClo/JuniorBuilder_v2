@@ -78,32 +78,7 @@
 										}
 									</script>
 								}
-							</div>
-							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-								@if (!string.IsNullOrEmpty(Model.FourthIntroBlockTitle) && !string.IsNullOrEmpty(Model.FourthIntroBlockDescription) && !string.IsNullOrEmpty(Model.FourthIntroBlockMoreDescription))
-								{
-									<i class="bx bx-receipt"></i>
-									<h4><a>@Model.FourthIntroBlockTitle</a></h4>
-									<p>@Model.FourthIntroBlockDescription</p>
-									<p id="myDIV1" class="noDisplay">@Model.FourthIntroBlockMoreDescription</p>
-									<div class="row" id="myMainDiv" onclick="myFunction1()">
-										<div class="col-12 readMoreColor">
-											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
-											Read More
-										</div>
-									</div>
-									<script>
-										function myFunction1() {
-											var x = document.getElementById("myDIV1");
-											if (x.style.display === "none") {
-												x.style.display = "block";
-											} else {
-												x.style.display = "none";
-											}
-										}
-									</script>
-								}
-							</div>
+							</div>						
 							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
 								@if (!string.IsNullOrEmpty(Model.ThirdIntroBlockTitle) && !string.IsNullOrEmpty(Model.ThirdIntroBlockDescription) && !string.IsNullOrEmpty(Model.ThirdIntroBlockMoreDescription))
 								{
@@ -178,32 +153,7 @@
 										}
 									</script>
 								}
-							</div>
-							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-								@if (!string.IsNullOrEmpty(Model.SixthIntroBlockTitle) && !string.IsNullOrEmpty(Model.SixthIntroBlockDescription) && !string.IsNullOrEmpty(Model.SixthIntroBlockMoreDescription))
-								{
-									<i class="bx bxs-face"></i>
-									<h4><a>@Model.SixthIntroBlockTitle</a></h4>
-									<p>@Model.SixthIntroBlockDescription</p>
-									<p id="myDIV5" class="noDisplay">@Model.SixthIntroBlockMoreDescription</p>
-									<div class="row" id="myMainDiv" onclick="myFunction5()">
-										<div class="col-12 readMoreColor">
-											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
-											Read More
-										</div>
-									</div>
-									<script>
-										function myFunction5() {
-											var x = document.getElementById("myDIV5");
-											if (x.style.display === "none") {
-												x.style.display = "block";
-											} else {
-												x.style.display = "none";
-											}
-										}
-									</script>
-								}
-							</div>
+							</div>						
 						</div>
 					</div>
 				</div>
@@ -223,21 +173,7 @@
 				{
 					<p data-aos="fade-in">@Model.VideoSectionDescription</p>
 				}
-			</div>
-			<div class="row d-flex align-items-center" data-aos="fade-in">
-				<div id="IntroVideo" class="introductionVideo">
-					@if (Model.IntroductionVideo != null)
-					{
-						<iframe width="700"
-								height="500"
-								src="@Model.IntroductionVideo"
-								frameborder="0"
-								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen>
-						</iframe>
-					}
-				</div>
-			</div>
+			</div>		
 		</div>
 	</section>
 	<!--Video Section end-->

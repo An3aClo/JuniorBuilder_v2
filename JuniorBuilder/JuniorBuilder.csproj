@@ -656,6 +656,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Partials\_ResetPassword.cshtml" />
     <Content Include="Views\resetPassword.cshtml" />
+    <Content Include="Views\LoginPageLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
