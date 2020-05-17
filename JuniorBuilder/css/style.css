@@ -72,7 +72,7 @@ button {
 }
 
 .galaryImg {
-    height: 264px;
+    height: 365px;
     width: 350px;
 }
 
@@ -1408,9 +1408,9 @@ section {
     transition: 0.3s;
 }
 
-.portfolio .portfolio-wrap .portfolio-links a:hover {
+/*.portfolio .portfolio-wrap .portfolio-links a:hover {
     color: #fff;
-}
+}*/
 
 .portfolio .portfolio-wrap .portfolio-info {
     opacity: 0;
@@ -1435,7 +1435,7 @@ section {
     text-transform: uppercase;
 }
 
-.portfolio .portfolio-wrap:hover::before {
+/*.portfolio .portfolio-wrap:hover::before {
     left: 0;
 }
 
@@ -1447,7 +1447,7 @@ section {
 .portfolio .portfolio-wrap:hover .portfolio-info {
     opacity: 1;
     bottom: 0;
-}
+}*/
 
 /*-------------------------------------------------------------- # Team --------------------------------------------------------------*/
 .team .member {
@@ -2046,4 +2046,39 @@ trophyTextMobile {
 .personalInfoDiv {
     border: 1px solid #ed3d96;
     border-radius:10px;
+}
+/*Tool tip*/
+.customTooltip {
+    position: relative;
+    display: inline-block;
+}
+
+    .customTooltip .customTooltiptext {
+        visibility: hidden;
+        min-width: 300px;
+        min-height: 150px;
+        background-color: #4AA7DB;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5%;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 110%;
+    }
+
+        .customTooltip .customTooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent #4AA7DB transparent transparent;
+        }
+
+.customTooltip:hover .customTooltiptext {
+    visibility: visible;
 }

@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4e754c9ef9f9d732")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c2e87422684d2a3d")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -980,7 +980,7 @@ namespace Umbraco.Web.PublishedModels
 	}
 
 	// Mixin Content Type with alias "lessonDetailPageContent"
-	/// <summary>Lesson detail page content</summary>
+	/// <summary>Lesson detail page components</summary>
 	public partial interface ILessonDetailPageContent : IPublishedContent
 	{
 		/// <summary>Lesson detail describtion</summary>
@@ -992,7 +992,7 @@ namespace Umbraco.Web.PublishedModels
 		string LessonDetailHeader { get; }
 	}
 
-	/// <summary>Lesson detail page content</summary>
+	/// <summary>Lesson detail page components</summary>
 	[PublishedModel("lessonDetailPageContent")]
 	public partial class LessonDetailPageContent : PublishedContentModel, ILessonDetailPageContent
 	{
@@ -1265,7 +1265,7 @@ namespace Umbraco.Web.PublishedModels
 		public string TrophyPageButtonWording => this.Value<string>("trophyPageButtonWording");
 	}
 
-	/// <summary>Lesson information blocks</summary>
+	/// <summary>Lesson information block components</summary>
 	[PublishedModel("lessonInformationBlocks")]
 	public partial class LessonInformationBlocks : PublishedElementModel
 	{
@@ -2098,7 +2098,7 @@ namespace Umbraco.Web.PublishedModels
 		public static string GetRegisterText(IRegisterButton that) => that.Value<string>("registerText");
 	}
 
-	/// <summary>Package content</summary>
+	/// <summary>Package components</summary>
 	[PublishedModel("tableContent")]
 	public partial class TableContent : PublishedElementModel
 	{
@@ -2159,7 +2159,7 @@ namespace Umbraco.Web.PublishedModels
 		public string PackageTitle => this.Value<string>("packageTitle");
 	}
 
-	/// <summary>Package aspect content</summary>
+	/// <summary>Package aspect components</summary>
 	[PublishedModel("packageContent")]
 	public partial class PackageContent : PublishedElementModel
 	{
@@ -2221,7 +2221,7 @@ namespace Umbraco.Web.PublishedModels
 	}
 
 	// Mixin Content Type with alias "introductionVideoContent"
-	/// <summary>Introduction video content</summary>
+	/// <summary>Introduction video compoents</summary>
 	public partial interface IIntroductionVideoContent : IPublishedContent
 	{
 		/// <summary>Video section description</summary>
@@ -2233,7 +2233,7 @@ namespace Umbraco.Web.PublishedModels
 		string VideoSectionHeader { get; }
 	}
 
-	/// <summary>Introduction video content</summary>
+	/// <summary>Introduction video compoents</summary>
 	[PublishedModel("introductionVideoContent")]
 	public partial class IntroductionVideoContent : PublishedContentModel, IIntroductionVideoContent
 	{
@@ -2512,7 +2512,7 @@ namespace Umbraco.Web.PublishedModels
 		public string RegisterText => global::Umbraco.Web.PublishedModels.RegisterButton.GetRegisterText(this);
 	}
 
-	/// <summary>Add Child</summary>
+	/// <summary>Add Child page</summary>
 	[PublishedModel("addChild")]
 	public partial class AddChild : PublishedContentModel
 	{
@@ -2538,7 +2538,7 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 	}
 
-	/// <summary>Trophy detail</summary>
+	/// <summary>Child detail page</summary>
 	[PublishedModel("trophyDetail")]
 	public partial class TrophyDetail : PublishedContentModel
 	{
@@ -2641,7 +2641,7 @@ namespace Umbraco.Web.PublishedModels
 		public global::System.Web.IHtmlString TrophyWording => this.Value<global::System.Web.IHtmlString>("trophyWording");
 	}
 
-	/// <summary>Week level layout</summary>
+	/// <summary>Week level layout components</summary>
 	[PublishedModel("weekLayoutLevel")]
 	public partial class WeekLayoutLevel : PublishedElementModel
 	{
