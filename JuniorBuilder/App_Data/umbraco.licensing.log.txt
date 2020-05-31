@@ -44,3 +44,8 @@ Could not find any UmbracoForms licensing files in C:\Users\andre\source\repos\J
 Could not find any UmbracoForms licensing files in C:\Users\andre\source\repos\JuniorBuilder\JuniorBuilder\JuniorBuilder\bin:
 Could not find any UmbracoForms licensing files in C:\Users\andre\source\repos\JuniorBuilder\JuniorBuilder\JuniorBuilder\bin:
 Could not find any UmbracoForms licensing files in C:\Users\andre\source\repos\JuniorBuilder\JuniorBuilder\JuniorBuilder\bin:
+Could not find any UmbracoForms licensing files in C:\Users\andre\source\repos\JuniorBuilder\JuniorBuilder\JuniorBuilder\bin:
+Could not find any UmbracoForms licensing files in C:\Users\andre\source\repos\JuniorBuilder\JuniorBuilder\JuniorBuilder\bin:
+Could not find any UmbracoForms licensing files in C:\Users\andre\source\repos\JuniorBuilder\JuniorBuilder\JuniorBuilder\bin:
+Could not find any UmbracoForms licensing files in C:\Users\andre\source\repos\JuniorBuilder\JuniorBuilder\JuniorBuilder\bin:
+Could not find any UmbracoForms licensing files in C:\Users\andre\source\repos\JuniorBuilder\JuniorBuilder\JuniorBuilder\bin:

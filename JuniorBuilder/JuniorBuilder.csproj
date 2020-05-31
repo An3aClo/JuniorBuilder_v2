@@ -430,6 +430,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\gameStyle.css" />
     <Content Include="css\style.css" />
     <Content Include="css\tableStyle.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -501,6 +502,7 @@
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="scripts\gameFunction.js" />
     <Content Include="scripts\jquery-3.4.1.js" />
     <Content Include="scripts\jquery-3.4.1.min.js" />
     <Content Include="scripts\jquery-3.4.1.slim.js" />

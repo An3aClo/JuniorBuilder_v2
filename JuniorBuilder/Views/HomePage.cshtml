@@ -3,225 +3,251 @@
 @{
 	Layout = "master.cshtml";
 }
-	<main id="main">
-		<!--Hero section-->
-		<section id="hero">
-			<div class="container headerSpacing">
-				<div class="row d-flex align-items-center">
-					<div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
-						@if (Model.HeroTittle != null)
-						{
-							<h1>@Model.HeroTittle</h1>
-						}
-						@if (Model.HeroDescription != null)
-						{
-							<h2>@Model.HeroDescription</h2>
-							@*<a href="#about" class="btn-get-started scrollto">Get Started</a>*@
-						}
-					</div>
-					<div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
-						@if (Model.HeroImage != null)
-						{
-							<img src="@Model.HeroImage.Url" class="img-fluid" alt="img">
-						}
-					</div>
+<main id="main">
+	<!--Hero section-->
+	<section id="hero">
+		<div class="container headerSpacing">
+			<div class="row d-flex align-items-center">
+				<div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
+					@if (Model.HeroTittle != null)
+					{
+						<h1>@Model.HeroTittle</h1>
+					}
+					@if (Model.HeroDescription != null)
+					{
+						<h2>@Model.HeroDescription</h2>
+						@*<a href="#about" class="btn-get-started scrollto">Get Started</a>*@
+					}
+				</div>
+				<div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
+					@if (Model.HeroImage != null)
+					{
+						<img src="@Model.HeroImage.Url" class="img-fluid" alt="img">
+					}
 				</div>
 			</div>
-		</section>
-		<!-- End Hero -->
-	
-		<!--Introduction-->
-		<section id="introduction" class="about section-bg">
-			<div class="container">
-				<div class="row">
-					@if (Model.IntroductionImage != null)
-					{
-						var IntorbackGroundImage = @Model.IntroductionImage.Url;
-						<style>
+		</div>
+	</section>
+	<!-- End Hero -->
+	<!--Introduction-->
+	<section id="introduction" class="about section-bg">
+		<div class="container">
+			<div class="row">
+				@if (Model.IntroductionImage != null)
+				{
+					var IntorbackGroundImage = @Model.IntroductionImage.Url;
+					<style>
                             .intro {
                                 background: url(@IntorbackGroundImage) center center no-repeat;
                             }
-						</style>
-						<div class="image intro col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
-					}
-					<div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch">
-						<div class="content d-flex flex-column justify-content-center">
-							@if (!string.IsNullOrEmpty(Model.IntroductionSectionIntroductionHeader))
-							{
-								<h3 data-aos="fade-in" data-aos-delay="100">@Model.IntroductionSectionIntroductionHeader</h3>
-							}
-							@if (Model.IntroductionSectionIntroductionDescription != null)
-							{
-								<p data-aos="fade-in">@Model.IntroductionSectionIntroductionDescription</p>
-							}
-							<div class="row">
-								<div class="col-md-6 icon-box" data-aos="fade-up">
-									@if (!string.IsNullOrEmpty(Model.FirstIntroBlockTitle) && !string.IsNullOrEmpty(Model.FirstIntroBlockDescription) && !string.IsNullOrEmpty(Model.FirstIntroBlockMoreDescription))
-									{
-										<i class="bx bx-receipt"></i>
-										<h4><a>@Model.FirstIntroBlockTitle</a></h4>
-										<p>@Model.FirstIntroBlockDescription</p>
-										<p id="myDIV" class="noDisplay">@Model.FirstIntroBlockMoreDescription</p>
-										<div class="row" id="myMainDiv" onclick="myFunction()">
-											<div class="col-12 readMoreColor">
-												<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
-												Read More
-											</div>
+					</style>
+					<div class="image intro col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
+				}
+				<div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch">
+					<div class="content d-flex flex-column justify-content-center">
+						@if (!string.IsNullOrEmpty(Model.IntroductionSectionIntroductionHeader))
+						{
+							<h3 data-aos="fade-in" data-aos-delay="100">@Model.IntroductionSectionIntroductionHeader</h3>
+						}
+						@if (Model.IntroductionSectionIntroductionDescription != null)
+						{
+							<p data-aos="fade-in">@Model.IntroductionSectionIntroductionDescription</p>
+						}
+						<div class="row">
+							<div class="col-md-6 icon-box" data-aos="fade-up">
+								@if (!string.IsNullOrEmpty(Model.FirstIntroBlockTitle) && !string.IsNullOrEmpty(Model.FirstIntroBlockDescription) && !string.IsNullOrEmpty(Model.FirstIntroBlockMoreDescription))
+								{
+									<i class="bx bx-receipt"></i>
+									<h4><a>@Model.FirstIntroBlockTitle</a></h4>
+									<p>@Model.FirstIntroBlockDescription</p>
+									<p id="myDIV" class="noDisplay">@Model.FirstIntroBlockMoreDescription</p>
+									<div class="row" id="myMainDiv" onclick="myFunction()">
+										<div class="col-12 readMoreColor">
+											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
+											Read More
 										</div>
-										<script>
-											function myFunction() {
-												var x = document.getElementById("myDIV");
-												if (x.style.display === "none") {
-													x.style.display = "block";
-												} else {
-													x.style.display = "none";
-												}
+									</div>
+									<script>
+										function myFunction() {
+											var x = document.getElementById("myDIV");
+											if (x.style.display === "none") {
+												x.style.display = "block";
+											} else {
+												x.style.display = "none";
 											}
-										</script>
-									}
-								</div>
-								<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-									@if (!string.IsNullOrEmpty(Model.ThirdIntroBlockTitle) && !string.IsNullOrEmpty(Model.ThirdIntroBlockDescription) && !string.IsNullOrEmpty(Model.ThirdIntroBlockMoreDescription))
-									{
-										<i class="bx bx-receipt"></i>
-										<h4><a>@Model.ThirdIntroBlockTitle</a></h4>
-										<p>@Model.ThirdIntroBlockDescription</p>
-										<p id="myDIV2" class="noDisplay">@Model.ThirdIntroBlockMoreDescription</p>
-										<div class="row" id="myMainDiv" onclick="myFunction2()">
-											<div class="col-12 readMoreColor">
-												<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
-												Read More
-											</div>
+										}
+									</script>
+								}
+							</div>
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+								@if (!string.IsNullOrEmpty(Model.ThirdIntroBlockTitle) && !string.IsNullOrEmpty(Model.ThirdIntroBlockDescription) && !string.IsNullOrEmpty(Model.ThirdIntroBlockMoreDescription))
+								{
+									<i class="bx bx-receipt"></i>
+									<h4><a>@Model.ThirdIntroBlockTitle</a></h4>
+									<p>@Model.ThirdIntroBlockDescription</p>
+									<p id="myDIV2" class="noDisplay">@Model.ThirdIntroBlockMoreDescription</p>
+									<div class="row" id="myMainDiv" onclick="myFunction2()">
+										<div class="col-12 readMoreColor">
+											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
+											Read More
 										</div>
-										<script>
-											function myFunction2() {
-												var x = document.getElementById("myDIV2");
-												if (x.style.display === "none") {
-													x.style.display = "block";
-												} else {
-													x.style.display = "none";
-												}
+									</div>
+									<script>
+										function myFunction2() {
+											var x = document.getElementById("myDIV2");
+											if (x.style.display === "none") {
+												x.style.display = "block";
+											} else {
+												x.style.display = "none";
 											}
-										</script>
-									}
-								</div>
-								<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-									@if (!string.IsNullOrEmpty(Model.SecondIntroBlockTitle) && !string.IsNullOrEmpty(Model.SecondIntroBlockDescription) && !string.IsNullOrEmpty(Model.SecondIntroBlockMoreDescription))
-									{
-										<i class="bx bx-receipt"></i>
-										<h4><a>@Model.SecondIntroBlockTitle</a></h4>
-										<p>@Model.SecondIntroBlockDescription</p>
-										<p id="myDIV3" class="noDisplay">@Model.SecondIntroBlockMoreDescription</p>
-										<div class="row" id="myMainDiv" onclick="myFunction3()">
-											<div class="col-12 readMoreColor">
-												<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
-												Read More
-											</div>
+										}
+									</script>
+								}
+							</div>
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+								@if (!string.IsNullOrEmpty(Model.SecondIntroBlockTitle) && !string.IsNullOrEmpty(Model.SecondIntroBlockDescription) && !string.IsNullOrEmpty(Model.SecondIntroBlockMoreDescription))
+								{
+									<i class="bx bx-receipt"></i>
+									<h4><a>@Model.SecondIntroBlockTitle</a></h4>
+									<p>@Model.SecondIntroBlockDescription</p>
+									<p id="myDIV3" class="noDisplay">@Model.SecondIntroBlockMoreDescription</p>
+									<div class="row" id="myMainDiv" onclick="myFunction3()">
+										<div class="col-12 readMoreColor">
+											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
+											Read More
 										</div>
-										<script>
-											function myFunction3() {
-												var x = document.getElementById("myDIV3");
-												if (x.style.display === "none") {
-													x.style.display = "block";
-												} else {
-													x.style.display = "none";
-												}
+									</div>
+									<script>
+										function myFunction3() {
+											var x = document.getElementById("myDIV3");
+											if (x.style.display === "none") {
+												x.style.display = "block";
+											} else {
+												x.style.display = "none";
 											}
-										</script>
-									}
-								</div>
-								<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-									@if (!string.IsNullOrEmpty(Model.FifthIntroBlockTitle) && !string.IsNullOrEmpty(Model.FifthIntroBlockDescription) && !string.IsNullOrEmpty(Model.FifthIntroBlockMoreDescription))
-									{
-										<i class="bx bxs-face"></i>
-										<h4><a>@Model.FifthIntroBlockTitle</a></h4>
-										<p>@Model.FifthIntroBlockDescription</p>
-										<p id="myDIV4" class="noDisplay">@Model.FifthIntroBlockMoreDescription</p>
-										<div class="row" id="myMainDiv" onclick="myFunction4()">
-											<div class="col-12 readMoreColor">
-												<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
-												Read More
-											</div>
+										}
+									</script>
+								}
+							</div>
+							<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+								@if (!string.IsNullOrEmpty(Model.FifthIntroBlockTitle) && !string.IsNullOrEmpty(Model.FifthIntroBlockDescription) && !string.IsNullOrEmpty(Model.FifthIntroBlockMoreDescription))
+								{
+									<i class="bx bxs-face"></i>
+									<h4><a>@Model.FifthIntroBlockTitle</a></h4>
+									<p>@Model.FifthIntroBlockDescription</p>
+									<p id="myDIV4" class="noDisplay">@Model.FifthIntroBlockMoreDescription</p>
+									<div class="row" id="myMainDiv" onclick="myFunction4()">
+										<div class="col-12 readMoreColor">
+											<img class="rightArrowImage" src="~/Media/rightPinkArrow.png" />
+											Read More
 										</div>
-										<script>
-											function myFunction4() {
-												var x = document.getElementById("myDIV4");
-												if (x.style.display === "none") {
-													x.style.display = "block";
-												} else {
-													x.style.display = "none";
-												}
+									</div>
+									<script>
+										function myFunction4() {
+											var x = document.getElementById("myDIV4");
+											if (x.style.display === "none") {
+												x.style.display = "block";
+											} else {
+												x.style.display = "none";
 											}
-										</script>
-									}
-								</div>
+										}
+									</script>
+								}
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- End Introduction Section -->
-		<!--Video Section-->
-		<section id="Video">
-			<div class="container">
-				<div class="section-title" data-aos="fade-in">
-					@if (!string.IsNullOrWhiteSpace(Model.VideoSectionHeader))
-					{
-						<h2 data-aos="fade-in">@Model.VideoSectionHeader</h2>
-					}
-					@if (Model.VideoSectionDescription != null)
-					{
-						<p data-aos="fade-in">@Model.VideoSectionDescription</p>
-					}
-				</div>
+		</div>
+	</section>
+	<!-- End Introduction Section -->
+	<!--Video Section-->
+	<section id="Video">
+		<div class="container">
+			<div class="section-title" data-aos="fade-in">
+				@if (!string.IsNullOrWhiteSpace(Model.VideoSectionHeader))
+				{
+					<h2 data-aos="fade-in">@Model.VideoSectionHeader</h2>
+				}
+				@if (Model.VideoSectionDescription != null)
+				{
+					<p data-aos="fade-in">@Model.VideoSectionDescription</p>
+				}
 			</div>
-		</section>
-		<!--Video Section end-->
-		<!-- ======= Skill Section ======= -->
-		<section id="portfolio" class="portfolio section-bg">
-			<div class="container">
-				<div class="section-title">
-					@if (!string.IsNullOrWhiteSpace(Model.SkillSectionTitle))
+		</div>
+	</section>
+	<!--Video Section end-->
+	<!-- ======= Skill Section ======= -->
+	<section id="portfolio" class="portfolio section-bg">
+		<div class="container">
+			<div class="section-title">
+				@if (!string.IsNullOrWhiteSpace(Model.SkillSectionTitle))
+				{
+					<h2 data-aos="fade-in">@Model.SkillSectionTitle</h2>
+				}
+				@if (Model.SkillSectionDescription != null)
+				{
+					<p data-aos="fade-in">@Model.SkillSectionDescription</p>
+				}
+			</div>
+			<div class="row " data-aos="fade-up">
+				@if (Model.SkillList != null)
+				{
+					foreach (var skill in Model.SkillList)
 					{
-						<h2 data-aos="fade-in">@Model.SkillSectionTitle</h2>
-					}
-					@if (Model.SkillSectionDescription != null)
-					{
-						<p data-aos="fade-in">@Model.SkillSectionDescription</p>
-					}
-				</div>		
-				<div class="row " data-aos="fade-up">
-					@if (Model.SkillList != null)
-					{
-						foreach (var skill in Model.SkillList)
-						{
-							<div class="col-lg-4 col-md-6 ">
-								<div class="customTooltip">
-									@if (skill.SkillDevelopmentImage != null)
+						<div class="col-lg-4 col-md-6 ">
+							<div class="customTooltip">
+								@if (skill.SkillDevelopmentImage != null)
+								{
+									<img src="@skill.SkillDevelopmentImage.Url" class="img-fluid galaryImg" />
+								}
+								<span class="customTooltiptext">
+									@if (!string.IsNullOrWhiteSpace(skill.SkillDevelopmentHeader))
 									{
-										<img src="@skill.SkillDevelopmentImage.Url" class="img-fluid galaryImg" />
+										<h4 class=" text-uppercase ">
+											<strong>@skill.SkillDevelopmentHeader</strong>
+										</h4>
 									}
-									<span class="customTooltiptext">
-										@if (!string.IsNullOrWhiteSpace(skill.SkillDevelopmentHeader))
-										{
-											<h4 class=" text-uppercase ">
-												<strong>@skill.SkillDevelopmentHeader</strong>
-											</h4>
-										}
-										@if (skill.SkillDevelopmentDescription != null)
-										{
-											<p class="">@skill.SkillDevelopmentDescription</p>
-										}
-									</span>
-								</div>
-							</div>							
-						}
+									@if (skill.SkillDevelopmentDescription != null)
+									{
+										<p class="">@skill.SkillDevelopmentDescription</p>
+									}
+								</span>
+							</div>
+						</div>
 					}
-				</div>
+				}
 			</div>
-		</section>
-		<!-- End Skill Section -->
-	</main>
+		</div>
+	</section>
+	<!-- End Skill Section -->
+</main>
+
+<section class="draggable-elements">
+	<i class="fas fa-cat draggable" draggable="true" style="color: #ff6384;" id="cat">cat</i>
+	<i class="fas fa-dog draggable" draggable="true" style="color: #36a2eb;" id="dog">dog</i>
+	<i class="fas fa-dove draggable" draggable="true" style="color: #ffce56;" id="dove">dove</i>
+	<i class="fas fa-fish draggable" draggable="true" style="color: #9966ff;" id="fish">fish</i>
+	<i class="fas fa-frog draggable" draggable="true" style="color: #4bc0c0;" id="frog">frog</i>
+	<!-- <i class="fas fa-horse draggable" draggable="true" style="color: #333333;" id="horse"></i>
+	<i class="fas fa-hippo draggable" draggable="true" style="color: #ff9f40;" id="hippo"></i>
+	<i class="fas fa-spider draggable" draggable="true" style="color: #ff99cc;" id="spider"></i> -->
+</section>
+<section class="droppable-elements">
+	<div class="droppable" data-draggable-id="frog"><span>Frog</span></div>
+	<div class="droppable" data-draggable-id="dove"><span>Bird</span></div>
+	<div class="droppable" data-draggable-id="cat"><span>Cat</span></div>
+	<div class="droppable" data-draggable-id="fish"><span>Fish</span></div>
+	<div class="droppable" data-draggable-id="dog"><span>Dog</span></div>
+	<!-- <div class="droppable" data-draggable-id="spider"><span>Spider</span></div>
+	<div class="droppable" data-draggable-id="horse"><span>Horse</span></div>
+	<div class="droppable" data-draggable-id="hippo"><span>Hippo</span></div> -->
+</section>
+<i class="bx bx-receipt"></i>
+
+
 <!--Back to top-->
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+@*https://codepen.io/Coding_Journey/pen/YzKpLvE*@
+<script src="~/scripts/gameFunction.js"></script>
+<link href="~/css/gameStyle.css" rel="stylesheet" />
